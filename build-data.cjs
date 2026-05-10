@@ -1,5 +1,6 @@
 const XLSX = require('xlsx');
 const fs = require('fs');
+const crypto = require('crypto');
 
 const wb = XLSX.readFile('C:/Users/marce/Downloads/BRAVUS CWL MAIO finale.xlsx');
 const sheet = (n) => XLSX.utils.sheet_to_json(wb.Sheets[n], { header: 1, defval: null });
@@ -77,4 +78,19 @@ for (let i = 4; i < ranking.length; i++) {
 const data = { info, groupClans, rounds: roundsData, attacks: attacksData, defenses: defensesData, ranking: rankingData };
 fs.writeFileSync('C:/dev/coc-clan-view/data.json', JSON.stringify(data, null, 2));
 fs.writeFileSync('C:/dev/coc-clan-view/data.js', 'window.DATA = ' + JSON.stringify(data) + ';');
-console.log('OK');
+
+// ----- Cache busting: rewrite ?v=... in index.html based on file hashes -----
+const hash = (path) => crypto.createHash('md5').update(fs.readFileSync(path)).digest('hex').slice(0, 8);
+const versions = {
+  'style.css': hash('C:/dev/coc-clan-view/style.css'),
+  'app.js': hash('C:/dev/coc-clan-view/app.js'),
+  'data.js': hash('C:/dev/coc-clan-view/data.js'),
+};
+const indexPath = 'C:/dev/coc-clan-view/index.html';
+let html = fs.readFileSync(indexPath, 'utf8');
+for (const [file, v] of Object.entries(versions)) {
+  const re = new RegExp(`(${file.replace('.', '\\.')})\\?v=[^"'\\s]+`, 'g');
+  html = html.replace(re, `$1?v=${v}`);
+}
+fs.writeFileSync(indexPath, html);
+console.log('OK', versions);
