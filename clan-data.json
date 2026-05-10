@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-10 21:07",
+  "generatedAt": "2026-05-10 22:06",
   "clan": {
     "name": "Bravus",
     "tag": "#2Q9RYP8QC",
@@ -237,9 +237,9 @@
       "th": 18,
       "trophies": 1123,
       "league": "Unranked",
-      "donations": 357,
+      "donations": 362,
       "donationsReceived": 2718,
-      "donationBalance": -2361,
+      "donationBalance": -2356,
       "warStarsLifetime": 2107,
       "warPreference": "in",
       "attackWinsSeason": 0,
@@ -303,11 +303,11 @@
         "participation": 0
       },
       "activity": {
-        "score": 57.4,
+        "score": 57.5,
         "level": "warm",
         "breakdown": {
           "cwl": 100,
-          "donations": 23.8,
+          "donations": 24.1,
           "multi": 0,
           "veteran": 100,
           "_weights": {
@@ -1137,8 +1137,8 @@
       "trophies": 800,
       "league": "Unranked",
       "donations": 800,
-      "donationsReceived": 2210,
-      "donationBalance": -1410,
+      "donationsReceived": 2276,
+      "donationBalance": -1476,
       "warStarsLifetime": 1788,
       "warPreference": "in",
       "attackWinsSeason": 0,
@@ -1240,8 +1240,8 @@
       "trophies": 799,
       "league": "Unranked",
       "donations": 1273,
-      "donationsReceived": 10991,
-      "donationBalance": -9718,
+      "donationsReceived": 11248,
+      "donationBalance": -9975,
       "warStarsLifetime": 2278,
       "warPreference": "out",
       "attackWinsSeason": 0,
@@ -2325,7 +2325,7 @@
       "attackWinsSeason": 0,
       "defenseWinsSeason": 0,
       "heroes": {
-        "progress": 70.1,
+        "progress": 70.3,
         "levels": [
           {
             "name": "Barbarian King",
@@ -2354,7 +2354,7 @@
           },
           {
             "name": "Dragon Duke",
-            "level": 2,
+            "level": 3,
             "max": 25
           }
         ],
@@ -3976,9 +3976,9 @@
       "th": 18,
       "trophies": 0,
       "league": "Champion League III",
-      "donations": 67552,
+      "donations": 67870,
       "donationsReceived": 0,
-      "donationBalance": 67552,
+      "donationBalance": 67870,
       "warStarsLifetime": 539,
       "warPreference": "out",
       "attackWinsSeason": 0,
