@@ -46,7 +46,13 @@ button { font-family: inherit; }
   background: linear-gradient(135deg, var(--gold), #b8860b);
   display: grid; place-items: center; font-size: 28px; color: #1a1300;
   box-shadow: 0 6px 18px rgba(245, 197, 66, 0.25);
+  overflow: hidden;
 }
+.brand-icon.has-badge {
+  background: transparent;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+.brand-icon img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .brand-title { font-size: 26px; font-weight: 800; letter-spacing: 0.2px; }
 .brand-sub { color: var(--muted); font-size: 14px; margin-top: 2px; }
 .hero-meta { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -148,8 +154,12 @@ button { font-family: inherit; }
 /* Tables */
 .table-wrap {
   background: var(--bg-1); border: 1px solid var(--line);
-  border-radius: var(--radius); overflow: hidden;
+  border-radius: var(--radius); overflow-x: auto;
 }
+.table-wrap::-webkit-scrollbar { height: 8px; }
+.table-wrap::-webkit-scrollbar-track { background: var(--bg-2); }
+.table-wrap::-webkit-scrollbar-thumb { background: var(--bg-3); border-radius: 4px; }
+.table-wrap::-webkit-scrollbar-thumb:hover { background: var(--line); }
 .table-header {
   display: flex; gap: 8px; padding: 12px; flex-wrap: wrap; align-items: center;
   border-bottom: 1px solid var(--line); background: var(--bg-2);

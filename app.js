@@ -33,35 +33,103 @@
   const triplesAgainst = D.defenses.filter((d) => d.stars === 3).length;
   const holdPct = D.defenses.length ? Math.round(((D.defenses.length - triplesAgainst) / D.defenses.length) * 100) : 0;
 
-  // Hero
-  $('#clan-title').textContent = D.info.clanName;
-  $('#clan-sub').textContent = D.info.subtitle || '';
+  // Aplica escudo do clã (se já temos clan-data) no ícone do header e favicon
+  if (window.CLAN_DATA?.clan?.badgeUrls) {
+    const badge = window.CLAN_DATA.clan.badgeUrls.medium || window.CLAN_DATA.clan.badgeUrls.large || window.CLAN_DATA.clan.badgeUrls.small;
+    const iconEl = document.querySelector('.brand-icon');
+    if (iconEl && badge) {
+      iconEl.innerHTML = '';
+      iconEl.classList.add('has-badge');
+      iconEl.appendChild(el('img', { src: badge, alt: 'escudo do clã' }));
+    }
+    const fav = document.getElementById('favicon');
+    if (fav && badge) fav.href = badge;
+  }
+
+  // Hero — prioriza dados do clã (CLAN_DATA), com CWL como info secundária
+  const C0 = window.CLAN_DATA;
+  const clanName = C0?.clan?.name || D.info.clanName;
+  $('#clan-title').textContent = clanName;
+  if (C0?.clan) {
+    const c = C0.clan;
+    const subParts = [
+      `Nível ${c.level}`,
+      `${c.members}/50 membros`,
+      c.location ? c.location : null,
+      c.warFrequency ? `Guerra: ${warFreqPt(c.warFrequency)}` : null,
+    ].filter(Boolean);
+    $('#clan-sub').textContent = subParts.join(' · ');
+  } else {
+    $('#clan-sub').textContent = D.info.subtitle || '';
+  }
   $('#hero-meta').appendChild(buildHeroMeta());
   $('#hero-stats').appendChild(buildHeroStats());
-  $('#generated').textContent = D.info.generatedAt ? `Atualizado em ${D.info.generatedAt}` : '';
-  document.title = `${D.info.clanName} · ${D.info.season || ''} · CWL`;
+  $('#generated').textContent = (C0?.generatedAt || D.info.generatedAt) ? `Atualizado em ${C0?.generatedAt || D.info.generatedAt}` : '';
+  document.title = `${clanName} · Clã & CWL`;
+
+  function warFreqPt(s) {
+    return ({ always: 'sempre', moreThanOncePerWeek: 'mais de 1×/sem', oncePerWeek: '1×/semana', lessThanOncePerWeek: 'rara', never: 'nunca', any: 'qualquer', unknown: '—' })[s] || s;
+  }
 
   function buildHeroMeta() {
     const wrap = el('div', { class: 'hero-meta' });
-    if (D.info.tag) wrap.appendChild(el('span', { class: 'chip tag' }, D.info.tag));
-    if (D.info.season) wrap.appendChild(el('span', { class: 'chip' }, `Temporada ${D.info.season}`));
-    if (D.info.state) {
+    const clanTag = C0?.clan?.tag || D.info.tag;
+    if (clanTag) wrap.appendChild(el('span', { class: 'chip tag' }, clanTag));
+    if (D.info.season && D.info.state) {
       const isLive = /guerra/i.test(D.info.state);
-      wrap.appendChild(el('span', { class: 'chip ' + (isLive ? 'live' : '') }, D.info.state));
+      wrap.appendChild(el('span', { class: 'chip ' + (isLive ? 'live' : '') }, `🏆 CWL ${D.info.season} · ${D.info.state}`));
+    }
+    if (C0?.warlog?.stats) {
+      const total = C0.warlog.stats.wins + C0.warlog.stats.losses + C0.warlog.stats.ties;
+      const wr = total ? Math.round((C0.warlog.stats.wins / total) * 100) : 0;
+      wrap.appendChild(el('span', { class: 'chip' }, `⚔ ${wr}% win rate`));
     }
     return wrap;
   }
 
   function buildHeroStats() {
     const wrap = el('div', { class: 'hero-stats' });
-    const cards = [
-      { label: 'Vitórias / Derrotas', value: `${wins} – ${losses}`, sub: live ? `${live} em andamento` : 'temporada' , cls: wins > losses ? 'win' : losses > wins ? 'loss' : '' },
-      { label: '★ Totais', value: totalStars, sub: `em ${D.rounds.length} rodadas`, cls: 'gold' },
-      { label: '% Destruição média', value: `${totalDestr}%`, sub: 'média por rodada' },
-      { label: 'Triplos', value: `${triples}`, sub: `${triplePct}% dos ataques`, cls: 'gold' },
-      { label: 'Defesa', value: `${holdPct}%`, sub: `${triplesAgainst} triplos sofridos` },
-      { label: 'Jogadores', value: D.ranking.length, sub: `CV ${[...new Set(D.ranking.map(r => r.th))].sort((a,b)=>b-a).join(', ')}` },
-    ];
+    const cards = [];
+
+    if (C0?.clan) {
+      const c = C0.clan;
+      cards.push({ label: '👥 Membros', value: `${c.members}/50`, sub: `Nível ${c.level}`, cls: 'gold' });
+      cards.push({ label: '🏆 Pontos do Clã', value: fmtNum(c.points), sub: 'troféus' });
+      cards.push({ label: '⚔ Guerras vencidas', value: fmtNum(c.warWins ?? 0), sub: `${c.warTies ?? 0} empates · ${c.warLosses ?? 0} derrotas`, cls: 'win' });
+      if ((c.warWinStreak ?? 0) > 0) {
+        cards.push({ label: '🔥 Sequência atual', value: c.warWinStreak, sub: 'vitórias seguidas', cls: 'gold' });
+      }
+      cards.push({ label: '🏛 Capital', value: fmtNum(c.capitalPoints), sub: 'pontos' });
+    }
+
+    // Resumo da CWL atual (sempre visível, com destaque menor)
+    cards.push({
+      label: '🏆 CWL atual',
+      value: `${wins}V – ${losses}D` + (live ? ` · ${live}↻` : ''),
+      sub: `★${totalStars} · ${totalDestr}% destr.`,
+      cls: wins > losses ? 'win' : losses > wins ? 'loss' : '',
+    });
+
+    if (C0?.roster?.length) {
+      const active = C0.roster.filter((m) => m.activity?.level === 'active').length;
+      const inactive = C0.roster.filter((m) => m.activity?.level === 'inactive').length;
+      cards.push({
+        label: '🟢 Atividade',
+        value: `${active} ativos`,
+        sub: `${inactive} sumidos · ${C0.roster.length - active - inactive} mornos`,
+        cls: active > inactive ? 'win' : 'loss',
+      });
+    }
+
+    if (!C0) {
+      // fallback (sem dados de clã ainda) — usa stats CWL
+      cards.push(
+        { label: 'Vitórias / Derrotas', value: `${wins} – ${losses}`, sub: live ? `${live} em andamento` : 'CWL atual', cls: wins > losses ? 'win' : losses > wins ? 'loss' : '' },
+        { label: '★ Totais', value: totalStars, sub: `em ${D.rounds.length} rodadas`, cls: 'gold' },
+        { label: '% Destruição média', value: `${totalDestr}%`, sub: 'média por rodada' },
+      );
+    }
+
     for (const c of cards) {
       wrap.appendChild(el('div', { class: 'stat' }, [
         el('div', { class: 'stat-label' }, c.label),
@@ -71,6 +139,7 @@
     }
     return wrap;
   }
+  function fmtNum(n) { return Number(n || 0).toLocaleString('pt-BR'); }
 
   // ---------- Reordena ranking: ★ → % destruição → tempo ----------
   const _avgTimeSec = (s) => parseInt(String(s || '').replace(/\D/g, ''), 10) || 0;
@@ -130,6 +199,11 @@
       ]));
     });
     root.appendChild(podium);
+
+    // 🔥 Top do mês — atacando e participação (vem do clan-data quando disponível)
+    if (window.CLAN_DATA?.roster?.length) {
+      root.appendChild(buildMonthHighlights());
+    }
 
     // Rodadas
     root.appendChild(el('div', { class: 'section-title' }, '📜 Rodadas'));
@@ -494,6 +568,125 @@
   // ============================================================
   const C = window.CLAN_DATA;
 
+  // Recalcula atividade no frontend com pesos adaptativos
+  // (corrige imediatamente sem esperar o próximo refresh do Action)
+  function recomputeActivity(m) {
+    const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+    const r1 = (n) => Math.round(n * 10) / 10;
+    const stats = {
+      warExpected: m.warHistory?.attacksAvailable || 0,
+      warUsed: m.warHistory?.attacksUsed || 0,
+      cwlExpected: m.cwl?.expected || 0,
+      cwlUsed: m.cwl?.used || 0,
+      cwlStars: m.cwl?.stars || 0,
+      donations: m.donations || 0,
+      attackWins: m.attackWinsSeason || 0,
+      defenseWins: m.defenseWinsSeason || 0,
+      warStarsLifetime: m.warStarsLifetime || 0,
+    };
+    const comps = [];
+    if (stats.warExpected > 0) comps.push({ key: 'warPart', value: clamp((stats.warUsed / stats.warExpected) * 100, 0, 100), weight: 0.40 });
+    if (stats.cwlExpected > 0) {
+      const v = clamp((stats.cwlUsed / stats.cwlExpected) * 80 + (stats.cwlStars / Math.max(stats.cwlExpected * 3, 1)) * 20, 0, 100);
+      comps.push({ key: 'cwl', value: v, weight: 0.30 });
+    }
+    comps.push({ key: 'donations', value: clamp((stats.donations / 1500) * 100, 0, 100), weight: 0.25 });
+    comps.push({ key: 'multi', value: clamp(((stats.attackWins + stats.defenseWins) / 200) * 100, 0, 100), weight: 0.15 });
+    comps.push({ key: 'veteran', value: clamp((stats.warStarsLifetime / 1500) * 100, 0, 100), weight: 0.10 });
+    const tw = comps.reduce((s, c) => s + c.weight, 0);
+    const score = r1(comps.reduce((s, c) => s + c.value * c.weight, 0) / tw);
+    let level = 'inactive';
+    if (score >= 70) level = 'active';
+    else if (score >= 40) level = 'warm';
+    return { score, level };
+  }
+  if (C?.roster) C.roster.forEach((m) => { m.activity = recomputeActivity(m); });
+
+  // Top atacantes e mais participativos do mês — usa CWL atual + histórico de guerras acumulado
+  function buildMonthHighlights() {
+    const wrap = el('section', { class: 'highlights' });
+
+    // ----- Top atacantes do mês -----
+    // Score combinado: estrelas (CWL + war history) e % destruição média
+    const attackers = window.CLAN_DATA.roster
+      .map((m) => {
+        const cwlStars = m.cwl?.stars || 0;
+        const histStars = m.warHistory?.stars || 0;
+        const cwlAvg = m.cwl?.avgDestr || 0;
+        const histAvg = m.warHistory?.avgDestr || 0;
+        const totalAtk = (m.cwl?.used || 0) + (m.warHistory?.attacksUsed || 0);
+        const totalStars = cwlStars + histStars;
+        const avgDestr = totalAtk > 0
+          ? ((cwlAvg * (m.cwl?.used || 0)) + (histAvg * (m.warHistory?.attacksUsed || 0))) / totalAtk
+          : 0;
+        return { ...m, _atkStars: totalStars, _atkDestr: Math.round(avgDestr * 10) / 10, _atkCount: totalAtk };
+      })
+      .filter((m) => m._atkCount > 0)
+      .sort((a, b) => (b._atkStars - a._atkStars) || (b._atkDestr - a._atkDestr))
+      .slice(0, 5);
+
+    const atkBox = el('div', { class: 'highlight-box' }, [
+      el('div', { class: 'highlight-head' }, [
+        el('span', { class: 'highlight-eyebrow' }, '🔥 TOP ATACANTES DO MÊS'),
+        el('span', { class: 'highlight-sub' }, 'CWL + guerras normais'),
+      ]),
+      el('div', { class: 'highlight-list' },
+        attackers.length
+          ? attackers.map((m, i) => el('div', { class: 'hl-row' + (i < 3 ? ' top' : '') }, [
+              el('span', { class: 'hl-rank' }, '#' + (i + 1)),
+              el('span', { class: 'hl-name' }, m.name),
+              el('span', { class: 'hl-meta' }, [
+                el('span', { class: 'stars-cell' }, '★ ' + m._atkStars),
+                el('span', { class: 'mono-mini muted' }, ' · ' + m._atkDestr + '% · ' + m._atkCount + ' atq'),
+              ]),
+            ]))
+          : [emptyInline('Sem ataques registrados ainda.')]
+      ),
+    ]);
+
+    // ----- Mais participativos -----
+    const participators = window.CLAN_DATA.roster
+      .map((m) => {
+        const histAv = m.warHistory?.attacksAvailable || 0;
+        const histUs = m.warHistory?.attacksUsed || 0;
+        const cwlEx = m.cwl?.expected || 0;
+        const cwlUs = m.cwl?.used || 0;
+        const totalAv = histAv + cwlEx;
+        const totalUs = histUs + cwlUs;
+        const pct = totalAv ? Math.round((totalUs / totalAv) * 1000) / 10 : 0;
+        return { ...m, _partPct: pct, _partUsed: totalUs, _partAvail: totalAv };
+      })
+      .filter((m) => m._partAvail > 0)
+      .sort((a, b) => (b._partPct - a._partPct) || (b._partUsed - a._partUsed))
+      .slice(0, 5);
+
+    const partBox = el('div', { class: 'highlight-box' }, [
+      el('div', { class: 'highlight-head' }, [
+        el('span', { class: 'highlight-eyebrow' }, '✅ MAIS PARTICIPATIVOS'),
+        el('span', { class: 'highlight-sub' }, 'usaram mais ataques no mês'),
+      ]),
+      el('div', { class: 'highlight-list' },
+        participators.length
+          ? participators.map((m, i) => el('div', { class: 'hl-row' + (i < 3 ? ' top' : '') }, [
+              el('span', { class: 'hl-rank' }, '#' + (i + 1)),
+              el('span', { class: 'hl-name' }, m.name),
+              el('span', { class: 'hl-meta' }, [
+                el('span', {}, m._partUsed + '/' + m._partAvail),
+                el('span', { class: 'mono-mini muted' }, ' · ' + m._partPct + '%'),
+              ]),
+            ]))
+          : [emptyInline('Sem dados de participação ainda.')]
+      ),
+    ]);
+
+    wrap.appendChild(el('div', { class: 'section-title' }, '🔥 Destaques do mês'));
+    wrap.appendChild(el('div', { class: 'highlights-grid' }, [atkBox, partBox]));
+    return wrap;
+  }
+  function emptyInline(text) {
+    return el('div', { class: 'hl-empty' }, text);
+  }
+
   function emptyState(text, icon = '⏳') {
     return el('div', { class: 'empty-state' }, [
       el('div', { class: 'empty-icon' }, icon),
@@ -610,10 +803,44 @@
     ]));
 
     root.appendChild(el('div', { class: 'section-title' }, 'Membros'));
+
+    // Toolbar com busca + filtros
+    const toolbar = el('div', { class: 'roster-toolbar' });
+    const search = el('input', { class: 'search', type: 'search', placeholder: '🔎 Buscar jogador…' });
+    const fRole = el('select', { class: 'select' });
+    [['', 'Todos · Função'], ['leader', 'Líder'], ['coLeader', 'Co-líder'], ['admin', 'Veterano'], ['member', 'Membro']]
+      .forEach(([v, l]) => fRole.appendChild(el('option', { value: v }, l)));
+    const fAct = el('select', { class: 'select' });
+    [['', 'Todos · Status'], ['active', '🟢 Ativo'], ['warm', '🟡 Morno'], ['inactive', '🔴 Sumido']]
+      .forEach(([v, l]) => fAct.appendChild(el('option', { value: v }, l)));
+    const fWar = el('select', { class: 'select' });
+    [['', 'Todos · War pref'], ['in', 'IN'], ['out', 'OUT']]
+      .forEach(([v, l]) => fWar.appendChild(el('option', { value: v }, l)));
+    toolbar.appendChild(search); toolbar.appendChild(fRole); toolbar.appendChild(fAct); toolbar.appendChild(fWar);
+    root.appendChild(toolbar);
+
     const grid = el('div', { class: 'roster-grid' });
-    const sorted = [...C.roster].sort((a, b) => (b.th || 0) - (a.th || 0) || b.trophies - a.trophies);
-    sorted.forEach((m) => grid.appendChild(memberCard(m)));
     root.appendChild(grid);
+
+    const all = [...C.roster].sort((a, b) => (b.th || 0) - (a.th || 0) || b.trophies - a.trophies);
+    const renderGrid = () => {
+      const q = search.value.trim().toLowerCase();
+      const filtered = all.filter((m) => {
+        if (q && !String(m.name || '').toLowerCase().includes(q) && !String(m.tag || '').toLowerCase().includes(q)) return false;
+        if (fRole.value && m.role !== fRole.value) return false;
+        if (fAct.value && m.activity?.level !== fAct.value) return false;
+        if (fWar.value && m.warPreference !== fWar.value) return false;
+        return true;
+      });
+      grid.innerHTML = '';
+      if (!filtered.length) {
+        grid.appendChild(emptyInline('Nenhum jogador encontrado.'));
+        return;
+      }
+      filtered.forEach((m) => grid.appendChild(memberCard(m)));
+    };
+    [search, fRole, fAct, fWar].forEach((e) => e.addEventListener('input', renderGrid));
+    renderGrid();
   }
 
   function miniStat(label, value) {
@@ -742,20 +969,35 @@
     const topLoot = sorted[0]?.capital?.looted || 1;
 
     root.appendChild(el('div', { class: 'section-title' }, 'Top contribuintes (últimas temporadas)'));
+
+    const search = el('input', { class: 'search', type: 'search', placeholder: '🔎 Buscar jogador…', style: 'margin-bottom:10px' });
+    root.appendChild(search);
+
     const grid = el('div', { class: 'capital-grid' });
-    sorted.filter((m) => (m.capital?.looted || 0) > 0).slice(0, 30).forEach((m, i) => {
-      const pct = Math.round(((m.capital?.looted || 0) / topLoot) * 100);
-      grid.appendChild(el('div', { class: 'cap-card' }, [
-        el('div', { class: 'cap-rank' }, '#' + (i + 1)),
-        el('div', { class: 'cap-info' }, [
-          el('div', { class: 'cap-name' }, m.name),
-          el('div', { class: 'cap-stats mono-mini muted' }, `${m.capital.attacks} ataques`),
-        ]),
-        el('div', { class: 'cap-bar' }, [el('i', { style: `width:${pct}%` })]),
-        el('div', { class: 'cap-val' }, fmt(m.capital.looted)),
-      ]));
-    });
     root.appendChild(grid);
+
+    const eligible = sorted.filter((m) => (m.capital?.looted || 0) > 0);
+    const renderCapList = () => {
+      const q = search.value.trim().toLowerCase();
+      const filtered = q ? eligible.filter((m) => String(m.name).toLowerCase().includes(q)) : eligible;
+      grid.innerHTML = '';
+      filtered.slice(0, 50).forEach((m, i) => {
+        const pct = Math.round(((m.capital?.looted || 0) / topLoot) * 100);
+        const realRank = eligible.indexOf(m) + 1;
+        grid.appendChild(el('div', { class: 'cap-card' }, [
+          el('div', { class: 'cap-rank' }, '#' + realRank),
+          el('div', { class: 'cap-info' }, [
+            el('div', { class: 'cap-name' }, m.name),
+            el('div', { class: 'cap-stats mono-mini muted' }, `${m.capital.attacks} ataques`),
+          ]),
+          el('div', { class: 'cap-bar' }, [el('i', { style: `width:${pct}%` })]),
+          el('div', { class: 'cap-val' }, fmt(m.capital.looted)),
+        ]));
+      });
+      if (!filtered.length) grid.appendChild(emptyInline('Nenhum jogador encontrado.'));
+    };
+    search.addEventListener('input', renderCapList);
+    renderCapList();
 
     // Histórico de temporadas
     root.appendChild(el('div', { class: 'section-title' }, 'Temporadas recentes'));

@@ -85,19 +85,38 @@ function achievementValue(p, name) {
 }
 function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
 
-// ----- Score de atividade -----
+// ----- Score de atividade (pesos adaptativos: componentes sem dado saem da conta) -----
 function activityScore(stats) {
-  // Cada componente normalizado 0-100
-  const warPart = stats.warExpected > 0 ? clamp((stats.warUsed / stats.warExpected) * 100, 0, 100) : 0;
-  const donations = clamp((stats.donations / 1500) * 100, 0, 100); // 1500+ doações = 100
-  const multi = clamp(((stats.attackWins + stats.defenseWins) / 200) * 100, 0, 100);
-  const cwl = stats.cwlExpected > 0 ? clamp((stats.cwlUsed / stats.cwlExpected) * 80 + (stats.cwlStars / Math.max(stats.cwlExpected * 3, 1)) * 20, 0, 100) : 0;
-  const veteran = clamp((stats.warStarsLifetime / 1500) * 100, 0, 100);
-  const score = round1(warPart * 0.40 + donations * 0.25 + multi * 0.15 + cwl * 0.10 + veteran * 0.10);
+  const components = [];
+  // Participação em guerra normal: só conta se já temos histórico coletado
+  if (stats.warExpected > 0) {
+    const v = clamp((stats.warUsed / stats.warExpected) * 100, 0, 100);
+    components.push({ key: 'warPart', value: v, weight: 0.40 });
+  }
+  // CWL atual: peso maior (sobe pra 0.30 quando ativo, vs 0.10 fora de CWL)
+  if (stats.cwlExpected > 0) {
+    const partPct = (stats.cwlUsed / stats.cwlExpected) * 80;
+    const starsPct = (stats.cwlStars / Math.max(stats.cwlExpected * 3, 1)) * 20;
+    const v = clamp(partPct + starsPct, 0, 100);
+    components.push({ key: 'cwl', value: v, weight: 0.30 });
+  }
+  // Doações da temporada (1500+ = 100)
+  components.push({ key: 'donations', value: clamp((stats.donations / 1500) * 100, 0, 100), weight: 0.25 });
+  // Vitórias multiplayer da temporada
+  components.push({ key: 'multi', value: clamp(((stats.attackWins + stats.defenseWins) / 200) * 100, 0, 100), weight: 0.15 });
+  // ★ war stars lifetime (1500+ = 100)
+  components.push({ key: 'veteran', value: clamp((stats.warStarsLifetime / 1500) * 100, 0, 100), weight: 0.10 });
+
+  const totalWeight = components.reduce((s, c) => s + c.weight, 0);
+  const score = round1(components.reduce((s, c) => s + c.value * c.weight, 0) / totalWeight);
   let level = 'inactive';
   if (score >= 70) level = 'active';
   else if (score >= 40) level = 'warm';
-  return { score, level, breakdown: { warPart: round1(warPart), donations: round1(donations), multi: round1(multi), cwl: round1(cwl), veteran: round1(veteran) } };
+
+  const breakdown = {};
+  for (const c of components) breakdown[c.key] = round1(c.value);
+  breakdown._weights = Object.fromEntries(components.map((c) => [c.key, round1((c.weight / totalWeight) * 100)]));
+  return { score, level, breakdown };
 }
 
 (async () => {
@@ -290,6 +309,7 @@ function activityScore(stats) {
       requiredTrophies: clan.requiredTrophies, warFrequency: clan.warFrequency,
       warWinStreak: clan.warWinStreak, warWins: clan.warWins, warTies: clan.warTies, warLosses: clan.warLosses,
       isWarLogPublic: clan.isWarLogPublic !== false,
+      badgeUrls: clan.badgeUrls || null,
     },
     roster,
     warlog: { public: warlogPublic, summary: warlogSummary, stats: { wins, losses, ties } },
