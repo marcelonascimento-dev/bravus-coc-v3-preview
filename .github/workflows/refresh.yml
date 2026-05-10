@@ -2,8 +2,8 @@ name: Refresh CWL data
 
 on:
   schedule:
-    # A cada 30 minutos
-    - cron: '*/30 * * * *'
+    # A cada 15 minutos (cadência fina pra detectar transições de guerra)
+    - cron: '*/15 * * * *'
   workflow_dispatch: {}
   push:
     branches: [main]
@@ -40,6 +40,14 @@ jobs:
           COC_TOKEN: ${{ secrets.COC_TOKEN }}
           CLAN_TAG: ${{ vars.CLAN_TAG || '#2Q9RYP8QC' }}
         run: node fetch-clan.cjs
+
+      - name: Send WhatsApp notifications
+        env:
+          COC_TOKEN: ${{ secrets.COC_TOKEN }}
+          CLAN_TAG: ${{ vars.CLAN_TAG || '#2Q9RYP8QC' }}
+          WHATSAPP_REGISTRY: ${{ secrets.WHATSAPP_REGISTRY }}
+        run: node notify.cjs
+        continue-on-error: true
 
       - name: Commit & push if changed
         run: |

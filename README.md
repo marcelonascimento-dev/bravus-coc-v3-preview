@@ -43,6 +43,43 @@ runners do GitHub têm IP dinâmico, usamos o proxy gratuito do RoyaleAPI
 | `.github/workflows/refresh.yml` | Cron de 30 min + atualização manual. |
 | `build-data.cjs` | Fallback: gera os dados a partir da planilha original. |
 
+## Notificações WhatsApp (CallMeBot)
+
+O sistema avisa via WhatsApp quem está escalado na guerra:
+
+- ⚔ **Guerra começa** → DM pra todos os escalados que estão no cadastro.
+- ⏰ **4h restantes** → DM **só pra quem não atacou ainda**.
+- 🚨 **1h restante** → DM final pros atrasados.
+
+Funciona pra guerras normais e pra cada rodada da CWL.
+
+### Como cada jogador autoriza (faz uma vez só)
+
+1. Salva `+34 644 38 13 22` como contato "CallMeBot".
+2. Manda no WhatsApp: `I allow callmebot to send me messages`.
+3. O bot responde com um `apikey` (7 dígitos).
+4. Manda pra liderança: **número (com DDI) + apikey + sua tag no jogo**.
+
+### Como o líder cadastra
+
+Vai em **Settings → Secrets and variables → Actions → New repository secret**:
+
+- Name: `WHATSAPP_REGISTRY`
+- Value: JSON com o cadastro:
+
+```json
+[
+  { "tag": "#ABC123", "name": "João",  "phone": "5562999999999", "apikey": "1234567" },
+  { "tag": "#DEF456", "name": "Maria", "phone": "5562888888888", "apikey": "7654321" },
+  { "tag": "#GHI789", "name": "Pedro", "phone": "5562777777777", "apikey": "0011223", "optOut": true }
+]
+```
+
+- `phone`: formato internacional **sem `+`**, ex: `5562999999999`.
+- `optOut: true`: jogador não recebe nada (útil quando alguém pede pra parar).
+
+Pra desativar tudo: deleta o secret.
+
 ## Atualização manual
 
 ```bash
