@@ -1,9 +1,9 @@
-# Bravus · CWL Dashboard
+# Bravus · Clã Dashboard
 
-Dashboard estático que mostra a CWL do clã **Bravus** com dados ao vivo da API
-oficial do Clash of Clans.
+Dashboard estático com visão completa do clã **Bravus** (membros, atividade,
+guerras, capital, CWL) com dados ao vivo da API oficial do Clash of Clans.
 
-🔗 **Site:** https://marcelonascimento-dev.github.io/bravus-cwl/
+🔗 **Site:** https://marcelonascimento-dev.github.io/bravus-coc/
 
 ## Como funciona
 
@@ -21,7 +21,7 @@ runners do GitHub têm IP dinâmico, usamos o proxy gratuito do RoyaleAPI
 1. Acesse https://developer.clashofclans.com e faça login com sua conta de
    Supercell ID.
 2. Em **My Account → Create New Key**, crie uma chave com:
-   - **Name:** `bravus-cwl`
+   - **Name:** `bravus-coc`
    - **IP Addresses:** `45.79.218.79`
 3. Copie o token gerado.
 4. No repositório do GitHub: **Settings → Secrets and variables → Actions →
