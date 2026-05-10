@@ -648,16 +648,42 @@
 
     const enriched = window.CLAN_DATA.roster.map((m) => ({ ...m, _w: combineWarStats(m) }));
 
+    // Máximos no clã (para normalizar componentes 0-100)
+    const maxOf = (key, fn) => {
+      const max = Math.max(0, ...enriched.map((m) => fn(m) || 0));
+      return max || 1;
+    };
+    const maxDonSent = maxOf('d', (m) => m.donations);
+    const maxDonRecv = maxOf('dr', (m) => m.donationsReceived);
+    const maxAtkWins = maxOf('aw', (m) => m.attackWinsSeason);
+
+    // Score composto de participação: ataques de guerra + doações ↑↓ + ataques multi
+    enriched.forEach((m) => {
+      const wars = m._w.expected ? (m._w.used / m._w.expected) * 100 : 0;
+      const dSent = (m.donations / maxDonSent) * 100;
+      const dRecv = (m.donationsReceived / maxDonRecv) * 100;
+      const atk = ((m.attackWinsSeason || 0) / maxAtkWins) * 100;
+      m._partScore = Math.round(((wars + dSent + dRecv + atk) / 4) * 10) / 10;
+      m._partBreakdown = {
+        wars: Math.round(wars), dSent: Math.round(dSent), dRecv: Math.round(dRecv), atk: Math.round(atk),
+      };
+    });
+
     // Top atacantes — mais ★ (CWL + guerras), tiebreaker destruição
     const attackers = enriched
       .filter((m) => m._w.used > 0)
       .sort((a, b) => (b._w.stars - a._w.stars) || (b._w.avgDestr - a._w.avgDestr))
       .slice(0, 10);
 
-    // Mais participativos — % de ataques usados (tiebreaker: total usado)
-    const participators = enriched
-      .filter((m) => m._w.expected > 0)
-      .sort((a, b) => (b._w.participation - a._w.participation) || (b._w.used - a._w.used))
+    // Mais participativos — score composto
+    const participators = [...enriched]
+      .sort((a, b) => b._partScore - a._partScore)
+      .slice(0, 10);
+
+    // Top push — evolução de troféus
+    const pushes = [...enriched]
+      .filter((m) => m.trophyEvolution && (m.trophyEvolution.deltaSinceFirst != null || m.trophyEvolution.delta7d != null))
+      .sort((a, b) => (b.trophyEvolution.delta7d || b.trophyEvolution.deltaSinceFirst || 0) - (a.trophyEvolution.delta7d || a.trophyEvolution.deltaSinceFirst || 0))
       .slice(0, 10);
 
     wrap.appendChild(el('div', { class: 'highlights-grid' }, [
@@ -665,11 +691,26 @@
         primary: '★ ' + m._w.stars,
         secondary: m._w.avgDestr + '% · ' + m._w.used + ' atq',
       })),
-      buildHighlightCard('✅', 'Mais participativos', 'usaram mais ataques disponíveis', participators, (m) => ({
-        primary: m._w.participation + '%',
-        secondary: m._w.used + '/' + m._w.expected + ' atq',
+      buildHighlightCard('✅', 'Mais participativos', 'guerra + doações + ataques multi', participators, (m) => ({
+        primary: m._partScore,
+        secondary: `🛡${m._partBreakdown.wars} ↑${m._partBreakdown.dSent} ↓${m._partBreakdown.dRecv} ⚔${m._partBreakdown.atk}`,
       })),
+      buildHighlightCard('📈', 'Top push', 'evolução de troféus', pushes, (m) => {
+        const d7 = m.trophyEvolution?.delta7d;
+        const dAll = m.trophyEvolution?.deltaSinceFirst;
+        const main = d7 != null ? d7 : (dAll || 0);
+        const arrow = main > 0 ? '+' : '';
+        return {
+          primary: arrow + main,
+          secondary: `${m.trophies} 🏆${m.league ? ' · ' + m.league : ''}`,
+        };
+      }),
     ]));
+
+    if (!pushes.length) {
+      wrap.appendChild(el('div', { class: 'formula-note' },
+        '📈 Evolução de troféus aparece após o segundo dia de coleta. Os snapshots começaram a ser salvos agora.'));
+    }
 
     return wrap;
   }

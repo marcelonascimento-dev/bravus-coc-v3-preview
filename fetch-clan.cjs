@@ -321,6 +321,51 @@ function activityScore(stats) {
     })) } : null,
   };
 
+  // ----- Snapshot diário de jogadores (para cálculo de evolução de troféus) -----
+  const today = new Date().toISOString().slice(0, 10);
+  const playerSnapDir = path.join(ROOT, 'history', 'players');
+  fs.mkdirSync(playerSnapDir, { recursive: true });
+  const snapshotToday = {
+    date: today,
+    members: roster.map((r) => ({
+      tag: r.tag, name: r.name,
+      trophies: r.trophies, league: r.league, th: r.th,
+      donations: r.donations, donationsReceived: r.donationsReceived,
+      attackWins: r.attackWinsSeason, defenseWins: r.defenseWinsSeason,
+    })),
+  };
+  fs.writeFileSync(path.join(playerSnapDir, today + '.json'), JSON.stringify(snapshotToday));
+
+  // Calcula evolução de troféus comparando com snapshots anteriores
+  const snapFiles = fs.readdirSync(playerSnapDir).filter((f) => f.endsWith('.json')).sort();
+  const findSnap = (daysAgo) => {
+    const target = new Date(); target.setDate(target.getDate() - daysAgo);
+    const targetStr = target.toISOString().slice(0, 10);
+    // pega o snapshot mais próximo de `daysAgo` (ou mais antigo se não houver exato)
+    let best = null;
+    for (const f of snapFiles) {
+      const d = f.replace('.json', '');
+      if (d <= targetStr) best = f;
+    }
+    return best ? JSON.parse(fs.readFileSync(path.join(playerSnapDir, best), 'utf8')) : null;
+  };
+  const snap7 = findSnap(7);
+  const snap30 = findSnap(30);
+  const oldest = snapFiles.length > 0 ? JSON.parse(fs.readFileSync(path.join(playerSnapDir, snapFiles[0]), 'utf8')) : null;
+
+  for (const r of roster) {
+    const find = (snap) => snap?.members?.find((m) => m.tag === r.tag);
+    const t7 = find(snap7)?.trophies;
+    const t30 = find(snap30)?.trophies;
+    const tOldest = find(oldest)?.trophies;
+    r.trophyEvolution = {
+      delta7d: t7 != null ? r.trophies - t7 : null,
+      delta30d: t30 != null ? r.trophies - t30 : null,
+      deltaSinceFirst: tOldest != null ? r.trophies - tOldest : null,
+      firstSnapshotDate: oldest?.date || null,
+    };
+  }
+
   fs.writeFileSync(path.join(ROOT, 'clan-data.json'), JSON.stringify(out, null, 2));
   fs.writeFileSync(path.join(ROOT, 'clan-data.js'), 'window.CLAN_DATA = ' + JSON.stringify(out) + ';');
 
