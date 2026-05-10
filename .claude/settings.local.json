@@ -7,7 +7,8 @@
       "Bash(git add *)",
       "Bash(git -c user.email=\"bravus@local\" -c user.name=\"Bravus\" commit -m \"Compact activity table, mobile responsive tweaks\")",
       "Bash(git pull *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(git -c user.email=\"bravus@local\" -c user.name=\"Bravus\" commit -m \"Compact hero stats on mobile to prioritize rankings\")"
     ]
   }
 }

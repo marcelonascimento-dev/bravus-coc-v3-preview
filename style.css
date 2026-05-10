@@ -601,22 +601,27 @@ tr.wl-tie td:first-child { box-shadow: inset 3px 0 0 var(--muted); }
 /* Responsive */
 @media (max-width: 700px) {
   .brand-title { font-size: 20px; }
-  .stat-value { font-size: 20px; }
   .podium { grid-template-columns: 1fr; }
   th, td { padding: 8px 6px; font-size: 12px; }
-  .hero-inner { padding: 18px 14px 14px; }
+  .hero-inner { padding: 16px 14px 12px; }
   .container { padding: 16px 12px 50px; }
   .tabs { padding: 8px 10px; }
   .tab { padding: 7px 10px; font-size: 13px; }
   .activity-summary { grid-template-columns: repeat(2, 1fr); }
   .clan-h-stats { gap: 10px; }
   .mini-val { font-size: 16px; }
-  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+
+  /* Hero stats compactos: priorizar conteúdo dos rankings */
+  .hero-stats { grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 12px; }
+  .stat { padding: 8px 10px; }
+  .stat-label { font-size: 9px; letter-spacing: 0.4px; }
+  .stat-value { font-size: 14px; margin-top: 2px; }
+  .stat-sub { display: none; }
 }
 @media (max-width: 480px) {
   .brand-title { font-size: 18px; }
   .brand-sub { font-size: 12px; }
-  .hero-stats { grid-template-columns: 1fr 1fr; }
+  .hero-stats { grid-template-columns: repeat(3, 1fr); }
   .hl-item { grid-template-columns: 28px 1fr auto; }
   .hl-secondary { grid-column: 2 / -1; text-align: right; padding-top: 2px; }
 }
