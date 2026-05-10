@@ -33,17 +33,21 @@
   const triplesAgainst = D.defenses.filter((d) => d.stars === 3).length;
   const holdPct = D.defenses.length ? Math.round(((D.defenses.length - triplesAgainst) / D.defenses.length) * 100) : 0;
 
-  // Aplica escudo do clã (se já temos clan-data) no ícone do header e favicon
+  // Aplica escudo do clã (badge oficial vindo da API) no ícone do header e favicon
   if (window.CLAN_DATA?.clan?.badgeUrls) {
-    const badge = window.CLAN_DATA.clan.badgeUrls.medium || window.CLAN_DATA.clan.badgeUrls.large || window.CLAN_DATA.clan.badgeUrls.small;
+    const b = window.CLAN_DATA.clan.badgeUrls;
+    const badgeBig = b.large || b.medium || b.small;
+    const badgeSmall = b.small || b.medium;
     const iconEl = document.querySelector('.brand-icon');
-    if (iconEl && badge) {
+    if (iconEl && badgeBig) {
       iconEl.innerHTML = '';
       iconEl.classList.add('has-badge');
-      iconEl.appendChild(el('img', { src: badge, alt: 'escudo do clã' }));
+      iconEl.appendChild(el('img', { src: badgeBig, alt: 'escudo do clã' }));
+      const lvl = window.CLAN_DATA.clan.level;
+      if (lvl) iconEl.appendChild(el('span', { class: 'badge-level' }, String(lvl)));
     }
     const fav = document.getElementById('favicon');
-    if (fav && badge) fav.href = badge;
+    if (fav && badgeSmall) fav.href = badgeSmall;
   }
 
   // Hero — prioriza dados do clã (CLAN_DATA), com CWL como info secundária
@@ -177,39 +181,61 @@
     });
   });
 
-  // ---------- Overview panel ----------
+  // ---------- Overview panel (clean) ----------
   function renderOverview() {
     const root = $('#panel-overview');
     root.innerHTML = '';
 
-    // ⭐ Bônus CWL — destaque máximo no topo
-    root.appendChild(buildBonusSpotlight());
-
-    // Top 3 pódio
-    root.appendChild(el('div', { class: 'section-title' }, '🏆 Pódio dos atacantes'));
-    const podium = el('div', { class: 'podium' });
-    const medals = ['🥇', '🥈', '🥉'];
-    const colors = ['gold', '', ''];
-    D.ranking.slice(0, 3).forEach((p, i) => {
-      podium.appendChild(el('div', { class: 'podium-card ' + colors[i] }, [
-        el('div', { class: 'podium-medal' }, medals[i]),
-        el('div', { class: 'podium-name' }, p.player),
-        el('div', { class: 'podium-score' }, fmt(p.score)),
-        el('div', { class: 'podium-meta' }, `★ ${p.starsTotal} · ${p.avgDestr}% · CV ${p.th} · ${p.attacks}`),
-      ]));
-    });
-    root.appendChild(podium);
-
-    // 🔥 Top do mês — atacando e participação (vem do clan-data quando disponível)
+    // 🔥 Top atacantes + participação (lado a lado, prioridade visual)
     if (window.CLAN_DATA?.roster?.length) {
       root.appendChild(buildMonthHighlights());
+    } else {
+      // Sem clan-data ainda: pódio CWL como fallback
+      root.appendChild(el('div', { class: 'section-title' }, '🏆 Pódio dos atacantes'));
+      const podium = el('div', { class: 'podium' });
+      const medals = ['🥇', '🥈', '🥉'];
+      D.ranking.slice(0, 3).forEach((p, i) => {
+        podium.appendChild(el('div', { class: 'podium-card ' + (i === 0 ? 'gold' : '') }, [
+          el('div', { class: 'podium-medal' }, medals[i]),
+          el('div', { class: 'podium-name' }, p.player),
+          el('div', { class: 'podium-score' }, fmt(p.score)),
+          el('div', { class: 'podium-meta' }, `★ ${p.starsTotal} · ${p.avgDestr}% · CV ${p.th} · ${p.attacks}`),
+        ]));
+      });
+      root.appendChild(podium);
     }
 
-    // Rodadas
-    root.appendChild(el('div', { class: 'section-title' }, '📜 Rodadas'));
+    // 🎖 Bônus CWL — strip horizontal compacto (só mostra se houver)
+    root.appendChild(buildBonusStrip());
+
+    // 📜 Últimas rodadas CWL
+    root.appendChild(el('div', { class: 'section-title' }, '📜 Rodadas da CWL'));
     const grid = el('div', { class: 'rounds-grid' });
     D.rounds.forEach((r) => grid.appendChild(roundCard(r)));
     root.appendChild(grid);
+  }
+
+  // Strip compacto de bônus CWL — substitui o megabanner
+  function buildBonusStrip() {
+    const winners = bonusWinners();
+    const wrap = el('section', { class: 'bonus-strip' });
+    wrap.appendChild(el('div', { class: 'bonus-strip-head' }, [
+      el('div', {}, [
+        el('span', { class: 'bonus-eyebrow' }, '🎖 BÔNUS CWL'),
+        el('span', { class: 'bonus-strip-sub' }, ` · top ${BONUS_N} levam o bônus`),
+      ]),
+      buildBonusControl(),
+    ]));
+    const list = el('div', { class: 'bonus-chips' });
+    winners.forEach((p, i) => {
+      list.appendChild(el('span', { class: 'bonus-chip-mini' + (i < 3 ? ' top' : '') }, [
+        el('span', { class: 'bcm-rank' }, '#' + (i + 1)),
+        el('span', { class: 'bcm-name' }, p.player),
+        el('span', { class: 'bcm-meta' }, `★${p.starsTotal} · ${p.avgDestr}%`),
+      ]));
+    });
+    wrap.appendChild(list);
+    return wrap;
   }
 
   function buildBonusSpotlight() {
@@ -602,86 +628,90 @@
   }
   if (C?.roster) C.roster.forEach((m) => { m.activity = recomputeActivity(m); });
 
-  // Top atacantes e mais participativos do mês — usa CWL atual + histórico de guerras acumulado
+  // Combina CWL + histórico de guerras para cada jogador
+  function combineWarStats(m) {
+    const cwlUsed = m.cwl?.used || 0;
+    const cwlExp = m.cwl?.expected || 0;
+    const cwlStars = m.cwl?.stars || 0;
+    const cwlAvg = m.cwl?.avgDestr || 0;
+    const histUsed = m.warHistory?.attacksUsed || 0;
+    const histExp = m.warHistory?.attacksAvailable || 0;
+    const histStars = m.warHistory?.stars || 0;
+    const histAvg = m.warHistory?.avgDestr || 0;
+    const totalUsed = cwlUsed + histUsed;
+    const totalExp = cwlExp + histExp;
+    const totalStars = cwlStars + histStars;
+    const avgDestr = totalUsed
+      ? ((cwlAvg * cwlUsed) + (histAvg * histUsed)) / totalUsed
+      : 0;
+    const partPct = totalExp ? (totalUsed / totalExp) * 100 : 0;
+    return {
+      used: totalUsed, expected: totalExp, stars: totalStars,
+      avgDestr: Math.round(avgDestr * 10) / 10,
+      participation: Math.round(partPct * 10) / 10,
+    };
+  }
+
   function buildMonthHighlights() {
-    const wrap = el('section', { class: 'highlights' });
+    const wrap = el('section', {});
 
-    // ----- Top atacantes do mês -----
-    // Score combinado: estrelas (CWL + war history) e % destruição média
-    const attackers = window.CLAN_DATA.roster
-      .map((m) => {
-        const cwlStars = m.cwl?.stars || 0;
-        const histStars = m.warHistory?.stars || 0;
-        const cwlAvg = m.cwl?.avgDestr || 0;
-        const histAvg = m.warHistory?.avgDestr || 0;
-        const totalAtk = (m.cwl?.used || 0) + (m.warHistory?.attacksUsed || 0);
-        const totalStars = cwlStars + histStars;
-        const avgDestr = totalAtk > 0
-          ? ((cwlAvg * (m.cwl?.used || 0)) + (histAvg * (m.warHistory?.attacksUsed || 0))) / totalAtk
-          : 0;
-        return { ...m, _atkStars: totalStars, _atkDestr: Math.round(avgDestr * 10) / 10, _atkCount: totalAtk };
-      })
-      .filter((m) => m._atkCount > 0)
-      .sort((a, b) => (b._atkStars - a._atkStars) || (b._atkDestr - a._atkDestr))
+    const enriched = window.CLAN_DATA.roster.map((m) => ({ ...m, _w: combineWarStats(m) }));
+
+    // Top atacantes — mais ★ (CWL + guerras), tiebreaker destruição
+    const attackers = enriched
+      .filter((m) => m._w.used > 0)
+      .sort((a, b) => (b._w.stars - a._w.stars) || (b._w.avgDestr - a._w.avgDestr))
       .slice(0, 5);
 
-    const atkBox = el('div', { class: 'highlight-box' }, [
-      el('div', { class: 'highlight-head' }, [
-        el('span', { class: 'highlight-eyebrow' }, '🔥 TOP ATACANTES DO MÊS'),
-        el('span', { class: 'highlight-sub' }, 'CWL + guerras normais'),
-      ]),
-      el('div', { class: 'highlight-list' },
-        attackers.length
-          ? attackers.map((m, i) => el('div', { class: 'hl-row' + (i < 3 ? ' top' : '') }, [
-              el('span', { class: 'hl-rank' }, '#' + (i + 1)),
-              el('span', { class: 'hl-name' }, m.name),
-              el('span', { class: 'hl-meta' }, [
-                el('span', { class: 'stars-cell' }, '★ ' + m._atkStars),
-                el('span', { class: 'mono-mini muted' }, ' · ' + m._atkDestr + '% · ' + m._atkCount + ' atq'),
-              ]),
-            ]))
-          : [emptyInline('Sem ataques registrados ainda.')]
-      ),
-    ]);
-
-    // ----- Mais participativos -----
-    const participators = window.CLAN_DATA.roster
-      .map((m) => {
-        const histAv = m.warHistory?.attacksAvailable || 0;
-        const histUs = m.warHistory?.attacksUsed || 0;
-        const cwlEx = m.cwl?.expected || 0;
-        const cwlUs = m.cwl?.used || 0;
-        const totalAv = histAv + cwlEx;
-        const totalUs = histUs + cwlUs;
-        const pct = totalAv ? Math.round((totalUs / totalAv) * 1000) / 10 : 0;
-        return { ...m, _partPct: pct, _partUsed: totalUs, _partAvail: totalAv };
-      })
-      .filter((m) => m._partAvail > 0)
-      .sort((a, b) => (b._partPct - a._partPct) || (b._partUsed - a._partUsed))
+    // Mais participativos — % de ataques usados (tiebreaker: total usado)
+    const participators = enriched
+      .filter((m) => m._w.expected > 0)
+      .sort((a, b) => (b._w.participation - a._w.participation) || (b._w.used - a._w.used))
       .slice(0, 5);
 
-    const partBox = el('div', { class: 'highlight-box' }, [
-      el('div', { class: 'highlight-head' }, [
-        el('span', { class: 'highlight-eyebrow' }, '✅ MAIS PARTICIPATIVOS'),
-        el('span', { class: 'highlight-sub' }, 'usaram mais ataques no mês'),
-      ]),
-      el('div', { class: 'highlight-list' },
-        participators.length
-          ? participators.map((m, i) => el('div', { class: 'hl-row' + (i < 3 ? ' top' : '') }, [
-              el('span', { class: 'hl-rank' }, '#' + (i + 1)),
-              el('span', { class: 'hl-name' }, m.name),
-              el('span', { class: 'hl-meta' }, [
-                el('span', {}, m._partUsed + '/' + m._partAvail),
-                el('span', { class: 'mono-mini muted' }, ' · ' + m._partPct + '%'),
-              ]),
-            ]))
-          : [emptyInline('Sem dados de participação ainda.')]
-      ),
-    ]);
+    wrap.appendChild(el('div', { class: 'highlights-grid' }, [
+      buildHighlightCard('🔥', 'Top atacantes', 'CWL + guerras normais', attackers, (m) => ({
+        primary: '★ ' + m._w.stars,
+        secondary: m._w.avgDestr + '% · ' + m._w.used + ' atq',
+      })),
+      buildHighlightCard('✅', 'Mais participativos', 'usaram mais ataques disponíveis', participators, (m) => ({
+        primary: m._w.participation + '%',
+        secondary: m._w.used + '/' + m._w.expected + ' atq',
+      })),
+    ]));
 
-    wrap.appendChild(el('div', { class: 'section-title' }, '🔥 Destaques do mês'));
-    wrap.appendChild(el('div', { class: 'highlights-grid' }, [atkBox, partBox]));
     return wrap;
+  }
+
+  function buildHighlightCard(icon, title, subtitle, items, formatter) {
+    const card = el('div', { class: 'hl-card' });
+    card.appendChild(el('div', { class: 'hl-card-head' }, [
+      el('div', { class: 'hl-card-icon' }, icon),
+      el('div', {}, [
+        el('div', { class: 'hl-card-title' }, title),
+        el('div', { class: 'hl-card-sub' }, subtitle),
+      ]),
+    ]));
+    if (!items.length) {
+      card.appendChild(el('div', { class: 'hl-empty' }, 'Sem dados ainda.'));
+      return card;
+    }
+    const list = el('ol', { class: 'hl-list' });
+    items.forEach((m, i) => {
+      const f = formatter(m);
+      const li = el('li', { class: 'hl-item' + (i === 0 ? ' first' : '') }, [
+        el('span', { class: 'hl-pos' }, i === 0 ? '🥇' : (i === 1 ? '🥈' : (i === 2 ? '🥉' : '#' + (i + 1)))),
+        el('span', { class: 'hl-player' }, [
+          el('span', { class: 'hl-player-name' }, m.name),
+          el('span', { class: 'hl-player-th' }, 'CV ' + (m.th ?? '?')),
+        ]),
+        el('span', { class: 'hl-primary' }, f.primary),
+        el('span', { class: 'hl-secondary' }, f.secondary),
+      ]);
+      list.appendChild(li);
+    });
+    card.appendChild(list);
+    return card;
   }
   function emptyInline(text) {
     return el('div', { class: 'hl-empty' }, text);
@@ -713,7 +743,10 @@
     ]));
 
     // Ordenado por score desc
-    const sorted = [...C.roster].sort((a, b) => b.activity.score - a.activity.score);
+    // Pré-calcula stats combinadas para sort funcionar
+    const sorted = [...C.roster]
+      .map((r) => ({ ...r, _warParticipation: combineWarStats(r).participation }))
+      .sort((a, b) => b.activity.score - a.activity.score);
 
     const cols = [
       { key: 'rank', label: '#', render: (_, r, i) => el('span', { class: 'pos' }, String(i + 1)) },
@@ -724,11 +757,16 @@
       { key: 'th', label: 'CV', render: (v) => el('span', { class: 'th-badge' }, String(v ?? '?')) },
       { key: 'activity.level', label: 'Status', render: (_, r) => activityBadge(r.activity) },
       { key: 'activity.score', label: 'Score', render: (_, r) => activityBar(r.activity.score) },
-      { key: 'warHistory.participation', label: 'Guerras', render: (_, r) => el('span', {}, [
-        el('strong', {}, r.warHistory.attacks + ' '),
-        el('span', { class: 'mono-mini' }, `(${r.warHistory.participation}%)`),
-      ]) },
-      { key: 'cwl.used', label: 'CWL', render: (_, r) => r.cwl ? el('span', {}, `${r.cwl.used}/${r.cwl.expected} · ★${r.cwl.stars}`) : el('span', { class: 'muted' }, '—') },
+      { key: '_warParticipation', label: 'Guerras', render: (_, r) => {
+        const w = combineWarStats(r);
+        const txt = w.expected ? `${w.used}/${w.expected}` : '—';
+        const pct = w.expected ? ` (${w.participation}%)` : '';
+        return el('span', {}, [
+          el('strong', {}, txt),
+          el('span', { class: 'mono-mini muted' }, pct),
+        ]);
+      } },
+      { key: 'cwl.stars', label: '★ CWL', render: (_, r) => r.cwl ? el('span', { class: 'stars-cell' }, '★ ' + r.cwl.stars) : el('span', { class: 'muted' }, '—') },
       { key: 'donations', label: 'Doações ↑', render: (v) => el('span', { class: 'mono-mini' }, fmt(v)) },
       { key: 'donationsReceived', label: 'Doações ↓', render: (v) => el('span', { class: 'mono-mini' }, fmt(v)) },
       { key: 'attackWinsSeason', label: 'Multi (atq)' },
