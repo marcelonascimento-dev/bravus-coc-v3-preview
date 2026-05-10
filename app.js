@@ -72,6 +72,23 @@
     return wrap;
   }
 
+  // ---------- Bônus CWL ----------
+  // Quantidade de bônus que o clã recebe (varia por liga). Persistido em localStorage.
+  const BONUS_KEY = 'bravus_bonus_count';
+  let BONUS_N = parseInt(localStorage.getItem(BONUS_KEY) || '8', 10);
+  function isEligible(p) {
+    // Apenas jogadores que de fato participaram (pelo menos 1 ataque) entram na briga pelo bônus
+    const att = String(p.attacks || '');
+    const used = parseInt(att.split('/')[0], 10) || 0;
+    return used > 0;
+  }
+  function bonusWinners() {
+    return D.ranking.filter(isEligible).slice(0, BONUS_N);
+  }
+  function isBonus(player) {
+    return bonusWinners().some((w) => w.player === player.player && w.pos === player.pos);
+  }
+
   // Tabs
   $$('.tab').forEach((t) => {
     t.addEventListener('click', () => {
@@ -89,14 +106,11 @@
     const root = $('#panel-overview');
     root.innerHTML = '';
 
-    // Recent rounds preview
-    root.appendChild(el('div', { class: 'section-title' }, 'Rodadas'));
-    const grid = el('div', { class: 'rounds-grid' });
-    D.rounds.forEach((r) => grid.appendChild(roundCard(r)));
-    root.appendChild(grid);
+    // ⭐ Bônus CWL — destaque máximo no topo
+    root.appendChild(buildBonusSpotlight());
 
-    // Top 3 podium
-    root.appendChild(el('div', { class: 'section-title' }, 'Pódio'));
+    // Top 3 pódio
+    root.appendChild(el('div', { class: 'section-title' }, '🏆 Pódio dos atacantes'));
     const podium = el('div', { class: 'podium' });
     const medals = ['🥇', '🥈', '🥉'];
     const colors = ['gold', '', ''];
@@ -109,6 +123,73 @@
       ]));
     });
     root.appendChild(podium);
+
+    // Rodadas
+    root.appendChild(el('div', { class: 'section-title' }, '📜 Rodadas'));
+    const grid = el('div', { class: 'rounds-grid' });
+    D.rounds.forEach((r) => grid.appendChild(roundCard(r)));
+    root.appendChild(grid);
+  }
+
+  function buildBonusSpotlight() {
+    const winners = bonusWinners();
+    const wrap = el('section', { class: 'bonus-hero' });
+
+    const head = el('div', { class: 'bonus-head' }, [
+      el('div', {}, [
+        el('div', { class: 'bonus-eyebrow' }, '🎖️ Bônus CWL · Temporada ' + (D.info.season || '')),
+        el('div', { class: 'bonus-title' }, 'Quem leva os bônus'),
+        el('div', { class: 'bonus-sub' }, `Os ${BONUS_N} melhores do ranking recebem o bônus de medalhas da CWL. Líderes: definam o pagamento conforme essa lista.`),
+      ]),
+      buildBonusControl(),
+    ]);
+    wrap.appendChild(head);
+
+    const list = el('div', { class: 'bonus-list' });
+    winners.forEach((p, i) => {
+      list.appendChild(el('div', { class: 'bonus-card ' + (i < 3 ? 'top' : '') }, [
+        el('div', { class: 'bonus-rank' }, '#' + (i + 1)),
+        el('div', { class: 'bonus-info' }, [
+          el('div', { class: 'bonus-name' }, p.player),
+          el('div', { class: 'bonus-stats' }, `★ ${p.starsTotal} · ${p.avgDestr}% · CV ${p.th} · ${p.attacks}`),
+        ]),
+        el('div', { class: 'bonus-score' }, [
+          el('div', { class: 'bonus-score-val' }, fmt(p.score)),
+          el('div', { class: 'bonus-score-lbl' }, 'pontos'),
+        ]),
+        el('div', { class: 'bonus-medal' }, '🎖'),
+      ]));
+    });
+    wrap.appendChild(list);
+
+    // Próximos da fila (não receberão)
+    const others = D.ranking.filter(isEligible).slice(BONUS_N, BONUS_N + 3);
+    if (others.length) {
+      wrap.appendChild(el('div', { class: 'bonus-next' }, [
+        el('span', { class: 'bonus-next-lbl' }, 'Próximos da fila (sem bônus):'),
+        ...others.map((p) => el('span', { class: 'bonus-next-chip' }, `#${p.pos} ${p.player} · ${fmt(p.score)}`)),
+      ]));
+    }
+    return wrap;
+  }
+
+  function buildBonusControl() {
+    const wrap = el('div', { class: 'bonus-control' });
+    wrap.appendChild(el('label', { class: 'bonus-control-lbl' }, 'Nº de bônus'));
+    const sel = el('select', { class: 'select bonus-select' });
+    [3, 4, 5, 6, 7, 8].forEach((n) => {
+      const o = el('option', { value: String(n) }, String(n));
+      if (n === BONUS_N) o.setAttribute('selected', 'selected');
+      sel.appendChild(o);
+    });
+    sel.addEventListener('change', () => {
+      BONUS_N = parseInt(sel.value, 10);
+      localStorage.setItem(BONUS_KEY, String(BONUS_N));
+      renderOverview();
+      renderRanking();
+    });
+    wrap.appendChild(sel);
+    return wrap;
   }
 
   function roundCard(r) {
@@ -157,9 +238,26 @@
     const root = $('#panel-ranking');
     root.innerHTML = '';
 
+    // Banner de bônus
+    const winners = bonusWinners();
+    const banner = el('div', { class: 'rank-banner' }, [
+      el('div', { class: 'rank-banner-left' }, [
+        el('div', { class: 'rank-banner-eyebrow' }, '🎖️ Bônus CWL'),
+        el('div', { class: 'rank-banner-title' }, `Top ${BONUS_N} recebem o bônus`),
+        el('div', { class: 'rank-banner-sub' }, 'Linhas destacadas em dourado abaixo são as elegíveis.'),
+      ]),
+      el('div', { class: 'rank-banner-right' }, winners.map((p, i) => el('span', { class: 'rank-chip' }, `${i + 1}. ${p.player}`))),
+      buildBonusControl(),
+    ]);
+    root.appendChild(banner);
+
     const cols = [
-      { key: 'pos', label: '#', width: 50, render: (v) => posBadge(v) },
-      { key: 'player', label: 'Jogador', render: (v) => el('strong', {}, String(v)) },
+      { key: 'pos', label: '#', width: 50, render: (v, r) => posBadge(v, r) },
+      { key: 'player', label: 'Jogador', render: (v, r) => {
+        const node = el('span', {}, [el('strong', {}, String(v))]);
+        if (isBonus(r)) node.appendChild(el('span', { class: 'bonus-tag', title: 'Recebe bônus de medalhas CWL' }, '🎖 Bônus'));
+        return node;
+      } },
       { key: 'th', label: 'CV', render: (v) => el('span', { class: 'th-badge' }, String(v)) },
       { key: 'attacks', label: 'Ataques' },
       { key: 'starsTotal', label: '★', render: (v) => el('span', { class: 'stars-cell' }, '★ ' + v) },
@@ -172,7 +270,10 @@
       { key: 'score', label: 'Pontuação', render: (v) => el('strong', { style: 'color:var(--gold-2)' }, fmt(v)) },
     ];
 
-    const tbl = buildSortableTable(D.ranking, cols, { defaultSort: 'score', defaultDesc: true, search: 'player' });
+    const tbl = buildSortableTable(D.ranking, cols, {
+      defaultSort: 'score', defaultDesc: true, search: 'player',
+      rowClass: (r) => isBonus(r) ? 'bonus-row' : '',
+    });
     root.appendChild(tbl);
   }
 
@@ -347,7 +448,8 @@
 
       tbody.innerHTML = '';
       for (const r of data) {
-        const tr = el('tr');
+        const extraCls = opts.rowClass ? opts.rowClass(r) : '';
+        const tr = el('tr', extraCls ? { class: extraCls } : {});
         cols.forEach((c) => {
           const td = el('td');
           const v = r[c.key];
