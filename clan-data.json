@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-10 18:37",
+  "generatedAt": "2026-05-10 19:08",
   "clan": {
     "name": "Bravus",
     "tag": "#2Q9RYP8QC",
@@ -14,7 +14,14 @@
     "warFrequency": "always",
     "warWinStreak": 3,
     "warWins": 199,
-    "isWarLogPublic": false
+    "warTies": 52,
+    "warLosses": 49,
+    "isWarLogPublic": true,
+    "badgeUrls": {
+      "small": "https://api-assets.clashofclans.com/badges/70/68dX0MT5Vk_-J_z16LW_ekwGA8XJVmMWhiGC0ehz11s.png",
+      "large": "https://api-assets.clashofclans.com/badges/512/68dX0MT5Vk_-J_z16LW_ekwGA8XJVmMWhiGC0ehz11s.png",
+      "medium": "https://api-assets.clashofclans.com/badges/200/68dX0MT5Vk_-J_z16LW_ekwGA8XJVmMWhiGC0ehz11s.png"
+    }
   },
   "roster": [
     {
@@ -90,14 +97,19 @@
         "participation": 0
       },
       "activity": {
-        "score": 20.1,
-        "level": "inactive",
+        "score": 50.1,
+        "level": "warm",
         "breakdown": {
-          "warPart": 0,
+          "cwl": 100,
           "donations": 0.3,
           "multi": 0,
-          "cwl": 100,
-          "veteran": 100
+          "veteran": 100,
+          "_weights": {
+            "cwl": 37.5,
+            "donations": 31.3,
+            "multi": 18.7,
+            "veteran": 12.5
+          }
         }
       },
       "cwl": {
@@ -114,7 +126,7 @@
       "name": "Hugo",
       "role": "member",
       "th": 18,
-      "trophies": 117,
+      "trophies": 128,
       "league": "Unranked",
       "donations": 0,
       "donationsReceived": 85,
@@ -182,14 +194,19 @@
         "participation": 0
       },
       "activity": {
-        "score": 20,
-        "level": "inactive",
+        "score": 50,
+        "level": "warm",
         "breakdown": {
-          "warPart": 0,
+          "cwl": 100,
           "donations": 0,
           "multi": 0,
-          "cwl": 100,
-          "veteran": 100
+          "veteran": 100,
+          "_weights": {
+            "cwl": 37.5,
+            "donations": 31.3,
+            "multi": 18.7,
+            "veteran": 12.5
+          }
         }
       },
       "cwl": {
@@ -274,14 +291,19 @@
         "participation": 0
       },
       "activity": {
-        "score": 26,
-        "level": "inactive",
+        "score": 57.4,
+        "level": "warm",
         "breakdown": {
-          "warPart": 0,
+          "cwl": 100,
           "donations": 23.8,
           "multi": 0,
-          "cwl": 100,
-          "veteran": 100
+          "veteran": 100,
+          "_weights": {
+            "cwl": 37.5,
+            "donations": 31.3,
+            "multi": 18.7,
+            "veteran": 12.5
+          }
         }
       },
       "cwl": {
@@ -362,14 +384,19 @@
         "participation": 0
       },
       "activity": {
-        "score": 21.5,
-        "level": "inactive",
+        "score": 51.8,
+        "level": "warm",
         "breakdown": {
-          "warPart": 0,
+          "cwl": 100,
           "donations": 5.8,
           "multi": 0,
-          "cwl": 100,
-          "veteran": 100
+          "veteran": 100,
+          "_weights": {
+            "cwl": 37.5,
+            "donations": 31.3,
+            "multi": 18.7,
+            "veteran": 12.5
+          }
         }
       },
       "cwl": {
@@ -450,14 +477,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 9.6,
+        "score": 19.3,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 96.5
+          "veteran": 96.5,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -534,14 +564,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 10.2,
+        "score": 20.3,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0.7,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 100
+          "veteran": 100,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -618,14 +651,19 @@
         "participation": 0
       },
       "activity": {
-        "score": 19.7,
-        "level": "inactive",
+        "score": 48.7,
+        "level": "warm",
         "breakdown": {
-          "warPart": 0,
+          "cwl": 96.2,
           "donations": 0.3,
           "multi": 0,
-          "cwl": 96.2,
-          "veteran": 100
+          "veteran": 100,
+          "_weights": {
+            "cwl": 37.5,
+            "donations": 31.3,
+            "multi": 18.7,
+            "veteran": 12.5
+          }
         }
       },
       "cwl": {
@@ -710,14 +748,19 @@
         "participation": 0
       },
       "activity": {
-        "score": 41.7,
-        "level": "warm",
+        "score": 77.1,
+        "level": "active",
         "breakdown": {
-          "warPart": 0,
+          "cwl": 100,
           "donations": 94.3,
           "multi": 0,
-          "cwl": 100,
-          "veteran": 81.1
+          "veteran": 81.1,
+          "_weights": {
+            "cwl": 37.5,
+            "donations": 31.3,
+            "multi": 18.7,
+            "veteran": 12.5
+          }
         }
       },
       "cwl": {
@@ -802,14 +845,19 @@
         "participation": 0
       },
       "activity": {
-        "score": 26.8,
-        "level": "inactive",
+        "score": 58.3,
+        "level": "warm",
         "breakdown": {
-          "warPart": 0,
+          "cwl": 99,
           "donations": 27.7,
           "multi": 0,
-          "cwl": 99,
-          "veteran": 100
+          "veteran": 100,
+          "_weights": {
+            "cwl": 37.5,
+            "donations": 31.3,
+            "multi": 18.7,
+            "veteran": 12.5
+          }
         }
       },
       "cwl": {
@@ -894,14 +942,19 @@
         "participation": 0
       },
       "activity": {
-        "score": 32.4,
-        "level": "inactive",
+        "score": 65.3,
+        "level": "warm",
         "breakdown": {
-          "warPart": 0,
+          "cwl": 99,
           "donations": 66.7,
           "multi": 0,
-          "cwl": 99,
-          "veteran": 58.2
+          "veteran": 58.2,
+          "_weights": {
+            "cwl": 37.5,
+            "donations": 31.3,
+            "multi": 18.7,
+            "veteran": 12.5
+          }
         }
       },
       "cwl": {
@@ -986,14 +1039,19 @@
         "participation": 0
       },
       "activity": {
-        "score": 20,
-        "level": "inactive",
+        "score": 49.5,
+        "level": "warm",
         "breakdown": {
-          "warPart": 0,
+          "cwl": 98.1,
           "donations": 0.7,
           "multi": 0,
-          "cwl": 98.1,
-          "veteran": 100
+          "veteran": 100,
+          "_weights": {
+            "cwl": 37.5,
+            "donations": 31.3,
+            "multi": 18.7,
+            "veteran": 12.5
+          }
         }
       },
       "cwl": {
@@ -1013,8 +1071,8 @@
       "trophies": 799,
       "league": "Unranked",
       "donations": 1273,
-      "donationsReceived": 10734,
-      "donationBalance": -9461,
+      "donationsReceived": 10818,
+      "donationBalance": -9545,
       "warStarsLifetime": 2278,
       "warPreference": "out",
       "attackWinsSeason": 0,
@@ -1078,14 +1136,19 @@
         "participation": 0
       },
       "activity": {
-        "score": 41.2,
-        "level": "warm",
+        "score": 76.5,
+        "level": "active",
         "breakdown": {
-          "warPart": 0,
+          "cwl": 100,
           "donations": 84.9,
           "multi": 0,
-          "cwl": 100,
-          "veteran": 100
+          "veteran": 100,
+          "_weights": {
+            "cwl": 37.5,
+            "donations": 31.3,
+            "multi": 18.7,
+            "veteran": 12.5
+          }
         }
       },
       "cwl": {
@@ -1170,14 +1233,19 @@
         "participation": 0
       },
       "activity": {
-        "score": 33.2,
-        "level": "inactive",
+        "score": 66.3,
+        "level": "warm",
         "breakdown": {
-          "warPart": 0,
+          "cwl": 99,
           "donations": 53.3,
           "multi": 0,
-          "cwl": 99,
-          "veteran": 100
+          "veteran": 100,
+          "_weights": {
+            "cwl": 37.5,
+            "donations": 31.3,
+            "multi": 18.7,
+            "veteran": 12.5
+          }
         }
       },
       "cwl": {
@@ -1262,14 +1330,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 10.5,
+        "score": 20.9,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 11.5,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 76.1
+          "veteran": 76.1,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -1346,14 +1417,19 @@
         "participation": 0
       },
       "activity": {
-        "score": 16.6,
-        "level": "inactive",
+        "score": 44.9,
+        "level": "warm",
         "breakdown": {
-          "warPart": 0,
+          "cwl": 96.7,
           "donations": 5.3,
           "multi": 0,
-          "cwl": 96.7,
-          "veteran": 56.1
+          "veteran": 56.1,
+          "_weights": {
+            "cwl": 37.5,
+            "donations": 31.3,
+            "multi": 18.7,
+            "veteran": 12.5
+          }
         }
       },
       "cwl": {
@@ -1416,7 +1492,7 @@
         "maxed": 2,
         "total": 6
       },
-      "troopsPct": 56.3,
+      "troopsPct": 56.5,
       "spellsPct": 74.2,
       "labels": [
         "Clan Wars",
@@ -1438,14 +1514,19 @@
         "participation": 0
       },
       "activity": {
-        "score": 16.7,
+        "score": 37.5,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
+          "cwl": 66.7,
           "donations": 0,
           "multi": 0,
-          "cwl": 66.7,
-          "veteran": 100
+          "veteran": 100,
+          "_weights": {
+            "cwl": 37.5,
+            "donations": 31.3,
+            "multi": 18.7,
+            "veteran": 12.5
+          }
         }
       },
       "cwl": {
@@ -1530,14 +1611,19 @@
         "participation": 0
       },
       "activity": {
-        "score": 22.8,
-        "level": "inactive",
+        "score": 53,
+        "level": "warm",
         "breakdown": {
-          "warPart": 0,
+          "cwl": 98.1,
           "donations": 11.8,
           "multi": 0,
-          "cwl": 98.1,
-          "veteran": 100
+          "veteran": 100,
+          "_weights": {
+            "cwl": 37.5,
+            "donations": 31.3,
+            "multi": 18.7,
+            "veteran": 12.5
+          }
         }
       },
       "cwl": {
@@ -1622,14 +1708,19 @@
         "participation": 0
       },
       "activity": {
-        "score": 26.5,
-        "level": "inactive",
+        "score": 57.9,
+        "level": "warm",
         "breakdown": {
-          "warPart": 0,
+          "cwl": 99,
           "donations": 26.5,
           "multi": 0,
-          "cwl": 99,
-          "veteran": 100
+          "veteran": 100,
+          "_weights": {
+            "cwl": 37.5,
+            "donations": 31.3,
+            "multi": 18.7,
+            "veteran": 12.5
+          }
         }
       },
       "cwl": {
@@ -1714,14 +1805,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 7.1,
+        "score": 14.2,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 71.1
+          "veteran": 71.1,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -1793,14 +1887,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 10,
+        "score": 20,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 100
+          "veteran": 100,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -1877,14 +1974,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 10,
+        "score": 20,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 100
+          "veteran": 100,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -1961,14 +2061,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 4.4,
+        "score": 8.8,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 44.1
+          "veteran": 44.1,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -2045,14 +2148,19 @@
         "participation": 0
       },
       "activity": {
-        "score": 28,
-        "level": "inactive",
+        "score": 59.8,
+        "level": "warm",
         "breakdown": {
-          "warPart": 0,
+          "cwl": 99,
           "donations": 32.5,
           "multi": 0,
-          "cwl": 99,
-          "veteran": 100
+          "veteran": 100,
+          "_weights": {
+            "cwl": 37.5,
+            "donations": 31.3,
+            "multi": 18.7,
+            "veteran": 12.5
+          }
         }
       },
       "cwl": {
@@ -2137,14 +2245,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 5.7,
+        "score": 11.5,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 57.3
+          "veteran": 57.3,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -2221,14 +2332,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 9.2,
+        "score": 18.5,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 16.1,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 52
+          "veteran": 52,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -2305,14 +2419,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 10,
+        "score": 20,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 100
+          "veteran": 100,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -2384,14 +2501,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 4.9,
+        "score": 9.7,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 48.7
+          "veteran": 48.7,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -2464,14 +2584,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 2.6,
+        "score": 5.2,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 25.9
+          "veteran": 25.9,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -2543,14 +2666,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 4.8,
+        "score": 9.7,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 48.4
+          "veteran": 48.4,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -2622,14 +2748,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 2.4,
+        "score": 4.7,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 23.5
+          "veteran": 23.5,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -2701,14 +2830,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 2.1,
+        "score": 4.3,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 21.3
+          "veteran": 21.3,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -2780,14 +2912,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 0.8,
+        "score": 1.7,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 8.3
+          "veteran": 8.3,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -2854,14 +2989,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 1,
+        "score": 2,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 10.1
+          "veteran": 10.1,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -2923,14 +3061,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 3.4,
+        "score": 6.7,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 33.6
+          "veteran": 33.6,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -3007,14 +3148,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 10,
+        "score": 20,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 100
+          "veteran": 100,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -3091,14 +3235,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 10,
+        "score": 20,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 100
+          "veteran": 100,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -3143,11 +3290,14 @@
         "score": 0,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 0
+          "veteran": 0,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -3219,14 +3369,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 10,
+        "score": 20,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 100
+          "veteran": 100,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -3303,14 +3456,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 10,
+        "score": 20,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 100
+          "veteran": 100,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -3373,14 +3529,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 5.4,
+        "score": 10.8,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 54
+          "veteran": 54,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -3457,14 +3616,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 7.9,
+        "score": 15.8,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 79.1
+          "veteran": 79.1,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -3541,14 +3703,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 4,
+        "score": 8.1,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 40.3
+          "veteran": 40.3,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -3559,9 +3724,9 @@
       "th": 18,
       "trophies": 0,
       "league": "Champion League III",
-      "donations": 67300,
+      "donations": 67384,
       "donationsReceived": 0,
-      "donationBalance": 67300,
+      "donationBalance": 67384,
       "warStarsLifetime": 539,
       "warPreference": "out",
       "attackWinsSeason": 0,
@@ -3621,14 +3786,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 28.6,
-        "level": "inactive",
+        "score": 57.2,
+        "level": "warm",
         "breakdown": {
-          "warPart": 0,
           "donations": 100,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 35.9
+          "veteran": 35.9,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -3705,14 +3873,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 9.9,
+        "score": 19.9,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 99.3
+          "veteran": 99.3,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -3789,14 +3960,17 @@
         "participation": 0
       },
       "activity": {
-        "score": 10,
+        "score": 20,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 100
+          "veteran": 100,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -3841,11 +4015,14 @@
         "score": 0,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 0
+          "veteran": 0,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     },
@@ -3922,14 +4099,19 @@
         "participation": 0
       },
       "activity": {
-        "score": 21.9,
-        "level": "inactive",
+        "score": 51.6,
+        "level": "warm",
         "breakdown": {
-          "warPart": 0,
+          "cwl": 97.1,
           "donations": 8.7,
           "multi": 0,
-          "cwl": 97.1,
-          "veteran": 100
+          "veteran": 100,
+          "_weights": {
+            "cwl": 37.5,
+            "donations": 31.3,
+            "multi": 18.7,
+            "veteran": 12.5
+          }
         }
       },
       "cwl": {
@@ -3982,22 +4164,676 @@
         "score": 0,
         "level": "inactive",
         "breakdown": {
-          "warPart": 0,
           "donations": 0,
           "multi": 0,
-          "cwl": 0,
-          "veteran": 0
+          "veteran": 0,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
         }
       }
     }
   ],
   "warlog": {
-    "public": false,
-    "summary": [],
+    "public": true,
+    "summary": [
+      {
+        "result": null,
+        "endTime": "20260510T151355.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 1,
+        "starsUs": 335,
+        "starsThem": 245,
+        "destrUs": 677.9,
+        "destrThem": 0
+      },
+      {
+        "result": "tie",
+        "endTime": "20260502T124209.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 45,
+        "destrUs": 100,
+        "destrThem": 100,
+        "opponent": "KING"
+      },
+      {
+        "result": "win",
+        "endTime": "20260430T112832.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 41,
+        "destrUs": 100,
+        "destrThem": 93.1,
+        "opponent": "Blunt Force"
+      },
+      {
+        "result": "win",
+        "endTime": "20260428T050952.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 44,
+        "destrUs": 100,
+        "destrThem": 99,
+        "opponent": "BEAST INDONESIA"
+      },
+      {
+        "result": "win",
+        "endTime": "20260426T013348.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 32,
+        "destrUs": 100,
+        "destrThem": 75.3,
+        "opponent": "UK bomb squad"
+      },
+      {
+        "result": "tie",
+        "endTime": "20260424T001712.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 45,
+        "destrUs": 100,
+        "destrThem": 100,
+        "opponent": "Quỳnh Lưu Star"
+      },
+      {
+        "result": "lose",
+        "endTime": "20260422T004558.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 44,
+        "starsThem": 45,
+        "destrUs": 99.3,
+        "destrThem": 100,
+        "opponent": "Team Packers"
+      },
+      {
+        "result": "win",
+        "endTime": "20260420T004646.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 43,
+        "destrUs": 100,
+        "destrThem": 99.5,
+        "opponent": "Friends Family✌"
+      },
+      {
+        "result": "win",
+        "endTime": "20260418T003513.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 37,
+        "destrUs": 100,
+        "destrThem": 94.2,
+        "opponent": "GOD CLASH"
+      },
+      {
+        "result": "tie",
+        "endTime": "20260416T005332.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 45,
+        "destrUs": 100,
+        "destrThem": 100,
+        "opponent": "tropang shimbot"
+      },
+      {
+        "result": "win",
+        "endTime": "20260413T215612.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 43,
+        "destrUs": 100,
+        "destrThem": 99.1,
+        "opponent": "1001 Bunch"
+      },
+      {
+        "result": "tie",
+        "endTime": "20260411T221833.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 45,
+        "destrUs": 100,
+        "destrThem": 100,
+        "opponent": "끌량원정대"
+      },
+      {
+        "result": null,
+        "endTime": "20260409T225738.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 1,
+        "starsUs": 312,
+        "starsThem": 272,
+        "destrUs": 678.2,
+        "destrThem": 0
+      },
+      {
+        "result": "tie",
+        "endTime": "20260331T003512.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 45,
+        "destrUs": 100,
+        "destrThem": 100,
+        "opponent": "Orange Room 1"
+      },
+      {
+        "result": "tie",
+        "endTime": "20260328T234909.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 45,
+        "destrUs": 100,
+        "destrThem": 100,
+        "opponent": "Weekend Wars"
+      },
+      {
+        "result": "win",
+        "endTime": "20260326T235519.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 41,
+        "destrUs": 100,
+        "destrThem": 98.8,
+        "opponent": "HALONG FRIENSD"
+      },
+      {
+        "result": "win",
+        "endTime": "20260325T003810.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 42,
+        "destrUs": 100,
+        "destrThem": 97.1,
+        "opponent": "canadian crunch"
+      },
+      {
+        "result": "tie",
+        "endTime": "20260323T013632.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 45,
+        "destrUs": 100,
+        "destrThem": 100,
+        "opponent": "BATAK"
+      },
+      {
+        "result": "win",
+        "endTime": "20260320T223906.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 43,
+        "destrUs": 100,
+        "destrThem": 98.9,
+        "opponent": "زلازل سورية"
+      },
+      {
+        "result": "win",
+        "endTime": "20260318T222417.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 41,
+        "destrUs": 100,
+        "destrThem": 98.9,
+        "opponent": "BD Young Boys"
+      },
+      {
+        "result": "lose",
+        "endTime": "20260316T222415.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 43,
+        "starsThem": 45,
+        "destrUs": 99.3,
+        "destrThem": 100,
+        "opponent": "VictorPoint"
+      },
+      {
+        "result": "win",
+        "endTime": "20260314T231038.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 42,
+        "destrUs": 100,
+        "destrThem": 97.7,
+        "opponent": "The King Hunter"
+      },
+      {
+        "result": "win",
+        "endTime": "20260312T223144.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 38,
+        "destrUs": 100,
+        "destrThem": 97.3,
+        "opponent": "gli amici itali"
+      },
+      {
+        "result": "tie",
+        "endTime": "20260310T095200.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 1,
+        "starsUs": 249,
+        "starsThem": 310,
+        "destrUs": 616.5,
+        "destrThem": 0
+      },
+      {
+        "result": "tie",
+        "endTime": "20260227T222007.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 45,
+        "destrUs": 100,
+        "destrThem": 100,
+        "opponent": "Scheibenwischer"
+      },
+      {
+        "result": "tie",
+        "endTime": "20260225T204529.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 45,
+        "destrUs": 100,
+        "destrThem": 100,
+        "opponent": "This is TURKEY"
+      },
+      {
+        "result": "tie",
+        "endTime": "20260223T155351.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 45,
+        "destrUs": 100,
+        "destrThem": 100,
+        "opponent": "EgYpT"
+      },
+      {
+        "result": "tie",
+        "endTime": "20260221T144912.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 45,
+        "destrUs": 100,
+        "destrThem": 100,
+        "opponent": "MÜpTeLaa"
+      },
+      {
+        "result": "win",
+        "endTime": "20260219T132007.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 43,
+        "destrUs": 100,
+        "destrThem": 98.1,
+        "opponent": "boy hugot"
+      },
+      {
+        "result": "win",
+        "endTime": "20260217T121634.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 43,
+        "destrUs": 100,
+        "destrThem": 99.7,
+        "opponent": "paradoXed"
+      },
+      {
+        "result": "tie",
+        "endTime": "20260215T115744.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 45,
+        "destrUs": 100,
+        "destrThem": 100,
+        "opponent": "丑不拉几香菇头"
+      },
+      {
+        "result": "win",
+        "endTime": "20260213T121958.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 43,
+        "destrUs": 100,
+        "destrThem": 99.1,
+        "opponent": "chinese kalbar"
+      },
+      {
+        "result": null,
+        "endTime": "20260210T224543.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 1,
+        "starsUs": 298,
+        "starsThem": 273,
+        "destrUs": 671.8,
+        "destrThem": 0
+      },
+      {
+        "result": "tie",
+        "endTime": "20260201T002600.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 45,
+        "destrUs": 100,
+        "destrThem": 100,
+        "opponent": "WAR PUSH BR"
+      },
+      {
+        "result": "win",
+        "endTime": "20260130T010158.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 44,
+        "starsThem": 44,
+        "destrUs": 99.5,
+        "destrThem": 97.7,
+        "opponent": "GOD CLASH"
+      },
+      {
+        "result": "win",
+        "endTime": "20260127T224118.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 38,
+        "destrUs": 100,
+        "destrThem": 88.4,
+        "opponent": "Canucks Only"
+      },
+      {
+        "result": "tie",
+        "endTime": "20260125T103150.000Z",
+        "teamSize": 20,
+        "attacksPerMember": 2,
+        "starsUs": 60,
+        "starsThem": 60,
+        "destrUs": 100,
+        "destrThem": 100,
+        "opponent": "chiến lang"
+      },
+      {
+        "result": "win",
+        "endTime": "20260123T111409.000Z",
+        "teamSize": 20,
+        "attacksPerMember": 2,
+        "starsUs": 60,
+        "starsThem": 52,
+        "destrUs": 100,
+        "destrThem": 95.9,
+        "opponent": "CAN THO VIP"
+      },
+      {
+        "result": "win",
+        "endTime": "20260121T012930.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 45,
+        "starsThem": 37,
+        "destrUs": 100,
+        "destrThem": 87.9,
+        "opponent": "101Hammer101"
+      },
+      {
+        "result": "lose",
+        "endTime": "20260118T232236.000Z",
+        "teamSize": 20,
+        "attacksPerMember": 2,
+        "starsUs": 59,
+        "starsThem": 60,
+        "destrUs": 99.8,
+        "destrThem": 100,
+        "opponent": "KC Chiefs 2.0"
+      },
+      {
+        "result": "lose",
+        "endTime": "20260115T223424.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 33,
+        "starsThem": 44,
+        "destrUs": 87.3,
+        "destrThem": 98.3,
+        "opponent": "Киев"
+      },
+      {
+        "result": "lose",
+        "endTime": "20260113T225020.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 2,
+        "starsUs": 43,
+        "starsThem": 44,
+        "destrUs": 99.3,
+        "destrThem": 99.9,
+        "opponent": "عراق"
+      },
+      {
+        "result": "tie",
+        "endTime": "20260110T182806.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 1,
+        "starsUs": 248,
+        "starsThem": 287,
+        "destrUs": 638.2,
+        "destrThem": 0
+      },
+      {
+        "result": "win",
+        "endTime": "20260101T230109.000Z",
+        "teamSize": 20,
+        "attacksPerMember": 2,
+        "starsUs": 60,
+        "starsThem": 43,
+        "destrUs": 100,
+        "destrThem": 82.3,
+        "opponent": "AKATSUKI"
+      },
+      {
+        "result": "win",
+        "endTime": "20251230T233139.000Z",
+        "teamSize": 20,
+        "attacksPerMember": 2,
+        "starsUs": 60,
+        "starsThem": 55,
+        "destrUs": 100,
+        "destrThem": 96.9,
+        "opponent": "world of soul"
+      },
+      {
+        "result": "tie",
+        "endTime": "20251228T222756.000Z",
+        "teamSize": 20,
+        "attacksPerMember": 2,
+        "starsUs": 60,
+        "starsThem": 60,
+        "destrUs": 100,
+        "destrThem": 100,
+        "opponent": "Egypt kings 2"
+      },
+      {
+        "result": "win",
+        "endTime": "20251226T232104.000Z",
+        "teamSize": 20,
+        "attacksPerMember": 2,
+        "starsUs": 60,
+        "starsThem": 47,
+        "destrUs": 100,
+        "destrThem": 90.1,
+        "opponent": "Offensive crew"
+      },
+      {
+        "result": "win",
+        "endTime": "20251225T001911.000Z",
+        "teamSize": 20,
+        "attacksPerMember": 2,
+        "starsUs": 60,
+        "starsThem": 54,
+        "destrUs": 100,
+        "destrThem": 94.4,
+        "opponent": "pune champs"
+      },
+      {
+        "result": "lose",
+        "endTime": "20251223T010042.000Z",
+        "teamSize": 25,
+        "attacksPerMember": 2,
+        "starsUs": 74,
+        "starsThem": 75,
+        "destrUs": 99.4,
+        "destrThem": 100,
+        "opponent": "aru?"
+      },
+      {
+        "result": "win",
+        "endTime": "20251220T235035.000Z",
+        "teamSize": 25,
+        "attacksPerMember": 2,
+        "starsUs": 75,
+        "starsThem": 62,
+        "destrUs": 100,
+        "destrThem": 87.8,
+        "opponent": "FARM EMPIRE"
+      },
+      {
+        "result": "win",
+        "endTime": "20251218T230416.000Z",
+        "teamSize": 25,
+        "attacksPerMember": 2,
+        "starsUs": 75,
+        "starsThem": 68,
+        "destrUs": 100,
+        "destrThem": 96.7,
+        "opponent": "احله♡شباب بنات"
+      },
+      {
+        "result": "win",
+        "endTime": "20251216T213953.000Z",
+        "teamSize": 25,
+        "attacksPerMember": 2,
+        "starsUs": 75,
+        "starsThem": 51,
+        "destrUs": 100,
+        "destrThem": 73.7,
+        "opponent": "Libra"
+      },
+      {
+        "result": "win",
+        "endTime": "20251214T222325.000Z",
+        "teamSize": 25,
+        "attacksPerMember": 2,
+        "starsUs": 75,
+        "starsThem": 64,
+        "destrUs": 100,
+        "destrThem": 89.6,
+        "opponent": "Victorious"
+      },
+      {
+        "result": "tie",
+        "endTime": "20251212T222233.000Z",
+        "teamSize": 20,
+        "attacksPerMember": 2,
+        "starsUs": 60,
+        "starsThem": 60,
+        "destrUs": 100,
+        "destrThem": 100,
+        "opponent": "争霸世界"
+      },
+      {
+        "result": "tie",
+        "endTime": "20251130T221812.000Z",
+        "teamSize": 25,
+        "attacksPerMember": 2,
+        "starsUs": 75,
+        "starsThem": 75,
+        "destrUs": 100,
+        "destrThem": 100,
+        "opponent": "activewar"
+      },
+      {
+        "result": null,
+        "endTime": "20251110T185805.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 1,
+        "starsUs": 314,
+        "starsThem": 277,
+        "destrUs": 670.6,
+        "destrThem": 0
+      },
+      {
+        "result": "win",
+        "endTime": "20250910T085807.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 1,
+        "starsUs": 355,
+        "starsThem": 255,
+        "destrUs": 684.6,
+        "destrThem": 0
+      },
+      {
+        "result": "win",
+        "endTime": "20250810T224112.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 1,
+        "starsUs": 366,
+        "starsThem": 217,
+        "destrUs": 685.5,
+        "destrThem": 0
+      },
+      {
+        "result": "win",
+        "endTime": "20250711T020952.000Z",
+        "teamSize": 15,
+        "attacksPerMember": 1,
+        "starsUs": 365,
+        "starsThem": 201,
+        "destrUs": 690.1,
+        "destrThem": 0
+      },
+      {
+        "result": null,
+        "endTime": "20250610T000430.000Z",
+        "teamSize": 30,
+        "attacksPerMember": 1,
+        "starsUs": 620,
+        "starsThem": 464,
+        "destrUs": 671.2,
+        "destrThem": 0
+      }
+    ],
     "stats": {
-      "wins": 0,
-      "losses": 0,
-      "ties": 0
+      "wins": 30,
+      "losses": 6,
+      "ties": 19
     }
   },
   "historyStats": {
