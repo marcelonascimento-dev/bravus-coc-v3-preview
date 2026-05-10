@@ -28,19 +28,26 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Fetch CoC API data
+      - name: Fetch CWL data
         env:
           COC_TOKEN: ${{ secrets.COC_TOKEN }}
           CLAN_TAG: ${{ vars.CLAN_TAG || '#2Q9RYP8QC' }}
         run: node fetch-coc.cjs
+        continue-on-error: true
+
+      - name: Fetch clan data + war history
+        env:
+          COC_TOKEN: ${{ secrets.COC_TOKEN }}
+          CLAN_TAG: ${{ vars.CLAN_TAG || '#2Q9RYP8QC' }}
+        run: node fetch-clan.cjs
 
       - name: Commit & push if changed
         run: |
-          if [[ -n "$(git status --porcelain data.json data.js index.html)" ]]; then
+          if [[ -n "$(git status --porcelain)" ]]; then
             git config user.name  "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data.json data.js index.html
-            git commit -m "chore: refresh CWL data [auto $(date -u +%Y-%m-%dT%H:%MZ)]"
+            git add data.json data.js clan-data.json clan-data.js index.html history/
+            git commit -m "chore: refresh data [auto $(date -u +%Y-%m-%dT%H:%MZ)]"
             git push
           else
             echo "No changes."

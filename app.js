@@ -232,7 +232,8 @@
 
   // ---------- Rounds panel ----------
   function renderRounds() {
-    const root = $('#panel-rounds');
+    const root = $('#panel-cwl-rounds');
+    if (!root) return;
     root.innerHTML = '';
     root.appendChild(el('div', { class: 'section-title' }, `Todas as ${D.rounds.length} rodadas`));
     const grid = el('div', { class: 'rounds-grid' });
@@ -381,6 +382,7 @@
   }
 
   function buildSortableTable(rows, cols, opts = {}) {
+    const getVal = opts.getValue || ((r, k) => r[k]);
     const wrap = el('div', { class: 'table-wrap' });
     const header = el('div', { class: 'table-header' });
     const search = el('input', { class: 'search', type: 'search', placeholder: '🔎 Buscar…' });
@@ -445,7 +447,7 @@
 
       // Sort: try numeric
       data.sort((a, b) => {
-        const va = a[sortKey], vb = b[sortKey];
+        const va = getVal(a, sortKey), vb = getVal(b, sortKey);
         const na = typeof va === 'number' ? va : parseFloat(va);
         const nb = typeof vb === 'number' ? vb : parseFloat(vb);
         let cmp;
@@ -455,19 +457,19 @@
       });
 
       tbody.innerHTML = '';
-      for (const r of data) {
+      data.forEach((r, idx) => {
         const extraCls = opts.rowClass ? opts.rowClass(r) : '';
         const tr = el('tr', extraCls ? { class: extraCls } : {});
         cols.forEach((c) => {
           const td = el('td');
-          const v = r[c.key];
-          const node = c.render ? c.render(v, r) : (v == null ? '' : String(v));
+          const v = getVal(r, c.key);
+          const node = c.render ? c.render(v, r, idx) : (v == null ? '' : String(v));
           if (typeof node === 'string') td.textContent = node;
           else td.appendChild(node);
           tr.appendChild(td);
         });
         tbody.appendChild(tr);
-      }
+      });
       if (!data.length) {
         const tr = el('tr');
         tr.appendChild(el('td', { colspan: String(cols.length), style: 'text-align:center;color:var(--muted);padding:24px' }, 'Nenhum resultado'));
@@ -486,4 +488,293 @@
   renderAttacks();
   renderDefenses();
   renderGroup();
+
+  // ============================================================
+  // V2 — Visão de Clã (atividade, roster, war log, capital)
+  // ============================================================
+  const C = window.CLAN_DATA;
+
+  function emptyState(text, icon = '⏳') {
+    return el('div', { class: 'empty-state' }, [
+      el('div', { class: 'empty-icon' }, icon),
+      el('div', { class: 'empty-text' }, text),
+    ]);
+  }
+
+  // ---------- Atividade ----------
+  function renderActivity() {
+    const root = $('#panel-activity');
+    root.innerHTML = '';
+    if (!C) { root.appendChild(emptyState('Dados do clã ainda não foram coletados. Aguarde o próximo refresh do GitHub Actions.')); return; }
+
+    const totals = {
+      active: C.roster.filter((r) => r.activity.level === 'active').length,
+      warm: C.roster.filter((r) => r.activity.level === 'warm').length,
+      inactive: C.roster.filter((r) => r.activity.level === 'inactive').length,
+    };
+    root.appendChild(el('div', { class: 'activity-summary' }, [
+      summaryCard('🟢 Ativos', totals.active, 'score ≥ 70', 'good'),
+      summaryCard('🟡 Mornos', totals.warm, 'score 40–69', 'warn'),
+      summaryCard('🔴 Sumidos', totals.inactive, 'score < 40', 'bad'),
+      summaryCard('📊 Guerras na base', C.historyStats.warsRecorded, 'salvas no histórico'),
+    ]));
+
+    // Ordenado por score desc
+    const sorted = [...C.roster].sort((a, b) => b.activity.score - a.activity.score);
+
+    const cols = [
+      { key: 'rank', label: '#', render: (_, r, i) => el('span', { class: 'pos' }, String(i + 1)) },
+      { key: 'name', label: 'Jogador', render: (v, r) => el('span', {}, [
+        el('strong', {}, v),
+        ...(r.role && r.role !== 'member' ? [el('span', { class: 'role-tag' }, roleLabel(r.role))] : []),
+      ]) },
+      { key: 'th', label: 'CV', render: (v) => el('span', { class: 'th-badge' }, String(v ?? '?')) },
+      { key: 'activity.level', label: 'Status', render: (_, r) => activityBadge(r.activity) },
+      { key: 'activity.score', label: 'Score', render: (_, r) => activityBar(r.activity.score) },
+      { key: 'warHistory.participation', label: 'Guerras', render: (_, r) => el('span', {}, [
+        el('strong', {}, r.warHistory.attacks + ' '),
+        el('span', { class: 'mono-mini' }, `(${r.warHistory.participation}%)`),
+      ]) },
+      { key: 'cwl.used', label: 'CWL', render: (_, r) => r.cwl ? el('span', {}, `${r.cwl.used}/${r.cwl.expected} · ★${r.cwl.stars}`) : el('span', { class: 'muted' }, '—') },
+      { key: 'donations', label: 'Doações ↑', render: (v) => el('span', { class: 'mono-mini' }, fmt(v)) },
+      { key: 'donationsReceived', label: 'Doações ↓', render: (v) => el('span', { class: 'mono-mini' }, fmt(v)) },
+      { key: 'attackWinsSeason', label: 'Multi (atq)' },
+      { key: 'warStarsLifetime', label: '★ Lifetime', render: (v) => el('span', { class: 'stars-cell' }, '★ ' + fmt(v)) },
+      { key: 'warPreference', label: 'War', render: (v) => warPrefBadge(v) },
+    ];
+
+    const tbl = buildSortableTable(sorted, cols, {
+      defaultSort: 'activity.score', defaultDesc: true, search: 'name',
+      rowClass: (r) => 'act-' + r.activity.level,
+      // suporte a chaves "a.b" no get
+      getValue: (r, k) => k.split('.').reduce((o, p) => (o ? o[p] : undefined), r),
+    });
+    root.appendChild(tbl);
+
+    // Legenda da fórmula
+    root.appendChild(el('div', { class: 'formula-note' }, [
+      el('strong', {}, 'Como calculamos: '),
+      'Atividade = 40% participação em guerra · 25% doações · 15% vitórias multiplayer · 10% CWL · 10% war stars lifetime',
+    ]));
+  }
+
+  function summaryCard(title, value, sub, kind = '') {
+    return el('div', { class: 'sum-card ' + kind }, [
+      el('div', { class: 'sum-title' }, title),
+      el('div', { class: 'sum-value' }, String(value)),
+      el('div', { class: 'sum-sub' }, sub),
+    ]);
+  }
+  function activityBadge(a) {
+    const map = { active: ['🟢', 'Ativo'], warm: ['🟡', 'Morno'], inactive: ['🔴', 'Sumido'] };
+    const [emoji, label] = map[a.level] || ['⚪', '—'];
+    return el('span', { class: 'act-badge act-' + a.level }, `${emoji} ${label}`);
+  }
+  function activityBar(score) {
+    const wrap = el('span', {});
+    const bar = el('span', { class: 'act-bar' });
+    const pct = Math.max(0, Math.min(100, score));
+    bar.appendChild(el('i', { style: `width:${pct}%` }));
+    wrap.appendChild(bar);
+    wrap.appendChild(el('span', { class: 'mono-mini' }, ' ' + score));
+    return wrap;
+  }
+  function warPrefBadge(p) {
+    if (p === 'in') return el('span', { class: 'pref pref-in' }, 'IN');
+    if (p === 'out') return el('span', { class: 'pref pref-out' }, 'OUT');
+    return el('span', { class: 'pref' }, '—');
+  }
+  function roleLabel(r) {
+    return ({ leader: 'Líder', coLeader: 'Co-líder', admin: 'Veterano', member: 'Membro' })[r] || r;
+  }
+
+  // ---------- Clã (roster) ----------
+  function renderClan() {
+    const root = $('#panel-clan');
+    root.innerHTML = '';
+    if (!C) { root.appendChild(emptyState('Dados do clã ainda não foram coletados.')); return; }
+
+    const c = C.clan;
+    root.appendChild(el('div', { class: 'clan-header' }, [
+      el('div', {}, [
+        el('div', { class: 'clan-h-title' }, c.name + ' '),
+        el('div', { class: 'clan-h-sub' }, `${c.tag} · Nível ${c.level} · ${c.members} membros · ${c.points} pts`),
+        c.description ? el('div', { class: 'clan-h-desc' }, c.description) : null,
+      ]),
+      el('div', { class: 'clan-h-stats' }, [
+        miniStat('Guerras vencidas', c.warWins ?? '—'),
+        miniStat('Sequência', c.warWinStreak ?? '—'),
+        miniStat('Frequência', c.warFrequency || '—'),
+        miniStat('Capital', fmt(c.capitalPoints)),
+      ]),
+    ]));
+
+    root.appendChild(el('div', { class: 'section-title' }, 'Membros'));
+    const grid = el('div', { class: 'roster-grid' });
+    const sorted = [...C.roster].sort((a, b) => (b.th || 0) - (a.th || 0) || b.trophies - a.trophies);
+    sorted.forEach((m) => grid.appendChild(memberCard(m)));
+    root.appendChild(grid);
+  }
+
+  function miniStat(label, value) {
+    return el('div', { class: 'mini-stat' }, [
+      el('div', { class: 'mini-lbl' }, label),
+      el('div', { class: 'mini-val' }, String(value)),
+    ]);
+  }
+
+  function memberCard(m) {
+    const heroLine = (m.heroes.levels || []).map((h) => {
+      const short = ({ 'Barbarian King': 'BK', 'Archer Queen': 'AQ', 'Grand Warden': 'GW', 'Royal Champion': 'RC', 'Minion Prince': 'MP' })[h.name] || h.name.slice(0, 2);
+      const pct = h.max ? (h.level / h.max) : 0;
+      const cls = pct >= 1 ? 'maxed' : pct >= 0.85 ? 'good' : pct >= 0.6 ? 'warn' : 'bad';
+      return el('span', { class: 'hero ' + cls, title: `${h.name} ${h.level}/${h.max}` }, `${short} ${h.level}`);
+    });
+
+    return el('div', { class: 'member-card act-' + m.activity.level }, [
+      el('div', { class: 'm-head' }, [
+        el('div', {}, [
+          el('div', { class: 'm-name' }, [
+            el('strong', {}, m.name),
+            m.role !== 'member' ? el('span', { class: 'role-tag' }, roleLabel(m.role)) : null,
+          ]),
+          el('div', { class: 'm-tag' }, m.tag),
+        ]),
+        el('div', { class: 'm-th' }, [
+          el('span', { class: 'th-badge big' }, 'CV ' + (m.th ?? '?')),
+        ]),
+      ]),
+      el('div', { class: 'm-row' }, [
+        miniStat('🏆 Troféus', fmt(m.trophies)),
+        miniStat('★ War lifetime', fmt(m.warStarsLifetime)),
+        miniStat('War pref', m.warPreference === 'in' ? 'IN' : (m.warPreference === 'out' ? 'OUT' : '—')),
+      ]),
+      el('div', { class: 'm-row' }, [
+        miniStat('Doações ↑', fmt(m.donations)),
+        miniStat('Doações ↓', fmt(m.donationsReceived)),
+        miniStat('Saldo', (m.donationBalance >= 0 ? '+' : '') + fmt(m.donationBalance)),
+      ]),
+      heroLine.length ? el('div', { class: 'heroes' }, heroLine) : null,
+      el('div', { class: 'progress-row' }, [
+        progressBar('Heróis', m.heroes.progress),
+        progressBar('Tropas', m.troopsPct),
+        progressBar('Feitiços', m.spellsPct),
+      ]),
+      el('div', { class: 'activity-row' }, [
+        activityBadge(m.activity),
+        el('span', { class: 'm-score' }, 'score ' + m.activity.score),
+        m.warHistory.attacksAvailable > 0
+          ? el('span', { class: 'mono-mini muted' }, `${m.warHistory.participation}% guerras (${m.warHistory.attacks})`)
+          : el('span', { class: 'mono-mini muted' }, 'sem histórico'),
+      ]),
+    ]);
+  }
+
+  function progressBar(label, pct) {
+    const cls = pct >= 95 ? 'maxed' : pct >= 80 ? 'good' : pct >= 60 ? 'warn' : 'bad';
+    return el('div', { class: 'pb' }, [
+      el('div', { class: 'pb-lbl' }, [el('span', {}, label), el('span', { class: 'mono-mini' }, pct + '%')]),
+      el('div', { class: 'pb-bar ' + cls }, [el('i', { style: `width:${Math.max(0, Math.min(100, pct))}%` })]),
+    ]);
+  }
+
+  // ---------- War log ----------
+  function renderWarlog() {
+    const root = $('#panel-warlog');
+    root.innerHTML = '';
+    if (!C) { root.appendChild(emptyState('Dados do clã ainda não foram coletados.')); return; }
+    if (!C.warlog.public) {
+      root.appendChild(emptyState('O war log do clã está privado. Peça ao líder pra deixar público em Configurações do Clã para ver o histórico aqui.', '🔒'));
+      return;
+    }
+    const { wins, losses, ties } = C.warlog.stats;
+    const total = wins + losses + ties;
+    const winRate = total ? Math.round((wins / total) * 100) : 0;
+
+    root.appendChild(el('div', { class: 'activity-summary' }, [
+      summaryCard('🏆 Vitórias', wins, 'guerras normais', 'good'),
+      summaryCard('💀 Derrotas', losses, '', 'bad'),
+      summaryCard('🤝 Empates', ties, ''),
+      summaryCard('Win rate', winRate + '%', `de ${total} guerras`),
+    ]));
+
+    root.appendChild(el('div', { class: 'section-title' }, `Últimas ${C.warlog.summary.length} guerras`));
+
+    const cols = [
+      { key: 'endTime', label: 'Quando', render: (v) => el('span', { class: 'mono-mini' }, fmtWarDate(v)) },
+      { key: 'opponent', label: 'Adversário', render: (v) => el('strong', {}, v) },
+      { key: 'teamSize', label: 'Tam.' },
+      { key: 'starsUs', label: '★ Nós', render: (v) => el('span', { class: 'stars-cell' }, '★ ' + v) },
+      { key: 'starsThem', label: '★ Eles' },
+      { key: 'destrUs', label: '% Nós', render: (v) => destBar(v) },
+      { key: 'destrThem', label: '% Eles', render: (v) => destBar(v) },
+      { key: 'result', label: 'Resultado', render: (v) => warResultBadge(v) },
+    ];
+    root.appendChild(buildSortableTable(C.warlog.summary, cols, {
+      defaultSort: 'endTime', defaultDesc: true, search: 'opponent',
+      rowClass: (r) => 'wl-' + r.result,
+    }));
+  }
+  function fmtWarDate(s) {
+    if (!s) return '';
+    const m = s.match(/^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})/);
+    if (!m) return s;
+    return `${m[1]}-${m[2]}-${m[3]}`;
+  }
+  function warResultBadge(r) {
+    const map = { win: ['result-win', 'VITÓRIA'], lose: ['result-loss', 'DERROTA'], tie: ['result-live', 'EMPATE'] };
+    const [cls, label] = map[r] || ['', r];
+    return el('span', { class: 'round-result ' + cls }, label);
+  }
+
+  // ---------- Capital ----------
+  function renderCapital() {
+    const root = $('#panel-capital');
+    root.innerHTML = '';
+    if (!C) { root.appendChild(emptyState('Dados do clã ainda não foram coletados.')); return; }
+    if (!C.capital || !C.capital.seasons.length) {
+      root.appendChild(emptyState('Sem dados de Capital Raid disponíveis.', '🏛'));
+      return;
+    }
+
+    // Ranking de contribuição (consolidado no fetcher dentro de roster.capital.looted)
+    const sorted = [...C.roster].sort((a, b) => (b.capital?.looted || 0) - (a.capital?.looted || 0));
+    const topLoot = sorted[0]?.capital?.looted || 1;
+
+    root.appendChild(el('div', { class: 'section-title' }, 'Top contribuintes (últimas temporadas)'));
+    const grid = el('div', { class: 'capital-grid' });
+    sorted.filter((m) => (m.capital?.looted || 0) > 0).slice(0, 30).forEach((m, i) => {
+      const pct = Math.round(((m.capital?.looted || 0) / topLoot) * 100);
+      grid.appendChild(el('div', { class: 'cap-card' }, [
+        el('div', { class: 'cap-rank' }, '#' + (i + 1)),
+        el('div', { class: 'cap-info' }, [
+          el('div', { class: 'cap-name' }, m.name),
+          el('div', { class: 'cap-stats mono-mini muted' }, `${m.capital.attacks} ataques`),
+        ]),
+        el('div', { class: 'cap-bar' }, [el('i', { style: `width:${pct}%` })]),
+        el('div', { class: 'cap-val' }, fmt(m.capital.looted)),
+      ]));
+    });
+    root.appendChild(grid);
+
+    // Histórico de temporadas
+    root.appendChild(el('div', { class: 'section-title' }, 'Temporadas recentes'));
+    const seasonRows = C.capital.seasons.map((s) => ({
+      season: fmtWarDate(s.startTime) + ' → ' + fmtWarDate(s.endTime),
+      capitalTotalLoot: s.capitalTotalLoot, raidsCompleted: s.raidsCompleted,
+      offensiveReward: s.offensiveReward, defensiveReward: s.defensiveReward,
+    }));
+    root.appendChild(buildSortableTable(seasonRows, [
+      { key: 'season', label: 'Temporada' },
+      { key: 'capitalTotalLoot', label: 'Loot total', render: (v) => fmt(v) },
+      { key: 'raidsCompleted', label: 'Raids' },
+      { key: 'offensiveReward', label: 'Recompensa atq.' },
+      { key: 'defensiveReward', label: 'Recompensa def.' },
+    ], { defaultSort: 'season', defaultDesc: true, search: 'season' }));
+  }
+
+  renderActivity();
+  renderClan();
+  renderWarlog();
+  renderCapital();
 })();

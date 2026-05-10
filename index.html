@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Bravus · CWL Maio 2026</title>
+<title>Bravus · Clã & CWL</title>
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
-<link rel="stylesheet" href="style.css?v=60ea3cd0" />
+<link rel="stylesheet" href="style.css?v=DEV" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -31,16 +31,24 @@
 
   <nav class="tabs" role="tablist">
     <button class="tab active" data-tab="overview">📊 Visão Geral</button>
-    <button class="tab" data-tab="rounds">📜 Rodadas</button>
-    <button class="tab" data-tab="ranking">🏆 Ranking</button>
-    <button class="tab" data-tab="attacks">⚔ Ataques</button>
-    <button class="tab" data-tab="defenses">🛡 Defesas</button>
-    <button class="tab" data-tab="group">🛡 Grupo</button>
+    <button class="tab" data-tab="activity">🔥 Atividade</button>
+    <button class="tab" data-tab="clan">🛡 Clã</button>
+    <button class="tab" data-tab="warlog">⚔ Histórico de Guerras</button>
+    <button class="tab" data-tab="capital">🏛 Capital</button>
+    <button class="tab" data-tab="cwl-rounds">📜 CWL · Rodadas</button>
+    <button class="tab" data-tab="ranking">🏆 CWL · Ranking</button>
+    <button class="tab" data-tab="attacks">⚔ CWL · Ataques</button>
+    <button class="tab" data-tab="defenses">🛡 CWL · Defesas</button>
+    <button class="tab" data-tab="group">🌐 CWL · Grupo</button>
   </nav>
 
   <main class="container">
     <section class="panel" id="panel-overview"></section>
-    <section class="panel hidden" id="panel-rounds"></section>
+    <section class="panel hidden" id="panel-activity"></section>
+    <section class="panel hidden" id="panel-clan"></section>
+    <section class="panel hidden" id="panel-warlog"></section>
+    <section class="panel hidden" id="panel-capital"></section>
+    <section class="panel hidden" id="panel-cwl-rounds"></section>
     <section class="panel hidden" id="panel-ranking"></section>
     <section class="panel hidden" id="panel-attacks"></section>
     <section class="panel hidden" id="panel-defenses"></section>
@@ -50,10 +58,11 @@
   <footer class="foot">
     <span id="generated"></span>
     <span class="dot">·</span>
-    <span>Dashboard gerado a partir de planilha CWL</span>
+    <span>Dashboard gerado a partir da API do Clash of Clans</span>
   </footer>
 
-  <script src="data.js?v=85a777f1"></script>
-  <script src="app.js?v=16053141"></script>
+  <script src="data.js?v=DEV"></script>
+  <script src="clan-data.js?v=DEV"></script>
+  <script src="app.js?v=DEV"></script>
 </body>
 </html>
