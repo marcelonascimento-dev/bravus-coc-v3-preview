@@ -200,10 +200,14 @@ async function api(p) {
       missed,
       score,
     };
-  }).sort((a, b) => b.score - a.score);
+  }).sort((a, b) => {
+    // ★ → % destruição média → tempo médio (menor é melhor)
+    if (b.starsTotal !== a.starsTotal) return b.starsTotal - a.starsTotal;
+    if (b.avgDestr !== a.avgDestr) return b.avgDestr - a.avgDestr;
+    return parseInt(a.avgTime) - parseInt(b.avgTime);
+  });
 
-  const medals = ['🥇', '🥈', '🥉'];
-  ranking.forEach((p, i) => { p.pos = i < 3 ? medals[i] : i + 1; });
+  ranking.forEach((p, i) => { p.pos = i + 1; });
 
   const data = { info, groupClans, rounds, attacks, defenses, ranking };
   fs.writeFileSync(path.join(ROOT, 'data.json'), JSON.stringify(data, null, 2));

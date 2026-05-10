@@ -72,12 +72,19 @@
     return wrap;
   }
 
+  // ---------- Reordena ranking: ★ → % destruição → tempo ----------
+  const _avgTimeSec = (s) => parseInt(String(s || '').replace(/\D/g, ''), 10) || 0;
+  D.ranking.sort((a, b) => {
+    if ((b.starsTotal || 0) !== (a.starsTotal || 0)) return (b.starsTotal || 0) - (a.starsTotal || 0);
+    if ((b.avgDestr || 0) !== (a.avgDestr || 0)) return (b.avgDestr || 0) - (a.avgDestr || 0);
+    return _avgTimeSec(a.avgTime) - _avgTimeSec(b.avgTime);
+  });
+  D.ranking.forEach((p, i) => { p.pos = i + 1; });
+
   // ---------- Bônus CWL ----------
-  // Quantidade de bônus que o clã recebe (varia por liga). Persistido em localStorage.
   const BONUS_KEY = 'bravus_bonus_count';
   let BONUS_N = parseInt(localStorage.getItem(BONUS_KEY) || '8', 10);
   function isEligible(p) {
-    // Apenas jogadores que de fato participaram (pelo menos 1 ataque) entram na briga pelo bônus
     const att = String(p.attacks || '');
     const used = parseInt(att.split('/')[0], 10) || 0;
     return used > 0;
@@ -271,7 +278,7 @@
     ];
 
     const tbl = buildSortableTable(D.ranking, cols, {
-      defaultSort: 'score', defaultDesc: true, search: 'player',
+      defaultSort: 'pos', defaultDesc: false, search: 'player',
       rowClass: (r) => isBonus(r) ? 'bonus-row' : '',
     });
     root.appendChild(tbl);
@@ -352,10 +359,11 @@
   }
   function posBadge(v) {
     let cls = 'pos';
-    if (v === '🥇' || v === 1) cls += ' gold';
-    else if (v === '🥈' || v === 2) cls += ' silver';
-    else if (v === '🥉' || v === 3) cls += ' bronze';
-    return el('span', { class: cls }, String(v));
+    let label = String(v);
+    if (v === '🥇' || v === 1) { cls += ' gold'; label = '🥇'; }
+    else if (v === '🥈' || v === 2) { cls += ' silver'; label = '🥈'; }
+    else if (v === '🥉' || v === 3) { cls += ' bronze'; label = '🥉'; }
+    return el('span', { class: cls }, label);
   }
   function starsCell(n) {
     const stars = '★'.repeat(n) + '<span class="empty">' + '★'.repeat(3 - n) + '</span>';
