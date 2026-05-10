@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bravus · CWL Maio 2026</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-top">
+        <div class="brand">
+          <div class="brand-icon">⚔</div>
+          <div>
+            <div class="brand-title" id="clan-title">Bravus</div>
+            <div class="brand-sub" id="clan-sub">Liga de Guerra de Clãs</div>
+          </div>
+        </div>
+        <div class="hero-meta" id="hero-meta"></div>
+      </div>
+      <div class="hero-stats" id="hero-stats"></div>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab active" data-tab="overview">📊 Visão Geral</button>
+    <button class="tab" data-tab="rounds">📜 Rodadas</button>
+    <button class="tab" data-tab="ranking">🏆 Ranking</button>
+    <button class="tab" data-tab="attacks">⚔ Ataques</button>
+    <button class="tab" data-tab="defenses">🛡 Defesas</button>
+    <button class="tab" data-tab="group">🛡 Grupo</button>
+  </nav>
+
+  <main class="container">
+    <section class="panel" id="panel-overview"></section>
+    <section class="panel hidden" id="panel-rounds"></section>
+    <section class="panel hidden" id="panel-ranking"></section>
+    <section class="panel hidden" id="panel-attacks"></section>
+    <section class="panel hidden" id="panel-defenses"></section>
+    <section class="panel hidden" id="panel-group"></section>
+  </main>
+
+  <footer class="foot">
+    <span id="generated"></span>
+    <span class="dot">·</span>
+    <span>Dashboard gerado a partir de planilha CWL</span>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
