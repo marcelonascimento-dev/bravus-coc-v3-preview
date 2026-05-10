@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-10 19:08",
+  "generatedAt": "2026-05-10 20:03",
   "clan": {
     "name": "Bravus",
     "tag": "#2Q9RYP8QC",
@@ -119,6 +119,12 @@
         "avgDestr": 100,
         "score": 1550,
         "pos": 1
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -216,6 +222,12 @@
         "avgDestr": 100,
         "score": 1520,
         "pos": 2
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -313,6 +325,12 @@
         "avgDestr": 100,
         "score": 1496,
         "pos": 3
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -366,7 +384,7 @@
         "maxed": 2,
         "total": 6
       },
-      "troopsPct": 58.7,
+      "troopsPct": 58.8,
       "spellsPct": 74.2,
       "labels": [],
       "capital": {
@@ -406,6 +424,12 @@
         "avgDestr": 100,
         "score": 1166,
         "pos": 6
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -489,6 +513,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -576,6 +606,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -673,6 +709,12 @@
         "avgDestr": 91.6,
         "score": 1130,
         "pos": 14
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -682,9 +724,9 @@
       "th": 18,
       "trophies": 629,
       "league": "Unranked",
-      "donations": 1415,
+      "donations": 1420,
       "donationsReceived": 4327,
-      "donationBalance": -2912,
+      "donationBalance": -2907,
       "warStarsLifetime": 1217,
       "warPreference": "in",
       "attackWinsSeason": 0,
@@ -748,11 +790,11 @@
         "participation": 0
       },
       "activity": {
-        "score": 77.1,
+        "score": 77.2,
         "level": "active",
         "breakdown": {
           "cwl": 100,
-          "donations": 94.3,
+          "donations": 94.7,
           "multi": 0,
           "veteran": 81.1,
           "_weights": {
@@ -770,6 +812,12 @@
         "avgDestr": 100,
         "score": 1152,
         "pos": 7
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -867,6 +915,12 @@
         "avgDestr": 98.9,
         "score": 1393,
         "pos": 9
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -874,7 +928,7 @@
       "name": "INSTEPECTOR 007",
       "role": "admin",
       "th": 18,
-      "trophies": 791,
+      "trophies": 804,
       "league": "Unranked",
       "donations": 1000,
       "donationsReceived": 1039,
@@ -964,6 +1018,12 @@
         "avgDestr": 98.3,
         "score": 1343,
         "pos": 10
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -971,7 +1031,7 @@
       "name": "Avano",
       "role": "admin",
       "th": 18,
-      "trophies": 321,
+      "trophies": 333,
       "league": "Unranked",
       "donations": 10,
       "donationsReceived": 1384,
@@ -1061,6 +1121,12 @@
         "avgDestr": 98.3,
         "score": 1055,
         "pos": 12
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -1071,8 +1137,8 @@
       "trophies": 799,
       "league": "Unranked",
       "donations": 1273,
-      "donationsReceived": 10818,
-      "donationBalance": -9545,
+      "donationsReceived": 10991,
+      "donationBalance": -9718,
       "warStarsLifetime": 2278,
       "warPreference": "out",
       "attackWinsSeason": 0,
@@ -1158,6 +1224,12 @@
         "avgDestr": 100,
         "score": 1497,
         "pos": 4
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -1255,6 +1327,12 @@
         "avgDestr": 99.4,
         "score": 1319,
         "pos": 8
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -1342,6 +1420,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -1439,6 +1523,12 @@
         "avgDestr": 98.3,
         "score": 556,
         "pos": 15
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -1536,6 +1626,12 @@
         "avgDestr": 100,
         "score": 371,
         "pos": 16
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -1633,6 +1729,12 @@
         "avgDestr": 99,
         "score": 1309,
         "pos": 11
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -1730,6 +1832,12 @@
         "avgDestr": 99.4,
         "score": 1319,
         "pos": 8
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -1817,6 +1925,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -1899,6 +2013,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -1986,6 +2106,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -2073,6 +2199,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -2170,6 +2302,12 @@
         "avgDestr": 99.4,
         "score": 1319,
         "pos": 8
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -2257,6 +2395,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -2344,6 +2488,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -2431,6 +2581,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -2513,6 +2669,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -2596,6 +2758,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -2678,6 +2846,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -2760,6 +2934,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -2842,6 +3022,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -2924,6 +3110,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -3001,6 +3193,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -3073,6 +3271,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -3160,6 +3364,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -3247,6 +3457,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -3299,6 +3515,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -3381,6 +3603,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -3468,6 +3696,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -3541,6 +3775,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -3628,6 +3868,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -3715,6 +3961,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -3724,9 +3976,9 @@
       "th": 18,
       "trophies": 0,
       "league": "Champion League III",
-      "donations": 67384,
+      "donations": 67552,
       "donationsReceived": 0,
-      "donationBalance": 67384,
+      "donationBalance": 67552,
       "warStarsLifetime": 539,
       "warPreference": "out",
       "attackWinsSeason": 0,
@@ -3798,6 +4050,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -3885,6 +4143,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -3972,6 +4236,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -4024,6 +4294,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -4121,6 +4397,12 @@
         "avgDestr": 95.9,
         "score": 1139,
         "pos": 13
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     },
     {
@@ -4173,6 +4455,12 @@
             "veteran": 20
           }
         }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
       }
     }
   ],
