@@ -10,7 +10,8 @@
       "Bash(git push *)",
       "Bash(git -c user.email=\"bravus@local\" -c user.name=\"Bravus\" commit -m \"Compact hero stats on mobile to prioritize rankings\")",
       "Bash(gh repo *)",
-      "Bash(git -c user.email=\"bravus@local\" -c user.name=\"Bravus\" commit -m \"Rename to bravus-coc, broaden README scope\")"
+      "Bash(git -c user.email=\"bravus@local\" -c user.name=\"Bravus\" commit -m \"Rename to bravus-coc, broaden README scope\")",
+      "Bash(git -c user.email=\"bravus@local\" -c user.name=\"Bravus\" commit -m \"Add 12h and 30min reminders to notification flow\")"
     ]
   }
 }

@@ -122,25 +122,35 @@ async function notifyWarParticipants(warMemberTags, text, eventId) {
         `war_started_${dayId}`
       );
 
-      // 2) Lembretes de ataques pendentes — 4h e 1h antes do fim
+      // 2) Lembretes de ataques pendentes — 12h, 4h, 1h, 30min antes do fim
       if (endTs) {
         const hrsLeft = (endTs - now) / 3600000;
+        const minsLeft = (endTs - now) / 60000;
         const attacksPerMember = cw.attacksPerMember || 2;
         const pendingTags = ourMembers
           .filter((m) => (m.attacks || []).length < attacksPerMember)
           .map((m) => m.tag);
+        const id = cw.endTime.slice(0, 12);
 
-        if (hrsLeft <= 4 && hrsLeft > 1) {
+        if (hrsLeft <= 12 && hrsLeft > 0) {
           await notifyWarParticipants(pendingTags,
-            `⏰ Restam ~4h da guerra contra *${opp}* e você ainda tem ataque pendente!`,
-            `war_4h_${cw.endTime.slice(0, 12)}`
-          );
+            `⏳ Restam ~12h da guerra contra *${opp}* e você ainda tem ataque pendente.`,
+            `war_12h_${id}`);
+        }
+        if (hrsLeft <= 4 && hrsLeft > 0) {
+          await notifyWarParticipants(pendingTags,
+            `⏰ Restam ~4h da guerra contra *${opp}* — não esquece de atacar!`,
+            `war_4h_${id}`);
         }
         if (hrsLeft <= 1 && hrsLeft > 0) {
           await notifyWarParticipants(pendingTags,
             `🚨 ÚLTIMA HORA da guerra contra *${opp}* — você ainda não atacou!`,
-            `war_1h_${cw.endTime.slice(0, 12)}`
-          );
+            `war_1h_${id}`);
+        }
+        if (minsLeft <= 30 && minsLeft > 0) {
+          await notifyWarParticipants(pendingTags,
+            `🔥 30min pra acabar a guerra contra *${opp}*! ATACA AGORA!`,
+            `war_30m_${id}`);
         }
       }
     }
@@ -171,25 +181,34 @@ async function notifyWarParticipants(warMemberTags, text, eventId) {
             `cwl_started_r${i + 1}_${id}`
           );
 
-          // Pendentes 4h / 1h antes do fim
+          // Pendentes 12h / 4h / 1h / 30min antes do fim
           const endTs = parseCocTime(w.endTime);
           if (endTs) {
             const hrsLeft = (endTs - new Date()) / 3600000;
+            const minsLeft = (endTs - new Date()) / 60000;
             const pendingTags = ourMembers
               .filter((m) => (m.attacks || []).length < 1)
               .map((m) => m.tag);
 
-            if (hrsLeft <= 4 && hrsLeft > 1) {
+            if (hrsLeft <= 12 && hrsLeft > 0) {
               await notifyWarParticipants(pendingTags,
-                `⏰ CWL ${roundLabel} — ~4h pro fim e você ainda não atacou contra ${opp}!`,
-                `cwl_4h_r${i + 1}_${id}`
-              );
+                `⏳ CWL ${roundLabel} — ~12h pro fim e você não atacou contra ${opp}.`,
+                `cwl_12h_r${i + 1}_${id}`);
+            }
+            if (hrsLeft <= 4 && hrsLeft > 0) {
+              await notifyWarParticipants(pendingTags,
+                `⏰ CWL ${roundLabel} — ~4h pro fim, não esquece do ataque contra ${opp}!`,
+                `cwl_4h_r${i + 1}_${id}`);
             }
             if (hrsLeft <= 1 && hrsLeft > 0) {
               await notifyWarParticipants(pendingTags,
                 `🚨 CWL ${roundLabel} — ÚLTIMA HORA pra atacar contra ${opp}!`,
-                `cwl_1h_r${i + 1}_${id}`
-              );
+                `cwl_1h_r${i + 1}_${id}`);
+            }
+            if (minsLeft <= 30 && minsLeft > 0) {
+              await notifyWarParticipants(pendingTags,
+                `🔥 CWL ${roundLabel} — 30min! ATACA contra ${opp}!`,
+                `cwl_30m_r${i + 1}_${id}`);
             }
           }
         }

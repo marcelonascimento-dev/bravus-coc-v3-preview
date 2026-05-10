@@ -47,9 +47,11 @@ runners do GitHub têm IP dinâmico, usamos o proxy gratuito do RoyaleAPI
 
 O sistema avisa via WhatsApp quem está escalado na guerra:
 
-- ⚔ **Guerra começa** → DM pra todos os escalados que estão no cadastro.
-- ⏰ **4h restantes** → DM **só pra quem não atacou ainda**.
-- 🚨 **1h restante** → DM final pros atrasados.
+- ⚔ **Guerra começa** → DM pra todos os escalados.
+- ⏳ **12h restantes** → DM só pra quem não atacou.
+- ⏰ **4h restantes** → DM só pra quem não atacou.
+- 🚨 **1h restante** → DM final.
+- 🔥 **30min restantes** → último aviso pros atrasados.
 
 Funciona pra guerras normais e pra cada rodada da CWL.
 
