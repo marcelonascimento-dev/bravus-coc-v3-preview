@@ -652,13 +652,13 @@
     const attackers = enriched
       .filter((m) => m._w.used > 0)
       .sort((a, b) => (b._w.stars - a._w.stars) || (b._w.avgDestr - a._w.avgDestr))
-      .slice(0, 5);
+      .slice(0, 10);
 
     // Mais participativos — % de ataques usados (tiebreaker: total usado)
     const participators = enriched
       .filter((m) => m._w.expected > 0)
       .sort((a, b) => (b._w.participation - a._w.participation) || (b._w.used - a._w.used))
-      .slice(0, 5);
+      .slice(0, 10);
 
     wrap.appendChild(el('div', { class: 'highlights-grid' }, [
       buildHighlightCard('🔥', 'Top atacantes', 'CWL + guerras normais', attackers, (m) => ({
