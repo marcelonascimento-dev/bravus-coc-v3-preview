@@ -186,7 +186,7 @@
     const root = $('#panel-overview');
     root.innerHTML = '';
 
-    // 🔥 Top atacantes + participação (lado a lado, prioridade visual)
+    // 🔥 Top atacantes + participação (foco da página inicial)
     if (window.CLAN_DATA?.roster?.length) {
       root.appendChild(buildMonthHighlights());
     } else {
@@ -204,15 +204,6 @@
       });
       root.appendChild(podium);
     }
-
-    // 🎖 Bônus CWL — strip horizontal compacto (só mostra se houver)
-    root.appendChild(buildBonusStrip());
-
-    // 📜 Últimas rodadas CWL
-    root.appendChild(el('div', { class: 'section-title' }, '📜 Rodadas da CWL'));
-    const grid = el('div', { class: 'rounds-grid' });
-    D.rounds.forEach((r) => grid.appendChild(roundCard(r)));
-    root.appendChild(grid);
   }
 
   // Strip compacto de bônus CWL — substitui o megabanner
