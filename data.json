@@ -8,7 +8,7 @@
     "state": "ended",
     "totalRounds": 7,
     "groupSize": 8,
-    "generatedAt": "2026-05-10 17:51"
+    "generatedAt": "2026-05-10 17:55"
   },
   "groupClans": [
     {
@@ -2862,7 +2862,7 @@
   ],
   "ranking": [
     {
-      "pos": "🥇",
+      "pos": 1,
       "player": "Hugatim",
       "th": 18,
       "attacks": "7/7",
@@ -2876,7 +2876,7 @@
       "score": 1550
     },
     {
-      "pos": "🥈",
+      "pos": 2,
       "player": "Hugo",
       "th": 18,
       "attacks": "7/7",
@@ -2890,21 +2890,7 @@
       "score": 1520
     },
     {
-      "pos": "🥉",
-      "player": "✨️Asta✨️",
-      "th": 18,
-      "attacks": "7/7",
-      "starsTotal": 21,
-      "triples": 7,
-      "twoStars": 0,
-      "oneStar": 0,
-      "avgDestr": 100,
-      "avgTime": "96s",
-      "missed": 0,
-      "score": 1497
-    },
-    {
-      "pos": 4,
+      "pos": 3,
       "player": "Shaze",
       "th": 18,
       "attacks": "7/7",
@@ -2918,21 +2904,21 @@
       "score": 1496
     },
     {
-      "pos": 5,
-      "player": "Cerradão Goiano",
+      "pos": 4,
+      "player": "✨️Asta✨️",
       "th": 18,
       "attacks": "7/7",
-      "starsTotal": 20,
-      "triples": 6,
-      "twoStars": 1,
+      "starsTotal": 21,
+      "triples": 7,
+      "twoStars": 0,
       "oneStar": 0,
-      "avgDestr": 98.9,
-      "avgTime": "102s",
+      "avgDestr": 100,
+      "avgTime": "96s",
       "missed": 0,
-      "score": 1393
+      "score": 1497
     },
     {
-      "pos": 6,
+      "pos": 5,
       "player": "RCUP",
       "th": 18,
       "attacks": "7/7",
@@ -2946,18 +2932,32 @@
       "score": 1388
     },
     {
-      "pos": 7,
-      "player": "INSTEPECTOR 007",
+      "pos": 6,
+      "player": "AkA Low",
       "th": 18,
       "attacks": "7/7",
-      "starsTotal": 20,
-      "triples": 6,
-      "twoStars": 1,
+      "starsTotal": 21,
+      "triples": 7,
+      "twoStars": 0,
       "oneStar": 0,
-      "avgDestr": 98.3,
-      "avgTime": "105s",
+      "avgDestr": 100,
+      "avgTime": "139s",
       "missed": 0,
-      "score": 1343
+      "score": 1166
+    },
+    {
+      "pos": 7,
+      "player": "CAPETADOBEM",
+      "th": 18,
+      "attacks": "7/7",
+      "starsTotal": 21,
+      "triples": 7,
+      "twoStars": 0,
+      "oneStar": 0,
+      "avgDestr": 100,
+      "avgTime": "145s",
+      "missed": 0,
+      "score": 1152
     },
     {
       "pos": 8,
@@ -2975,6 +2975,34 @@
     },
     {
       "pos": 9,
+      "player": "Cerradão Goiano",
+      "th": 18,
+      "attacks": "7/7",
+      "starsTotal": 20,
+      "triples": 6,
+      "twoStars": 1,
+      "oneStar": 0,
+      "avgDestr": 98.9,
+      "avgTime": "102s",
+      "missed": 0,
+      "score": 1393
+    },
+    {
+      "pos": 10,
+      "player": "INSTEPECTOR 007",
+      "th": 18,
+      "attacks": "7/7",
+      "starsTotal": 20,
+      "triples": 6,
+      "twoStars": 1,
+      "oneStar": 0,
+      "avgDestr": 98.3,
+      "avgTime": "105s",
+      "missed": 0,
+      "score": 1343
+    },
+    {
+      "pos": 11,
       "player": "MalvadaoPlay",
       "th": 18,
       "attacks": "7/7",
@@ -2988,35 +3016,21 @@
       "score": 1309
     },
     {
-      "pos": 10,
-      "player": "AkA Low",
+      "pos": 12,
+      "player": "Avano",
       "th": 18,
       "attacks": "7/7",
-      "starsTotal": 21,
-      "triples": 7,
-      "twoStars": 0,
+      "starsTotal": 19,
+      "triples": 5,
+      "twoStars": 2,
       "oneStar": 0,
-      "avgDestr": 100,
+      "avgDestr": 98.3,
       "avgTime": "139s",
       "missed": 0,
-      "score": 1166
+      "score": 1055
     },
     {
-      "pos": 11,
-      "player": "CAPETADOBEM",
-      "th": 18,
-      "attacks": "7/7",
-      "starsTotal": 21,
-      "triples": 7,
-      "twoStars": 0,
-      "oneStar": 0,
-      "avgDestr": 100,
-      "avgTime": "145s",
-      "missed": 0,
-      "score": 1152
-    },
-    {
-      "pos": 12,
+      "pos": 13,
       "player": "malakh",
       "th": 18,
       "attacks": "7/7",
@@ -3030,7 +3044,7 @@
       "score": 1139
     },
     {
-      "pos": 13,
+      "pos": 14,
       "player": "nicolah$",
       "th": 18,
       "attacks": "7/7",
@@ -3042,20 +3056,6 @@
       "avgTime": "109s",
       "missed": 0,
       "score": 1130
-    },
-    {
-      "pos": 14,
-      "player": "Avano",
-      "th": 18,
-      "attacks": "7/7",
-      "starsTotal": 19,
-      "triples": 5,
-      "twoStars": 2,
-      "oneStar": 0,
-      "avgDestr": 98.3,
-      "avgTime": "139s",
-      "missed": 0,
-      "score": 1055
     },
     {
       "pos": 15,
