@@ -12,7 +12,11 @@
     }
     (Array.isArray(children) ? children : [children]).forEach((c) => {
       if (c == null) return;
-      e.appendChild(typeof c === 'string' ? document.createTextNode(c) : c);
+      if (typeof c === 'string' || typeof c === 'number' || typeof c === 'boolean') {
+        e.appendChild(document.createTextNode(String(c)));
+      } else {
+        e.appendChild(c);
+      }
     });
     return e;
   };
