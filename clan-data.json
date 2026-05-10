@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-10 22:06",
+  "generatedAt": "2026-05-10 23:10",
   "clan": {
     "name": "Bravus",
     "tag": "#2Q9RYP8QC",
@@ -437,11 +437,11 @@
       "name": "Equipe Cão",
       "role": "member",
       "th": 18,
-      "trophies": 66,
+      "trophies": 346,
       "league": "Unranked",
-      "donations": 0,
+      "donations": 5,
       "donationsReceived": 85,
-      "donationBalance": -85,
+      "donationBalance": -80,
       "warStarsLifetime": 1447,
       "warPreference": "in",
       "attackWinsSeason": 0,
@@ -501,10 +501,10 @@
         "participation": 0
       },
       "activity": {
-        "score": 19.3,
+        "score": 19.5,
         "level": "inactive",
         "breakdown": {
-          "donations": 0,
+          "donations": 0.3,
           "multi": 0,
           "veteran": 96.5,
           "_weights": {
@@ -1137,8 +1137,8 @@
       "trophies": 800,
       "league": "Unranked",
       "donations": 800,
-      "donationsReceived": 2276,
-      "donationBalance": -1476,
+      "donationsReceived": 2399,
+      "donationBalance": -1599,
       "warStarsLifetime": 1788,
       "warPreference": "in",
       "attackWinsSeason": 0,
@@ -1181,7 +1181,7 @@
         "total": 6
       },
       "troopsPct": 75.9,
-      "spellsPct": 96.9,
+      "spellsPct": 97.7,
       "labels": [
         "Hungry Learner",
         "Teacher",
@@ -1240,8 +1240,8 @@
       "trophies": 799,
       "league": "Unranked",
       "donations": 1273,
-      "donationsReceived": 11248,
-      "donationBalance": -9975,
+      "donationsReceived": 11337,
+      "donationBalance": -10064,
       "warStarsLifetime": 2278,
       "warPreference": "out",
       "attackWinsSeason": 0,
@@ -2214,9 +2214,9 @@
       "th": 18,
       "trophies": 274,
       "league": "Unranked",
-      "donations": 488,
+      "donations": 543,
       "donationsReceived": 490,
-      "donationBalance": -2,
+      "donationBalance": 53,
       "warStarsLifetime": 2055,
       "warPreference": "out",
       "attackWinsSeason": 0,
@@ -2280,11 +2280,11 @@
         "participation": 0
       },
       "activity": {
-        "score": 59.8,
+        "score": 61,
         "level": "warm",
         "breakdown": {
           "cwl": 99,
-          "donations": 32.5,
+          "donations": 36.2,
           "multi": 0,
           "veteran": 100,
           "_weights": {
@@ -3976,9 +3976,9 @@
       "th": 18,
       "trophies": 0,
       "league": "Champion League III",
-      "donations": 67870,
+      "donations": 68022,
       "donationsReceived": 0,
-      "donationBalance": 67870,
+      "donationBalance": 68022,
       "warStarsLifetime": 539,
       "warPreference": "out",
       "attackWinsSeason": 0,
@@ -5135,7 +5135,7 @@
         "endTime": "20260511T070000.000Z",
         "state": "ongoing",
         "capitalTotalLoot": 376006,
-        "raidsCompleted": 4,
+        "raidsCompleted": 5,
         "defensiveReward": 0,
         "offensiveReward": 0
       },
