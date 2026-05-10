@@ -802,11 +802,13 @@
           el('span', { class: 'mono-mini muted' }, pct),
         ]);
       } },
-      { key: 'cwl.stars', label: '★ CWL', render: (_, r) => r.cwl ? el('span', { class: 'stars-cell' }, '★ ' + r.cwl.stars) : el('span', { class: 'muted' }, '—') },
-      { key: 'donations', label: 'Doações ↑', render: (v) => el('span', { class: 'mono-mini' }, fmt(v)) },
-      { key: 'donationsReceived', label: 'Doações ↓', render: (v) => el('span', { class: 'mono-mini' }, fmt(v)) },
-      { key: 'attackWinsSeason', label: 'Multi (atq)' },
-      { key: 'warStarsLifetime', label: '★ Lifetime', render: (v) => el('span', { class: 'stars-cell' }, '★ ' + fmt(v)) },
+      { key: 'cwl.stars', label: '★ CWL', render: (_, r) => r.cwl ? el('span', { class: 'stars-cell' }, '★' + r.cwl.stars) : el('span', { class: 'muted' }, '—') },
+      { key: 'donations', label: 'Doações', render: (v, r) => el('span', { class: 'mono-mini' }, [
+        el('span', {}, '↑' + fmt(v)),
+        el('span', { class: 'muted' }, ' ↓' + fmt(r.donationsReceived)),
+      ]) },
+      { key: 'attackWinsSeason', label: 'Multi' },
+      { key: 'warStarsLifetime', label: '★ Lif', render: (v) => el('span', { class: 'stars-cell' }, '★' + fmt(v)) },
       { key: 'warPreference', label: 'War', render: (v) => warPrefBadge(v) },
     ];
 

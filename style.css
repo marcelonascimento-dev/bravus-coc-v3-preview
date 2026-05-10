@@ -198,7 +198,7 @@ button { font-family: inherit; }
 .select:focus { border-color: var(--gold); }
 
 table { width: 100%; border-collapse: collapse; font-size: 14px; }
-th, td { text-align: left; padding: 12px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th, td { text-align: left; padding: 10px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
 th {
   background: var(--bg-2); color: var(--muted); font-size: 12px; font-weight: 600;
   text-transform: uppercase; letter-spacing: 0.6px; cursor: pointer; user-select: none;
@@ -381,7 +381,7 @@ tr.bonus-row td:first-child { box-shadow: inset 3px 0 0 var(--gold); }
 
 /* ===== Visão Geral V2 (clean) ===== */
 .highlights-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 16px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;
   margin-bottom: 18px;
 }
 .hl-card {
@@ -526,7 +526,7 @@ tr.act-inactive td:first-child { box-shadow: inset 3px 0 0 var(--red); }
 
 /* Roster grid */
 .roster-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px;
 }
 .member-card {
   background: var(--bg-1); border: 1px solid var(--line); border-radius: 14px;
@@ -603,5 +603,20 @@ tr.wl-tie td:first-child { box-shadow: inset 3px 0 0 var(--muted); }
   .brand-title { font-size: 20px; }
   .stat-value { font-size: 20px; }
   .podium { grid-template-columns: 1fr; }
-  th, td { padding: 10px 8px; font-size: 13px; }
+  th, td { padding: 8px 6px; font-size: 12px; }
+  .hero-inner { padding: 18px 14px 14px; }
+  .container { padding: 16px 12px 50px; }
+  .tabs { padding: 8px 10px; }
+  .tab { padding: 7px 10px; font-size: 13px; }
+  .activity-summary { grid-template-columns: repeat(2, 1fr); }
+  .clan-h-stats { gap: 10px; }
+  .mini-val { font-size: 16px; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .brand-title { font-size: 18px; }
+  .brand-sub { font-size: 12px; }
+  .hero-stats { grid-template-columns: 1fr 1fr; }
+  .hl-item { grid-template-columns: 28px 1fr auto; }
+  .hl-secondary { grid-column: 2 / -1; text-align: right; padding-top: 2px; }
 }
