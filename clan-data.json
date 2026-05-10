@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-10 20:03",
+  "generatedAt": "2026-05-10 21:07",
   "clan": {
     "name": "Bravus",
     "tag": "#2Q9RYP8QC",
     "level": 22,
-    "points": 98105,
+    "points": 98061,
     "capitalPoints": 3318,
     "members": 48,
     "type": "open",
@@ -29,7 +29,7 @@
       "name": "Hugatim",
       "role": "member",
       "th": 18,
-      "trophies": 4905,
+      "trophies": 4861,
       "league": "Unranked",
       "donations": 5,
       "donationsReceived": 0,
@@ -1130,6 +1130,109 @@
       }
     },
     {
+      "tag": "#9LGQJQULP",
+      "name": "RCUP",
+      "role": "admin",
+      "th": 18,
+      "trophies": 800,
+      "league": "Unranked",
+      "donations": 800,
+      "donationsReceived": 2210,
+      "donationBalance": -1410,
+      "warStarsLifetime": 1788,
+      "warPreference": "in",
+      "attackWinsSeason": 0,
+      "defenseWinsSeason": 0,
+      "heroes": {
+        "progress": 100,
+        "levels": [
+          {
+            "name": "Barbarian King",
+            "level": 105,
+            "max": 105
+          },
+          {
+            "name": "Archer Queen",
+            "level": 105,
+            "max": 105
+          },
+          {
+            "name": "Grand Warden",
+            "level": 80,
+            "max": 80
+          },
+          {
+            "name": "Royal Champion",
+            "level": 55,
+            "max": 55
+          },
+          {
+            "name": "Minion Prince",
+            "level": 95,
+            "max": 95
+          },
+          {
+            "name": "Dragon Duke",
+            "level": 25,
+            "max": 25
+          }
+        ],
+        "maxed": 6,
+        "total": 6
+      },
+      "troopsPct": 75.9,
+      "spellsPct": 96.9,
+      "labels": [
+        "Hungry Learner",
+        "Teacher",
+        "Competitive"
+      ],
+      "capital": {
+        "looted": 0,
+        "attacks": 0
+      },
+      "warHistory": {
+        "wars": 0,
+        "attacks": "0/0",
+        "attacksUsed": 0,
+        "attacksAvailable": 0,
+        "stars": 0,
+        "avgDestr": 0,
+        "missed": 0,
+        "participation": 0
+      },
+      "activity": {
+        "score": 66.3,
+        "level": "warm",
+        "breakdown": {
+          "cwl": 99,
+          "donations": 53.3,
+          "multi": 0,
+          "veteran": 100,
+          "_weights": {
+            "cwl": 37.5,
+            "donations": 31.3,
+            "multi": 18.7,
+            "veteran": 12.5
+          }
+        }
+      },
+      "cwl": {
+        "used": 7,
+        "expected": 7,
+        "stars": 20,
+        "avgDestr": 99.4,
+        "score": 1319,
+        "pos": 8
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 0,
+        "firstSnapshotDate": "2026-05-10"
+      }
+    },
+    {
       "tag": "#PGQ9RP92U",
       "name": "✨️Asta✨️",
       "role": "admin",
@@ -1224,109 +1327,6 @@
         "avgDestr": 100,
         "score": 1497,
         "pos": 4
-      },
-      "trophyEvolution": {
-        "delta7d": null,
-        "delta30d": null,
-        "deltaSinceFirst": 0,
-        "firstSnapshotDate": "2026-05-10"
-      }
-    },
-    {
-      "tag": "#9LGQJQULP",
-      "name": "RCUP",
-      "role": "admin",
-      "th": 18,
-      "trophies": 780,
-      "league": "Unranked",
-      "donations": 800,
-      "donationsReceived": 2210,
-      "donationBalance": -1410,
-      "warStarsLifetime": 1788,
-      "warPreference": "in",
-      "attackWinsSeason": 0,
-      "defenseWinsSeason": 0,
-      "heroes": {
-        "progress": 100,
-        "levels": [
-          {
-            "name": "Barbarian King",
-            "level": 105,
-            "max": 105
-          },
-          {
-            "name": "Archer Queen",
-            "level": 105,
-            "max": 105
-          },
-          {
-            "name": "Grand Warden",
-            "level": 80,
-            "max": 80
-          },
-          {
-            "name": "Royal Champion",
-            "level": 55,
-            "max": 55
-          },
-          {
-            "name": "Minion Prince",
-            "level": 95,
-            "max": 95
-          },
-          {
-            "name": "Dragon Duke",
-            "level": 25,
-            "max": 25
-          }
-        ],
-        "maxed": 6,
-        "total": 6
-      },
-      "troopsPct": 75.9,
-      "spellsPct": 96.9,
-      "labels": [
-        "Hungry Learner",
-        "Teacher",
-        "Competitive"
-      ],
-      "capital": {
-        "looted": 0,
-        "attacks": 0
-      },
-      "warHistory": {
-        "wars": 0,
-        "attacks": "0/0",
-        "attacksUsed": 0,
-        "attacksAvailable": 0,
-        "stars": 0,
-        "avgDestr": 0,
-        "missed": 0,
-        "participation": 0
-      },
-      "activity": {
-        "score": 66.3,
-        "level": "warm",
-        "breakdown": {
-          "cwl": 99,
-          "donations": 53.3,
-          "multi": 0,
-          "veteran": 100,
-          "_weights": {
-            "cwl": 37.5,
-            "donations": 31.3,
-            "multi": 18.7,
-            "veteran": 12.5
-          }
-        }
-      },
-      "cwl": {
-        "used": 7,
-        "expected": 7,
-        "stars": 20,
-        "avgDestr": 99.4,
-        "score": 1319,
-        "pos": 8
       },
       "trophyEvolution": {
         "delta7d": null,
