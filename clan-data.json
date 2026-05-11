@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-10 23:10",
+  "generatedAt": "2026-05-11 00:09",
   "clan": {
     "name": "Bravus",
     "tag": "#2Q9RYP8QC",
@@ -334,6 +334,95 @@
       }
     },
     {
+      "tag": "#GLCQCQPGL",
+      "name": "Equipe Cão",
+      "role": "member",
+      "th": 18,
+      "trophies": 546,
+      "league": "Unranked",
+      "donations": 5,
+      "donationsReceived": 85,
+      "donationBalance": -80,
+      "warStarsLifetime": 1447,
+      "warPreference": "in",
+      "attackWinsSeason": 0,
+      "defenseWinsSeason": 0,
+      "heroes": {
+        "progress": 79.4,
+        "levels": [
+          {
+            "name": "Barbarian King",
+            "level": 96,
+            "max": 105
+          },
+          {
+            "name": "Archer Queen",
+            "level": 94,
+            "max": 105
+          },
+          {
+            "name": "Grand Warden",
+            "level": 66,
+            "max": 80
+          },
+          {
+            "name": "Royal Champion",
+            "level": 39,
+            "max": 55
+          },
+          {
+            "name": "Minion Prince",
+            "level": 63,
+            "max": 95
+          },
+          {
+            "name": "Dragon Duke",
+            "level": 11,
+            "max": 25
+          }
+        ],
+        "maxed": 0,
+        "total": 6
+      },
+      "troopsPct": 52.9,
+      "spellsPct": 75.8,
+      "labels": [],
+      "capital": {
+        "looted": 0,
+        "attacks": 0
+      },
+      "warHistory": {
+        "wars": 0,
+        "attacks": "0/0",
+        "attacksUsed": 0,
+        "attacksAvailable": 0,
+        "stars": 0,
+        "avgDestr": 0,
+        "missed": 0,
+        "participation": 0
+      },
+      "activity": {
+        "score": 19.5,
+        "level": "inactive",
+        "breakdown": {
+          "donations": 0.3,
+          "multi": 0,
+          "veteran": 96.5,
+          "_weights": {
+            "donations": 50,
+            "multi": 30,
+            "veteran": 20
+          }
+        }
+      },
+      "trophyEvolution": {
+        "delta7d": null,
+        "delta30d": null,
+        "deltaSinceFirst": 200,
+        "firstSnapshotDate": "2026-05-10"
+      }
+    },
+    {
       "tag": "#8JG8PUVR8",
       "name": "AkA Low",
       "role": "member",
@@ -433,104 +522,15 @@
       }
     },
     {
-      "tag": "#GLCQCQPGL",
-      "name": "Equipe Cão",
-      "role": "member",
-      "th": 18,
-      "trophies": 346,
-      "league": "Unranked",
-      "donations": 5,
-      "donationsReceived": 85,
-      "donationBalance": -80,
-      "warStarsLifetime": 1447,
-      "warPreference": "in",
-      "attackWinsSeason": 0,
-      "defenseWinsSeason": 0,
-      "heroes": {
-        "progress": 79.4,
-        "levels": [
-          {
-            "name": "Barbarian King",
-            "level": 96,
-            "max": 105
-          },
-          {
-            "name": "Archer Queen",
-            "level": 94,
-            "max": 105
-          },
-          {
-            "name": "Grand Warden",
-            "level": 66,
-            "max": 80
-          },
-          {
-            "name": "Royal Champion",
-            "level": 39,
-            "max": 55
-          },
-          {
-            "name": "Minion Prince",
-            "level": 63,
-            "max": 95
-          },
-          {
-            "name": "Dragon Duke",
-            "level": 11,
-            "max": 25
-          }
-        ],
-        "maxed": 0,
-        "total": 6
-      },
-      "troopsPct": 52.9,
-      "spellsPct": 75.8,
-      "labels": [],
-      "capital": {
-        "looted": 0,
-        "attacks": 0
-      },
-      "warHistory": {
-        "wars": 0,
-        "attacks": "0/0",
-        "attacksUsed": 0,
-        "attacksAvailable": 0,
-        "stars": 0,
-        "avgDestr": 0,
-        "missed": 0,
-        "participation": 0
-      },
-      "activity": {
-        "score": 19.5,
-        "level": "inactive",
-        "breakdown": {
-          "donations": 0.3,
-          "multi": 0,
-          "veteran": 96.5,
-          "_weights": {
-            "donations": 50,
-            "multi": 30,
-            "veteran": 20
-          }
-        }
-      },
-      "trophyEvolution": {
-        "delta7d": null,
-        "delta30d": null,
-        "deltaSinceFirst": 0,
-        "firstSnapshotDate": "2026-05-10"
-      }
-    },
-    {
       "tag": "#LQLL02QUR",
       "name": "HP.Freitas",
       "role": "member",
       "th": 18,
-      "trophies": 0,
+      "trophies": 360,
       "league": "Unranked",
-      "donations": 10,
+      "donations": 15,
       "donationsReceived": 85,
-      "donationBalance": -75,
+      "donationBalance": -70,
       "warStarsLifetime": 1883,
       "warPreference": "in",
       "attackWinsSeason": 0,
@@ -594,10 +594,10 @@
         "participation": 0
       },
       "activity": {
-        "score": 20.3,
+        "score": 20.5,
         "level": "inactive",
         "breakdown": {
-          "donations": 0.7,
+          "donations": 1,
           "multi": 0,
           "veteran": 100,
           "_weights": {
@@ -610,7 +610,7 @@
       "trophyEvolution": {
         "delta7d": null,
         "delta30d": null,
-        "deltaSinceFirst": 0,
+        "deltaSinceFirst": 360,
         "firstSnapshotDate": "2026-05-10"
       }
     },
@@ -725,8 +725,8 @@
       "trophies": 629,
       "league": "Unranked",
       "donations": 1420,
-      "donationsReceived": 4327,
-      "donationBalance": -2907,
+      "donationsReceived": 4414,
+      "donationBalance": -2994,
       "warStarsLifetime": 1217,
       "warPreference": "in",
       "attackWinsSeason": 0,
@@ -1031,7 +1031,7 @@
       "name": "Avano",
       "role": "admin",
       "th": 18,
-      "trophies": 333,
+      "trophies": 350,
       "league": "Unranked",
       "donations": 10,
       "donationsReceived": 1384,
@@ -1125,7 +1125,7 @@
       "trophyEvolution": {
         "delta7d": null,
         "delta30d": null,
-        "deltaSinceFirst": 0,
+        "deltaSinceFirst": 17,
         "firstSnapshotDate": "2026-05-10"
       }
     },
@@ -1240,8 +1240,8 @@
       "trophies": 799,
       "league": "Unranked",
       "donations": 1273,
-      "donationsReceived": 11337,
-      "donationBalance": -10064,
+      "donationsReceived": 11421,
+      "donationBalance": -10148,
       "warStarsLifetime": 2278,
       "warPreference": "out",
       "attackWinsSeason": 0,
@@ -3976,9 +3976,9 @@
       "th": 18,
       "trophies": 0,
       "league": "Champion League III",
-      "donations": 68022,
+      "donations": 68188,
       "donationsReceived": 0,
-      "donationBalance": 68022,
+      "donationBalance": 68188,
       "warStarsLifetime": 539,
       "warPreference": "out",
       "attackWinsSeason": 0,
@@ -4020,7 +4020,7 @@
         "maxed": 0,
         "total": 6
       },
-      "troopsPct": 49.8,
+      "troopsPct": 49.9,
       "spellsPct": 75,
       "labels": [],
       "capital": {
