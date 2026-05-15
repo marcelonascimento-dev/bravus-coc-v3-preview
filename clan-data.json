@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-15 15:40",
+  "generatedAt": "2026-05-15 15:43",
   "clan": {
     "name": "Bravus",
     "tag": "#2Q9RYP8QC",
@@ -22,6 +22,380 @@
       "large": "https://api-assets.clashofclans.com/badges/512/68dX0MT5Vk_-J_z16LW_ekwGA8XJVmMWhiGC0ehz11s.png",
       "medium": "https://api-assets.clashofclans.com/badges/200/68dX0MT5Vk_-J_z16LW_ekwGA8XJVmMWhiGC0ehz11s.png"
     }
+  },
+  "ranked": {
+    "leagueTiers": [
+      {
+        "id": 105000000,
+        "name": "Unranked",
+        "order": 0,
+        "key": "unranked",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/yyYo5DUFeFBZvmMEQh0ZxvG-1sUOZ_S3kDMB7RllXX0.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/yyYo5DUFeFBZvmMEQh0ZxvG-1sUOZ_S3kDMB7RllXX0.png"
+        }
+      },
+      {
+        "id": 105000001,
+        "name": "Skeleton League 1",
+        "order": 1,
+        "key": "skeleton",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/CiSJYHyhMuloCpIIJ3n5-xCnRWrEd9vcq_zu6Ahkl3o.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/CiSJYHyhMuloCpIIJ3n5-xCnRWrEd9vcq_zu6Ahkl3o.png"
+        }
+      },
+      {
+        "id": 105000002,
+        "name": "Skeleton League 2",
+        "order": 2,
+        "key": "skeleton",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/CmM-Tihn6ojPGJstmTK_HC-QairrpYLyRhdKhQjkacQ.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/CmM-Tihn6ojPGJstmTK_HC-QairrpYLyRhdKhQjkacQ.png"
+        }
+      },
+      {
+        "id": 105000003,
+        "name": "Skeleton League 3",
+        "order": 3,
+        "key": "skeleton",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/YMnWU25Xs2SvtAkVS2WDDbcUQY-PTfCK9OSvCKJnwJU.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/YMnWU25Xs2SvtAkVS2WDDbcUQY-PTfCK9OSvCKJnwJU.png"
+        }
+      },
+      {
+        "id": 105000004,
+        "name": "Barbarian League 4",
+        "order": 4,
+        "key": "barbarian",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/CoTrW7nhyiNIDCI4WHUK-0BuhOxibwd_tfASdtmMWFE.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/CoTrW7nhyiNIDCI4WHUK-0BuhOxibwd_tfASdtmMWFE.png"
+        }
+      },
+      {
+        "id": 105000005,
+        "name": "Barbarian League 5",
+        "order": 5,
+        "key": "barbarian",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/7Alm6gwA1lYoRn5m8vrXAfbTKIK2fFU7OxfYhYwWJYM.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/7Alm6gwA1lYoRn5m8vrXAfbTKIK2fFU7OxfYhYwWJYM.png"
+        }
+      },
+      {
+        "id": 105000006,
+        "name": "Barbarian League 6",
+        "order": 6,
+        "key": "barbarian",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/pQHVG1p0IboE8Ggp0U1YR7U8dWhVn4YSS1zSPH61F0I.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/pQHVG1p0IboE8Ggp0U1YR7U8dWhVn4YSS1zSPH61F0I.png"
+        }
+      },
+      {
+        "id": 105000007,
+        "name": "Archer League 7",
+        "order": 7,
+        "key": "archer",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/x1c7byHQmOHQVKGxAn1sqOW2XOCzTYW-e6OKjq-FBco.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/x1c7byHQmOHQVKGxAn1sqOW2XOCzTYW-e6OKjq-FBco.png"
+        }
+      },
+      {
+        "id": 105000008,
+        "name": "Archer League 8",
+        "order": 8,
+        "key": "archer",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/lzneKpnJ_ADL1Xb1rceH7-svqRN1UaLnI7ldd8BbyxI.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/lzneKpnJ_ADL1Xb1rceH7-svqRN1UaLnI7ldd8BbyxI.png"
+        }
+      },
+      {
+        "id": 105000009,
+        "name": "Archer League 9",
+        "order": 9,
+        "key": "archer",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/ieEdz9Mqbo7g9iJfXwTnIh7Iwz-37aPEmWma1ENEwXE.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/ieEdz9Mqbo7g9iJfXwTnIh7Iwz-37aPEmWma1ENEwXE.png"
+        }
+      },
+      {
+        "id": 105000010,
+        "name": "Wizard League 10",
+        "order": 10,
+        "key": "wizard",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/3kJYaYpDwKF8AEkwRLkm-947_t2mAhpEQcZJYulPPIA.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/3kJYaYpDwKF8AEkwRLkm-947_t2mAhpEQcZJYulPPIA.png"
+        }
+      },
+      {
+        "id": 105000011,
+        "name": "Wizard League 11",
+        "order": 11,
+        "key": "wizard",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/XazuJHG2wjBq39KEA4g4hh1nKJQwVO0fRoVDPHvWwAY.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/XazuJHG2wjBq39KEA4g4hh1nKJQwVO0fRoVDPHvWwAY.png"
+        }
+      },
+      {
+        "id": 105000012,
+        "name": "Wizard League 12",
+        "order": 12,
+        "key": "wizard",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/A_ZoGbh1g8wYRWygsQ_wMgbVz8GXvvfavKwlSx8C8PQ.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/A_ZoGbh1g8wYRWygsQ_wMgbVz8GXvvfavKwlSx8C8PQ.png"
+        }
+      },
+      {
+        "id": 105000013,
+        "name": "Valkyrie League 13",
+        "order": 13,
+        "key": "valkyrie",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/6BwmbzkNm6p2unZonTauFQ_683uNl4NYtoOXJmEs78c.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/6BwmbzkNm6p2unZonTauFQ_683uNl4NYtoOXJmEs78c.png"
+        }
+      },
+      {
+        "id": 105000014,
+        "name": "Valkyrie League 14",
+        "order": 14,
+        "key": "valkyrie",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/7AbbZbiV6whmfa6CZtqt6Ml4NgFH1B-UqCxc59ziqfk.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/7AbbZbiV6whmfa6CZtqt6Ml4NgFH1B-UqCxc59ziqfk.png"
+        }
+      },
+      {
+        "id": 105000015,
+        "name": "Valkyrie League 15",
+        "order": 15,
+        "key": "valkyrie",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/vT-0ssHYx5zJbBbbjB5NHPXnlHk76MDxJmG7iKmghc4.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/vT-0ssHYx5zJbBbbjB5NHPXnlHk76MDxJmG7iKmghc4.png"
+        }
+      },
+      {
+        "id": 105000016,
+        "name": "Witch League 16",
+        "order": 16,
+        "key": "witch",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/a3zg3PSqri2WrWD8tGzKs0hJ5OrND1Rx1SJ45f5O0gE.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/a3zg3PSqri2WrWD8tGzKs0hJ5OrND1Rx1SJ45f5O0gE.png"
+        }
+      },
+      {
+        "id": 105000017,
+        "name": "Witch League 17",
+        "order": 17,
+        "key": "witch",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/3mEMvpajLceJ3EKu7u_JIh_cOEsT7wyh701zum9hqCY.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/3mEMvpajLceJ3EKu7u_JIh_cOEsT7wyh701zum9hqCY.png"
+        }
+      },
+      {
+        "id": 105000018,
+        "name": "Witch League 18",
+        "order": 18,
+        "key": "witch",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/GeLamlTvRYNnZp5lEW64pyaORN30rCdrxTjU7oJoTN8.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/GeLamlTvRYNnZp5lEW64pyaORN30rCdrxTjU7oJoTN8.png"
+        }
+      },
+      {
+        "id": 105000019,
+        "name": "Golem League 19",
+        "order": 19,
+        "key": "golem",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/yS8XBv_a_SNtCpcofsWMFaojRNwO504Py7HyDCBCjYU.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/yS8XBv_a_SNtCpcofsWMFaojRNwO504Py7HyDCBCjYU.png"
+        }
+      },
+      {
+        "id": 105000020,
+        "name": "Golem League 20",
+        "order": 20,
+        "key": "golem",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/uizNRh8glQZuAbLdCa-EQSf3oJnge3nqoXHjtQ6O8pw.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/uizNRh8glQZuAbLdCa-EQSf3oJnge3nqoXHjtQ6O8pw.png"
+        }
+      },
+      {
+        "id": 105000021,
+        "name": "Golem League 21",
+        "order": 21,
+        "key": "golem",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/WkqDvnK0CXI-Nc0TNTKG_fSuzRYoLRC54HFOdMCxVTI.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/WkqDvnK0CXI-Nc0TNTKG_fSuzRYoLRC54HFOdMCxVTI.png"
+        }
+      },
+      {
+        "id": 105000022,
+        "name": "P.E.K.K.A League 22",
+        "order": 22,
+        "key": "pekka",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/iTWXPUUFQy0uEb7NDpMTyzGMFOJvlC4SLAqlHYgC8do.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/iTWXPUUFQy0uEb7NDpMTyzGMFOJvlC4SLAqlHYgC8do.png"
+        }
+      },
+      {
+        "id": 105000023,
+        "name": "P.E.K.K.A League 23",
+        "order": 23,
+        "key": "pekka",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/0eDMQmsiZ0gs8xzViGfVETnYjwzgELTKwYhH3izevT4.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/0eDMQmsiZ0gs8xzViGfVETnYjwzgELTKwYhH3izevT4.png"
+        }
+      },
+      {
+        "id": 105000024,
+        "name": "P.E.K.K.A League 24",
+        "order": 24,
+        "key": "pekka",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/vxV7LI0votsz0_n-8lW-Lag96D5HwKsEgEk_7247zC4.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/vxV7LI0votsz0_n-8lW-Lag96D5HwKsEgEk_7247zC4.png"
+        }
+      },
+      {
+        "id": 105000025,
+        "name": "Titan League 25",
+        "order": 25,
+        "key": "titan",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png"
+        }
+      },
+      {
+        "id": 105000026,
+        "name": "Titan League 26",
+        "order": 26,
+        "key": "titan",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/yIfqSgrhiYRcuMbAPCoeCj1FTmfylCLxnrAljEZc8K0.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/yIfqSgrhiYRcuMbAPCoeCj1FTmfylCLxnrAljEZc8K0.png"
+        }
+      },
+      {
+        "id": 105000027,
+        "name": "Titan League 27",
+        "order": 27,
+        "key": "titan",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/1AhObOl55grQIWnGmn1J9qMWq5pmRA3aBObfYkQEjko.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/1AhObOl55grQIWnGmn1J9qMWq5pmRA3aBObfYkQEjko.png"
+        }
+      },
+      {
+        "id": 105000028,
+        "name": "Dragon League 28",
+        "order": 28,
+        "key": "dragon",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/YCZ7O_3_c8eCBYvX-92qiWeLc6Md6eNJ5A8O-2vUg7I.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/YCZ7O_3_c8eCBYvX-92qiWeLc6Md6eNJ5A8O-2vUg7I.png"
+        }
+      },
+      {
+        "id": 105000029,
+        "name": "Dragon League 29",
+        "order": 29,
+        "key": "dragon",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/DIMeRH3N4lrNObA3zAmk_eUin8nvNeLR89qYznnA--s.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/DIMeRH3N4lrNObA3zAmk_eUin8nvNeLR89qYznnA--s.png"
+        }
+      },
+      {
+        "id": 105000030,
+        "name": "Dragon League 30",
+        "order": 30,
+        "key": "dragon",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png"
+        }
+      },
+      {
+        "id": 105000031,
+        "name": "Electro League 31",
+        "order": 31,
+        "key": "electro",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/qVORiRguZ-xMq8L0g7rE1-rZuiA-lKlI8VKuMndRy4w.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/qVORiRguZ-xMq8L0g7rE1-rZuiA-lKlI8VKuMndRy4w.png"
+        }
+      },
+      {
+        "id": 105000032,
+        "name": "Electro League 32",
+        "order": 32,
+        "key": "electro",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/iX8uNhG6jBcQATWFS8a0gtidGy9O1PRYtXZZMTtUK3U.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/iX8uNhG6jBcQATWFS8a0gtidGy9O1PRYtXZZMTtUK3U.png"
+        }
+      },
+      {
+        "id": 105000033,
+        "name": "Electro League 33",
+        "order": 33,
+        "key": "electro",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/VFqkaQimExWtSmIf9PC8WEpj4Vd58oLjPWyZqfVb5VE.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/VFqkaQimExWtSmIf9PC8WEpj4Vd58oLjPWyZqfVb5VE.png"
+        }
+      },
+      {
+        "id": 105000034,
+        "name": "Legend League",
+        "order": 34,
+        "key": "legend",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/BvEu_UE53UzADvTRiU9AdyOrlvb1RqvBmMau_uX6xm0.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/BvEu_UE53UzADvTRiU9AdyOrlvb1RqvBmMau_uX6xm0.png"
+        }
+      },
+      {
+        "id": 105000035,
+        "name": "Legend League",
+        "order": 35,
+        "key": "legend",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/2fQPjjBJCXzHdYY8Eul4DQUBB232Bhiw5KPv6TOLMgQ.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/2fQPjjBJCXzHdYY8Eul4DQUBB232Bhiw5KPv6TOLMgQ.png"
+        }
+      },
+      {
+        "id": 105000036,
+        "name": "Legend League",
+        "order": 36,
+        "key": "legend",
+        "iconUrls": {
+          "small": "https://api-assets.clashofclans.com/leaguetiers/125/s5Y12RDRg7tgznd2RwU9kgLbedC5Not4peiHfOaWfJo.png",
+          "large": "https://api-assets.clashofclans.com/leaguetiers/326/s5Y12RDRg7tgznd2RwU9kgLbedC5Not4peiHfOaWfJo.png"
+        }
+      }
+    ]
   },
   "roster": [
     {
@@ -47,6 +421,12 @@
         "previousLeagueSeasonId": 1776661200,
         "history": [
           {
+            "league": "Legend League",
+            "leagueKey": "legend",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/BvEu_UE53UzADvTRiU9AdyOrlvb1RqvBmMau_uX6xm0.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/BvEu_UE53UzADvTRiU9AdyOrlvb1RqvBmMau_uX6xm0.png"
+            },
             "leagueSeasonId": 1774242000,
             "leagueTrophies": 5387,
             "leagueTierId": 105000034,
@@ -181,6 +561,12 @@
         "previousLeagueSeasonId": 1777870800,
         "history": [
           {
+            "league": "Legend League",
+            "leagueKey": "legend",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/BvEu_UE53UzADvTRiU9AdyOrlvb1RqvBmMau_uX6xm0.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/BvEu_UE53UzADvTRiU9AdyOrlvb1RqvBmMau_uX6xm0.png"
+            },
             "leagueSeasonId": 1774242000,
             "leagueTrophies": 5109,
             "leagueTierId": 105000034,
@@ -195,6 +581,12 @@
             "maxBattles": 0
           },
           {
+            "league": "Legend League",
+            "leagueKey": "legend",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/2fQPjjBJCXzHdYY8Eul4DQUBB232Bhiw5KPv6TOLMgQ.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/2fQPjjBJCXzHdYY8Eul4DQUBB232Bhiw5KPv6TOLMgQ.png"
+            },
             "leagueSeasonId": 1777266000,
             "leagueTrophies": 1176,
             "leagueTierId": 105000035,
@@ -209,6 +601,12 @@
             "maxBattles": 30
           },
           {
+            "league": "Legend League",
+            "leagueKey": "legend",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/2fQPjjBJCXzHdYY8Eul4DQUBB232Bhiw5KPv6TOLMgQ.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/2fQPjjBJCXzHdYY8Eul4DQUBB232Bhiw5KPv6TOLMgQ.png"
+            },
             "leagueSeasonId": 1777870800,
             "leagueTrophies": 1278,
             "leagueTierId": 105000035,
@@ -343,6 +741,12 @@
         "previousLeagueSeasonId": 1777870800,
         "history": [
           {
+            "league": "Electro League 33",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/VFqkaQimExWtSmIf9PC8WEpj4Vd58oLjPWyZqfVb5VE.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/VFqkaQimExWtSmIf9PC8WEpj4Vd58oLjPWyZqfVb5VE.png"
+            },
             "leagueSeasonId": 1776056400,
             "leagueTrophies": 1144,
             "leagueTierId": 105000033,
@@ -357,6 +761,12 @@
             "maxBattles": 24
           },
           {
+            "league": "Electro League 33",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/VFqkaQimExWtSmIf9PC8WEpj4Vd58oLjPWyZqfVb5VE.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/VFqkaQimExWtSmIf9PC8WEpj4Vd58oLjPWyZqfVb5VE.png"
+            },
             "leagueSeasonId": 1776661200,
             "leagueTrophies": 1219,
             "leagueTierId": 105000033,
@@ -371,6 +781,12 @@
             "maxBattles": 24
           },
           {
+            "league": "Legend League",
+            "leagueKey": "legend",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/BvEu_UE53UzADvTRiU9AdyOrlvb1RqvBmMau_uX6xm0.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/BvEu_UE53UzADvTRiU9AdyOrlvb1RqvBmMau_uX6xm0.png"
+            },
             "leagueSeasonId": 1777266000,
             "leagueTrophies": 1046,
             "leagueTierId": 105000034,
@@ -385,6 +801,12 @@
             "maxBattles": 24
           },
           {
+            "league": "Legend League",
+            "leagueKey": "legend",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/BvEu_UE53UzADvTRiU9AdyOrlvb1RqvBmMau_uX6xm0.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/BvEu_UE53UzADvTRiU9AdyOrlvb1RqvBmMau_uX6xm0.png"
+            },
             "leagueSeasonId": 1777870800,
             "leagueTrophies": 1141,
             "leagueTierId": 105000034,
@@ -519,6 +941,12 @@
         "previousLeagueSeasonId": 1777870800,
         "history": [
           {
+            "league": "Electro League 32",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/iX8uNhG6jBcQATWFS8a0gtidGy9O1PRYtXZZMTtUK3U.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/iX8uNhG6jBcQATWFS8a0gtidGy9O1PRYtXZZMTtUK3U.png"
+            },
             "leagueSeasonId": 1774846800,
             "leagueTrophies": 1024,
             "leagueTierId": 105000032,
@@ -533,6 +961,12 @@
             "maxBattles": 24
           },
           {
+            "league": "Electro League 32",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/iX8uNhG6jBcQATWFS8a0gtidGy9O1PRYtXZZMTtUK3U.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/iX8uNhG6jBcQATWFS8a0gtidGy9O1PRYtXZZMTtUK3U.png"
+            },
             "leagueSeasonId": 1775451600,
             "leagueTrophies": 864,
             "leagueTierId": 105000032,
@@ -547,6 +981,12 @@
             "maxBattles": 24
           },
           {
+            "league": "Electro League 32",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/iX8uNhG6jBcQATWFS8a0gtidGy9O1PRYtXZZMTtUK3U.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/iX8uNhG6jBcQATWFS8a0gtidGy9O1PRYtXZZMTtUK3U.png"
+            },
             "leagueSeasonId": 1776056400,
             "leagueTrophies": 1196,
             "leagueTierId": 105000032,
@@ -561,6 +1001,12 @@
             "maxBattles": 24
           },
           {
+            "league": "Electro League 33",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/VFqkaQimExWtSmIf9PC8WEpj4Vd58oLjPWyZqfVb5VE.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/VFqkaQimExWtSmIf9PC8WEpj4Vd58oLjPWyZqfVb5VE.png"
+            },
             "leagueSeasonId": 1776661200,
             "leagueTrophies": 1014,
             "leagueTierId": 105000033,
@@ -575,6 +1021,12 @@
             "maxBattles": 24
           },
           {
+            "league": "Electro League 33",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/VFqkaQimExWtSmIf9PC8WEpj4Vd58oLjPWyZqfVb5VE.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/VFqkaQimExWtSmIf9PC8WEpj4Vd58oLjPWyZqfVb5VE.png"
+            },
             "leagueSeasonId": 1777266000,
             "leagueTrophies": 772,
             "leagueTierId": 105000033,
@@ -589,6 +1041,12 @@
             "maxBattles": 18
           },
           {
+            "league": "Electro League 33",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/VFqkaQimExWtSmIf9PC8WEpj4Vd58oLjPWyZqfVb5VE.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/VFqkaQimExWtSmIf9PC8WEpj4Vd58oLjPWyZqfVb5VE.png"
+            },
             "leagueSeasonId": 1777870800,
             "leagueTrophies": 805,
             "leagueTierId": 105000033,
@@ -709,6 +1167,12 @@
         "previousLeagueSeasonId": 1777870800,
         "history": [
           {
+            "league": "Electro League 32",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/iX8uNhG6jBcQATWFS8a0gtidGy9O1PRYtXZZMTtUK3U.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/iX8uNhG6jBcQATWFS8a0gtidGy9O1PRYtXZZMTtUK3U.png"
+            },
             "leagueSeasonId": 1774846800,
             "leagueTrophies": 823,
             "leagueTierId": 105000032,
@@ -723,6 +1187,12 @@
             "maxBattles": 24
           },
           {
+            "league": "Electro League 32",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/iX8uNhG6jBcQATWFS8a0gtidGy9O1PRYtXZZMTtUK3U.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/iX8uNhG6jBcQATWFS8a0gtidGy9O1PRYtXZZMTtUK3U.png"
+            },
             "leagueSeasonId": 1775451600,
             "leagueTrophies": 761,
             "leagueTierId": 105000032,
@@ -737,6 +1207,12 @@
             "maxBattles": 24
           },
           {
+            "league": "Electro League 32",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/iX8uNhG6jBcQATWFS8a0gtidGy9O1PRYtXZZMTtUK3U.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/iX8uNhG6jBcQATWFS8a0gtidGy9O1PRYtXZZMTtUK3U.png"
+            },
             "leagueSeasonId": 1776056400,
             "leagueTrophies": 993,
             "leagueTierId": 105000032,
@@ -751,6 +1227,12 @@
             "maxBattles": 24
           },
           {
+            "league": "Electro League 32",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/iX8uNhG6jBcQATWFS8a0gtidGy9O1PRYtXZZMTtUK3U.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/iX8uNhG6jBcQATWFS8a0gtidGy9O1PRYtXZZMTtUK3U.png"
+            },
             "leagueSeasonId": 1776661200,
             "leagueTrophies": 960,
             "leagueTierId": 105000032,
@@ -765,6 +1247,12 @@
             "maxBattles": 24
           },
           {
+            "league": "Electro League 32",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/iX8uNhG6jBcQATWFS8a0gtidGy9O1PRYtXZZMTtUK3U.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/iX8uNhG6jBcQATWFS8a0gtidGy9O1PRYtXZZMTtUK3U.png"
+            },
             "leagueSeasonId": 1777266000,
             "leagueTrophies": 732,
             "leagueTierId": 105000032,
@@ -779,6 +1267,12 @@
             "maxBattles": 18
           },
           {
+            "league": "Electro League 32",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/iX8uNhG6jBcQATWFS8a0gtidGy9O1PRYtXZZMTtUK3U.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/iX8uNhG6jBcQATWFS8a0gtidGy9O1PRYtXZZMTtUK3U.png"
+            },
             "leagueSeasonId": 1777870800,
             "leagueTrophies": 720,
             "leagueTierId": 105000032,
@@ -903,6 +1397,12 @@
         "previousLeagueSeasonId": 1777870800,
         "history": [
           {
+            "league": "Electro League 33",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/VFqkaQimExWtSmIf9PC8WEpj4Vd58oLjPWyZqfVb5VE.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/VFqkaQimExWtSmIf9PC8WEpj4Vd58oLjPWyZqfVb5VE.png"
+            },
             "leagueSeasonId": 1774846800,
             "leagueTrophies": 1101,
             "leagueTierId": 105000033,
@@ -917,6 +1417,12 @@
             "maxBattles": 24
           },
           {
+            "league": "Electro League 33",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/VFqkaQimExWtSmIf9PC8WEpj4Vd58oLjPWyZqfVb5VE.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/VFqkaQimExWtSmIf9PC8WEpj4Vd58oLjPWyZqfVb5VE.png"
+            },
             "leagueSeasonId": 1776056400,
             "leagueTrophies": 885,
             "leagueTierId": 105000033,
@@ -931,6 +1437,12 @@
             "maxBattles": 24
           },
           {
+            "league": "Electro League 33",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/VFqkaQimExWtSmIf9PC8WEpj4Vd58oLjPWyZqfVb5VE.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/VFqkaQimExWtSmIf9PC8WEpj4Vd58oLjPWyZqfVb5VE.png"
+            },
             "leagueSeasonId": 1776661200,
             "leagueTrophies": 449,
             "leagueTierId": 105000033,
@@ -945,6 +1457,12 @@
             "maxBattles": 24
           },
           {
+            "league": "Electro League 32",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/iX8uNhG6jBcQATWFS8a0gtidGy9O1PRYtXZZMTtUK3U.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/iX8uNhG6jBcQATWFS8a0gtidGy9O1PRYtXZZMTtUK3U.png"
+            },
             "leagueSeasonId": 1777266000,
             "leagueTrophies": 903,
             "leagueTierId": 105000032,
@@ -959,6 +1477,12 @@
             "maxBattles": 18
           },
           {
+            "league": "Electro League 33",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/VFqkaQimExWtSmIf9PC8WEpj4Vd58oLjPWyZqfVb5VE.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/VFqkaQimExWtSmIf9PC8WEpj4Vd58oLjPWyZqfVb5VE.png"
+            },
             "leagueSeasonId": 1777870800,
             "leagueTrophies": 475,
             "leagueTierId": 105000033,
@@ -1089,6 +1613,12 @@
         "previousLeagueSeasonId": 1777870800,
         "history": [
           {
+            "league": "Electro League 31",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/qVORiRguZ-xMq8L0g7rE1-rZuiA-lKlI8VKuMndRy4w.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/qVORiRguZ-xMq8L0g7rE1-rZuiA-lKlI8VKuMndRy4w.png"
+            },
             "leagueSeasonId": 1774846800,
             "leagueTrophies": 969,
             "leagueTierId": 105000031,
@@ -1103,6 +1633,12 @@
             "maxBattles": 24
           },
           {
+            "league": "Electro League 31",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/qVORiRguZ-xMq8L0g7rE1-rZuiA-lKlI8VKuMndRy4w.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/qVORiRguZ-xMq8L0g7rE1-rZuiA-lKlI8VKuMndRy4w.png"
+            },
             "leagueSeasonId": 1775451600,
             "leagueTrophies": 874,
             "leagueTierId": 105000031,
@@ -1117,6 +1653,12 @@
             "maxBattles": 24
           },
           {
+            "league": "Electro League 31",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/qVORiRguZ-xMq8L0g7rE1-rZuiA-lKlI8VKuMndRy4w.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/qVORiRguZ-xMq8L0g7rE1-rZuiA-lKlI8VKuMndRy4w.png"
+            },
             "leagueSeasonId": 1776056400,
             "leagueTrophies": 814,
             "leagueTierId": 105000031,
@@ -1131,6 +1673,12 @@
             "maxBattles": 24
           },
           {
+            "league": "Electro League 31",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/qVORiRguZ-xMq8L0g7rE1-rZuiA-lKlI8VKuMndRy4w.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/qVORiRguZ-xMq8L0g7rE1-rZuiA-lKlI8VKuMndRy4w.png"
+            },
             "leagueSeasonId": 1776661200,
             "leagueTrophies": 868,
             "leagueTierId": 105000031,
@@ -1145,6 +1693,12 @@
             "maxBattles": 24
           },
           {
+            "league": "Electro League 31",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/qVORiRguZ-xMq8L0g7rE1-rZuiA-lKlI8VKuMndRy4w.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/qVORiRguZ-xMq8L0g7rE1-rZuiA-lKlI8VKuMndRy4w.png"
+            },
             "leagueSeasonId": 1777266000,
             "leagueTrophies": 747,
             "leagueTierId": 105000031,
@@ -1159,6 +1713,12 @@
             "maxBattles": 18
           },
           {
+            "league": "Electro League 31",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/qVORiRguZ-xMq8L0g7rE1-rZuiA-lKlI8VKuMndRy4w.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/qVORiRguZ-xMq8L0g7rE1-rZuiA-lKlI8VKuMndRy4w.png"
+            },
             "leagueSeasonId": 1777870800,
             "leagueTrophies": 613,
             "leagueTierId": 105000031,
@@ -1293,6 +1853,12 @@
         "previousLeagueSeasonId": 1777870800,
         "history": [
           {
+            "league": "Dragon League 30",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png"
+            },
             "leagueSeasonId": 1774846800,
             "leagueTrophies": 371,
             "leagueTierId": 105000030,
@@ -1307,6 +1873,12 @@
             "maxBattles": 18
           },
           {
+            "league": "Dragon League 29",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/DIMeRH3N4lrNObA3zAmk_eUin8nvNeLR89qYznnA--s.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/DIMeRH3N4lrNObA3zAmk_eUin8nvNeLR89qYznnA--s.png"
+            },
             "leagueSeasonId": 1775451600,
             "leagueTrophies": 675,
             "leagueTierId": 105000029,
@@ -1321,6 +1893,12 @@
             "maxBattles": 18
           },
           {
+            "league": "Dragon League 29",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/DIMeRH3N4lrNObA3zAmk_eUin8nvNeLR89qYznnA--s.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/DIMeRH3N4lrNObA3zAmk_eUin8nvNeLR89qYznnA--s.png"
+            },
             "leagueSeasonId": 1776056400,
             "leagueTrophies": 839,
             "leagueTierId": 105000029,
@@ -1335,6 +1913,12 @@
             "maxBattles": 18
           },
           {
+            "league": "Dragon League 30",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png"
+            },
             "leagueSeasonId": 1776661200,
             "leagueTrophies": 718,
             "leagueTierId": 105000030,
@@ -1349,6 +1933,12 @@
             "maxBattles": 18
           },
           {
+            "league": "Dragon League 30",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png"
+            },
             "leagueSeasonId": 1777266000,
             "leagueTrophies": 508,
             "leagueTierId": 105000030,
@@ -1363,6 +1953,12 @@
             "maxBattles": 14
           },
           {
+            "league": "Dragon League 30",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png"
+            },
             "leagueSeasonId": 1777870800,
             "leagueTrophies": 635,
             "leagueTierId": 105000030,
@@ -1497,6 +2093,12 @@
         "previousLeagueSeasonId": 1777870800,
         "history": [
           {
+            "league": "Dragon League 30",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png"
+            },
             "leagueSeasonId": 1774846800,
             "leagueTrophies": 588,
             "leagueTierId": 105000030,
@@ -1511,6 +2113,12 @@
             "maxBattles": 18
           },
           {
+            "league": "Dragon League 30",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png"
+            },
             "leagueSeasonId": 1775451600,
             "leagueTrophies": 308,
             "leagueTierId": 105000030,
@@ -1525,6 +2133,12 @@
             "maxBattles": 18
           },
           {
+            "league": "Dragon League 28",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/YCZ7O_3_c8eCBYvX-92qiWeLc6Md6eNJ5A8O-2vUg7I.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/YCZ7O_3_c8eCBYvX-92qiWeLc6Md6eNJ5A8O-2vUg7I.png"
+            },
             "leagueSeasonId": 1777266000,
             "leagueTrophies": 842,
             "leagueTierId": 105000028,
@@ -1539,6 +2153,12 @@
             "maxBattles": 14
           },
           {
+            "league": "Dragon League 29",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/DIMeRH3N4lrNObA3zAmk_eUin8nvNeLR89qYznnA--s.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/DIMeRH3N4lrNObA3zAmk_eUin8nvNeLR89qYznnA--s.png"
+            },
             "leagueSeasonId": 1777870800,
             "leagueTrophies": 846,
             "leagueTierId": 105000029,
@@ -1673,6 +2293,12 @@
         "previousLeagueSeasonId": 1777870800,
         "history": [
           {
+            "league": "Dragon League 30",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png"
+            },
             "leagueSeasonId": 1774846800,
             "leagueTrophies": 942,
             "leagueTierId": 105000030,
@@ -1687,6 +2313,12 @@
             "maxBattles": 18
           },
           {
+            "league": "Electro League 31",
+            "leagueKey": "electro",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/qVORiRguZ-xMq8L0g7rE1-rZuiA-lKlI8VKuMndRy4w.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/qVORiRguZ-xMq8L0g7rE1-rZuiA-lKlI8VKuMndRy4w.png"
+            },
             "leagueSeasonId": 1775451600,
             "leagueTrophies": 399,
             "leagueTierId": 105000031,
@@ -1701,6 +2333,12 @@
             "maxBattles": 24
           },
           {
+            "league": "Dragon League 30",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png"
+            },
             "leagueSeasonId": 1776056400,
             "leagueTrophies": 204,
             "leagueTierId": 105000030,
@@ -1715,6 +2353,12 @@
             "maxBattles": 18
           },
           {
+            "league": "Dragon League 29",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/DIMeRH3N4lrNObA3zAmk_eUin8nvNeLR89qYznnA--s.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/DIMeRH3N4lrNObA3zAmk_eUin8nvNeLR89qYznnA--s.png"
+            },
             "leagueSeasonId": 1777266000,
             "leagueTrophies": 440,
             "leagueTierId": 105000029,
@@ -1729,6 +2373,12 @@
             "maxBattles": 14
           },
           {
+            "league": "Dragon League 29",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/DIMeRH3N4lrNObA3zAmk_eUin8nvNeLR89qYznnA--s.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/DIMeRH3N4lrNObA3zAmk_eUin8nvNeLR89qYznnA--s.png"
+            },
             "leagueSeasonId": 1777870800,
             "leagueTrophies": 823,
             "leagueTierId": 105000029,
@@ -1863,6 +2513,12 @@
         "previousLeagueSeasonId": 1777870800,
         "history": [
           {
+            "league": "Titan League 25",
+            "leagueKey": "titan",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png"
+            },
             "leagueSeasonId": 1776056400,
             "leagueTrophies": 862,
             "leagueTierId": 105000025,
@@ -1877,6 +2533,12 @@
             "maxBattles": 14
           },
           {
+            "league": "Titan League 26",
+            "leagueKey": "titan",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/yIfqSgrhiYRcuMbAPCoeCj1FTmfylCLxnrAljEZc8K0.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/yIfqSgrhiYRcuMbAPCoeCj1FTmfylCLxnrAljEZc8K0.png"
+            },
             "leagueSeasonId": 1776661200,
             "leagueTrophies": 806,
             "leagueTierId": 105000026,
@@ -1891,6 +2553,12 @@
             "maxBattles": 14
           },
           {
+            "league": "Titan League 27",
+            "leagueKey": "titan",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/1AhObOl55grQIWnGmn1J9qMWq5pmRA3aBObfYkQEjko.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/1AhObOl55grQIWnGmn1J9qMWq5pmRA3aBObfYkQEjko.png"
+            },
             "leagueSeasonId": 1777266000,
             "leagueTrophies": 740,
             "leagueTierId": 105000027,
@@ -1905,6 +2573,12 @@
             "maxBattles": 12
           },
           {
+            "league": "Dragon League 28",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/YCZ7O_3_c8eCBYvX-92qiWeLc6Md6eNJ5A8O-2vUg7I.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/YCZ7O_3_c8eCBYvX-92qiWeLc6Md6eNJ5A8O-2vUg7I.png"
+            },
             "leagueSeasonId": 1777870800,
             "leagueTrophies": 837,
             "leagueTierId": 105000028,
@@ -2021,14 +2695,14 @@
       "name": "RCUP",
       "role": "admin",
       "th": 18,
-      "trophies": 440,
+      "trophies": 480,
       "league": "Unranked",
       "ranked": {
         "leagueTierId": 105000029,
         "league": "Dragon League 29",
         "leagueKey": "dragon",
         "leagueOrder": 29,
-        "trophies": 440,
+        "trophies": 480,
         "iconUrls": {
           "small": "https://api-assets.clashofclans.com/leaguetiers/125/DIMeRH3N4lrNObA3zAmk_eUin8nvNeLR89qYznnA--s.png",
           "large": "https://api-assets.clashofclans.com/leaguetiers/326/DIMeRH3N4lrNObA3zAmk_eUin8nvNeLR89qYznnA--s.png"
@@ -2039,6 +2713,12 @@
         "previousLeagueSeasonId": 1777870800,
         "history": [
           {
+            "league": "Dragon League 28",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/YCZ7O_3_c8eCBYvX-92qiWeLc6Md6eNJ5A8O-2vUg7I.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/YCZ7O_3_c8eCBYvX-92qiWeLc6Md6eNJ5A8O-2vUg7I.png"
+            },
             "leagueSeasonId": 1774846800,
             "leagueTrophies": 405,
             "leagueTierId": 105000028,
@@ -2053,6 +2733,12 @@
             "maxBattles": 18
           },
           {
+            "league": "Dragon League 28",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/YCZ7O_3_c8eCBYvX-92qiWeLc6Md6eNJ5A8O-2vUg7I.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/YCZ7O_3_c8eCBYvX-92qiWeLc6Md6eNJ5A8O-2vUg7I.png"
+            },
             "leagueSeasonId": 1775451600,
             "leagueTrophies": 442,
             "leagueTierId": 105000028,
@@ -2067,6 +2753,12 @@
             "maxBattles": 18
           },
           {
+            "league": "Dragon League 28",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/YCZ7O_3_c8eCBYvX-92qiWeLc6Md6eNJ5A8O-2vUg7I.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/YCZ7O_3_c8eCBYvX-92qiWeLc6Md6eNJ5A8O-2vUg7I.png"
+            },
             "leagueSeasonId": 1776056400,
             "leagueTrophies": 669,
             "leagueTierId": 105000028,
@@ -2081,6 +2773,12 @@
             "maxBattles": 18
           },
           {
+            "league": "Dragon League 28",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/YCZ7O_3_c8eCBYvX-92qiWeLc6Md6eNJ5A8O-2vUg7I.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/YCZ7O_3_c8eCBYvX-92qiWeLc6Md6eNJ5A8O-2vUg7I.png"
+            },
             "leagueSeasonId": 1776661200,
             "leagueTrophies": 405,
             "leagueTierId": 105000028,
@@ -2095,6 +2793,12 @@
             "maxBattles": 18
           },
           {
+            "league": "Titan League 27",
+            "leagueKey": "titan",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/1AhObOl55grQIWnGmn1J9qMWq5pmRA3aBObfYkQEjko.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/1AhObOl55grQIWnGmn1J9qMWq5pmRA3aBObfYkQEjko.png"
+            },
             "leagueSeasonId": 1777266000,
             "leagueTrophies": 720,
             "leagueTierId": 105000027,
@@ -2109,6 +2813,12 @@
             "maxBattles": 12
           },
           {
+            "league": "Dragon League 28",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/YCZ7O_3_c8eCBYvX-92qiWeLc6Md6eNJ5A8O-2vUg7I.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/YCZ7O_3_c8eCBYvX-92qiWeLc6Md6eNJ5A8O-2vUg7I.png"
+            },
             "leagueSeasonId": 1777870800,
             "leagueTrophies": 842,
             "leagueTierId": 105000028,
@@ -2216,7 +2926,7 @@
       "trophyEvolution": {
         "delta7d": null,
         "delta30d": null,
-        "deltaSinceFirst": -360,
+        "deltaSinceFirst": -320,
         "firstSnapshotDate": "2026-05-10"
       }
     },
@@ -2243,6 +2953,12 @@
         "previousLeagueSeasonId": 1777870800,
         "history": [
           {
+            "league": "Titan League 25",
+            "leagueKey": "titan",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png"
+            },
             "leagueSeasonId": 1775451600,
             "leagueTrophies": 366,
             "leagueTierId": 105000025,
@@ -2257,6 +2973,12 @@
             "maxBattles": 14
           },
           {
+            "league": "Titan League 25",
+            "leagueKey": "titan",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png"
+            },
             "leagueSeasonId": 1776661200,
             "leagueTrophies": 748,
             "leagueTierId": 105000025,
@@ -2271,6 +2993,12 @@
             "maxBattles": 14
           },
           {
+            "league": "Titan League 26",
+            "leagueKey": "titan",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/yIfqSgrhiYRcuMbAPCoeCj1FTmfylCLxnrAljEZc8K0.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/yIfqSgrhiYRcuMbAPCoeCj1FTmfylCLxnrAljEZc8K0.png"
+            },
             "leagueSeasonId": 1777266000,
             "leagueTrophies": 763,
             "leagueTierId": 105000026,
@@ -2285,6 +3013,12 @@
             "maxBattles": 12
           },
           {
+            "league": "Titan League 27",
+            "leagueKey": "titan",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/1AhObOl55grQIWnGmn1J9qMWq5pmRA3aBObfYkQEjko.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/1AhObOl55grQIWnGmn1J9qMWq5pmRA3aBObfYkQEjko.png"
+            },
             "leagueSeasonId": 1777870800,
             "leagueTrophies": 705,
             "leagueTierId": 105000027,
@@ -2419,6 +3153,12 @@
         "previousLeagueSeasonId": 1777870800,
         "history": [
           {
+            "league": "Dragon League 28",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/YCZ7O_3_c8eCBYvX-92qiWeLc6Md6eNJ5A8O-2vUg7I.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/YCZ7O_3_c8eCBYvX-92qiWeLc6Md6eNJ5A8O-2vUg7I.png"
+            },
             "leagueSeasonId": 1774846800,
             "leagueTrophies": 857,
             "leagueTierId": 105000028,
@@ -2433,6 +3173,12 @@
             "maxBattles": 18
           },
           {
+            "league": "Dragon League 29",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/DIMeRH3N4lrNObA3zAmk_eUin8nvNeLR89qYznnA--s.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/DIMeRH3N4lrNObA3zAmk_eUin8nvNeLR89qYznnA--s.png"
+            },
             "leagueSeasonId": 1775451600,
             "leagueTrophies": 767,
             "leagueTierId": 105000029,
@@ -2447,6 +3193,12 @@
             "maxBattles": 18
           },
           {
+            "league": "Dragon League 30",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png"
+            },
             "leagueSeasonId": 1776056400,
             "leagueTrophies": 698,
             "leagueTierId": 105000030,
@@ -2461,6 +3213,12 @@
             "maxBattles": 18
           },
           {
+            "league": "Dragon League 30",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/g7m9aF8YoYj9b0olPsyT4eUIxyYEmkqr53wYxWmzpE4.png"
+            },
             "leagueSeasonId": 1776661200,
             "leagueTrophies": 392,
             "leagueTierId": 105000030,
@@ -2475,6 +3233,12 @@
             "maxBattles": 18
           },
           {
+            "league": "Dragon League 29",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/DIMeRH3N4lrNObA3zAmk_eUin8nvNeLR89qYznnA--s.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/DIMeRH3N4lrNObA3zAmk_eUin8nvNeLR89qYznnA--s.png"
+            },
             "leagueSeasonId": 1777266000,
             "leagueTrophies": 466,
             "leagueTierId": 105000029,
@@ -2489,6 +3253,12 @@
             "maxBattles": 14
           },
           {
+            "league": "Dragon League 29",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/DIMeRH3N4lrNObA3zAmk_eUin8nvNeLR89qYznnA--s.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/DIMeRH3N4lrNObA3zAmk_eUin8nvNeLR89qYznnA--s.png"
+            },
             "leagueSeasonId": 1777870800,
             "leagueTrophies": 363,
             "leagueTierId": 105000029,
@@ -2623,6 +3393,12 @@
         "previousLeagueSeasonId": 1777266000,
         "history": [
           {
+            "league": "Titan League 26",
+            "leagueKey": "titan",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/yIfqSgrhiYRcuMbAPCoeCj1FTmfylCLxnrAljEZc8K0.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/yIfqSgrhiYRcuMbAPCoeCj1FTmfylCLxnrAljEZc8K0.png"
+            },
             "leagueSeasonId": 1777266000,
             "leagueTrophies": 728,
             "leagueTierId": 105000026,
@@ -2757,6 +3533,12 @@
         "previousLeagueSeasonId": 1777870800,
         "history": [
           {
+            "league": "Dragon League 29",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/DIMeRH3N4lrNObA3zAmk_eUin8nvNeLR89qYznnA--s.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/DIMeRH3N4lrNObA3zAmk_eUin8nvNeLR89qYznnA--s.png"
+            },
             "leagueSeasonId": 1774846800,
             "leagueTrophies": 421,
             "leagueTierId": 105000029,
@@ -2771,6 +3553,12 @@
             "maxBattles": 18
           },
           {
+            "league": "Dragon League 29",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/DIMeRH3N4lrNObA3zAmk_eUin8nvNeLR89qYznnA--s.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/DIMeRH3N4lrNObA3zAmk_eUin8nvNeLR89qYznnA--s.png"
+            },
             "leagueSeasonId": 1775451600,
             "leagueTrophies": 269,
             "leagueTierId": 105000029,
@@ -2785,6 +3573,12 @@
             "maxBattles": 18
           },
           {
+            "league": "Dragon League 28",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/YCZ7O_3_c8eCBYvX-92qiWeLc6Md6eNJ5A8O-2vUg7I.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/YCZ7O_3_c8eCBYvX-92qiWeLc6Md6eNJ5A8O-2vUg7I.png"
+            },
             "leagueSeasonId": 1776056400,
             "leagueTrophies": 256,
             "leagueTierId": 105000028,
@@ -2799,6 +3593,12 @@
             "maxBattles": 18
           },
           {
+            "league": "Titan League 27",
+            "leagueKey": "titan",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/1AhObOl55grQIWnGmn1J9qMWq5pmRA3aBObfYkQEjko.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/1AhObOl55grQIWnGmn1J9qMWq5pmRA3aBObfYkQEjko.png"
+            },
             "leagueSeasonId": 1776661200,
             "leagueTrophies": 317,
             "leagueTierId": 105000027,
@@ -2813,6 +3613,12 @@
             "maxBattles": 14
           },
           {
+            "league": "Titan League 27",
+            "leagueKey": "titan",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/1AhObOl55grQIWnGmn1J9qMWq5pmRA3aBObfYkQEjko.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/1AhObOl55grQIWnGmn1J9qMWq5pmRA3aBObfYkQEjko.png"
+            },
             "leagueSeasonId": 1777266000,
             "leagueTrophies": 559,
             "leagueTierId": 105000027,
@@ -2827,6 +3633,12 @@
             "maxBattles": 12
           },
           {
+            "league": "Dragon League 28",
+            "leagueKey": "dragon",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/YCZ7O_3_c8eCBYvX-92qiWeLc6Md6eNJ5A8O-2vUg7I.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/YCZ7O_3_c8eCBYvX-92qiWeLc6Md6eNJ5A8O-2vUg7I.png"
+            },
             "leagueSeasonId": 1777870800,
             "leagueTrophies": 233,
             "leagueTierId": 105000028,
@@ -2951,6 +3763,12 @@
         "previousLeagueSeasonId": 1777870800,
         "history": [
           {
+            "league": "P.E.K.K.A League 23",
+            "leagueKey": "pekka",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/0eDMQmsiZ0gs8xzViGfVETnYjwzgELTKwYhH3izevT4.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/0eDMQmsiZ0gs8xzViGfVETnYjwzgELTKwYhH3izevT4.png"
+            },
             "leagueSeasonId": 1777870800,
             "leagueTrophies": 406,
             "leagueTierId": 105000023,
@@ -3085,6 +3903,12 @@
         "previousLeagueSeasonId": 1777870800,
         "history": [
           {
+            "league": "Titan League 26",
+            "leagueKey": "titan",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/yIfqSgrhiYRcuMbAPCoeCj1FTmfylCLxnrAljEZc8K0.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/yIfqSgrhiYRcuMbAPCoeCj1FTmfylCLxnrAljEZc8K0.png"
+            },
             "leagueSeasonId": 1774846800,
             "leagueTrophies": 323,
             "leagueTierId": 105000026,
@@ -3099,6 +3923,12 @@
             "maxBattles": 14
           },
           {
+            "league": "Titan League 25",
+            "leagueKey": "titan",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png"
+            },
             "leagueSeasonId": 1776056400,
             "leagueTrophies": 284,
             "leagueTierId": 105000025,
@@ -3113,6 +3943,12 @@
             "maxBattles": 14
           },
           {
+            "league": "Titan League 25",
+            "leagueKey": "titan",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png"
+            },
             "leagueSeasonId": 1776661200,
             "leagueTrophies": 369,
             "leagueTierId": 105000025,
@@ -3127,6 +3963,12 @@
             "maxBattles": 14
           },
           {
+            "league": "Titan League 25",
+            "leagueKey": "titan",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png"
+            },
             "leagueSeasonId": 1777870800,
             "leagueTrophies": 464,
             "leagueTierId": 105000025,
@@ -3261,6 +4103,12 @@
         "previousLeagueSeasonId": 1777870800,
         "history": [
           {
+            "league": "Titan League 25",
+            "leagueKey": "titan",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png"
+            },
             "leagueSeasonId": 1774846800,
             "leagueTrophies": 327,
             "leagueTierId": 105000025,
@@ -3275,6 +4123,12 @@
             "maxBattles": 14
           },
           {
+            "league": "Titan League 25",
+            "leagueKey": "titan",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png"
+            },
             "leagueSeasonId": 1775451600,
             "leagueTrophies": 353,
             "leagueTierId": 105000025,
@@ -3289,6 +4143,12 @@
             "maxBattles": 14
           },
           {
+            "league": "Titan League 25",
+            "leagueKey": "titan",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png"
+            },
             "leagueSeasonId": 1776056400,
             "leagueTrophies": 323,
             "leagueTierId": 105000025,
@@ -3303,6 +4163,12 @@
             "maxBattles": 14
           },
           {
+            "league": "Titan League 25",
+            "leagueKey": "titan",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png"
+            },
             "leagueSeasonId": 1777266000,
             "leagueTrophies": 362,
             "leagueTierId": 105000025,
@@ -3317,6 +4183,12 @@
             "maxBattles": 12
           },
           {
+            "league": "Titan League 26",
+            "leagueKey": "titan",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/yIfqSgrhiYRcuMbAPCoeCj1FTmfylCLxnrAljEZc8K0.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/yIfqSgrhiYRcuMbAPCoeCj1FTmfylCLxnrAljEZc8K0.png"
+            },
             "leagueSeasonId": 1777870800,
             "leagueTrophies": 374,
             "leagueTierId": 105000026,
@@ -3773,6 +4645,12 @@
         "previousLeagueSeasonId": 1777870800,
         "history": [
           {
+            "league": "Golem League 19",
+            "leagueKey": "golem",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/yS8XBv_a_SNtCpcofsWMFaojRNwO504Py7HyDCBCjYU.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/yS8XBv_a_SNtCpcofsWMFaojRNwO504Py7HyDCBCjYU.png"
+            },
             "leagueSeasonId": 1774846800,
             "leagueTrophies": 452,
             "leagueTierId": 105000019,
@@ -3787,6 +4665,12 @@
             "maxBattles": 12
           },
           {
+            "league": "Golem League 20",
+            "leagueKey": "golem",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/uizNRh8glQZuAbLdCa-EQSf3oJnge3nqoXHjtQ6O8pw.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/uizNRh8glQZuAbLdCa-EQSf3oJnge3nqoXHjtQ6O8pw.png"
+            },
             "leagueSeasonId": 1775451600,
             "leagueTrophies": 659,
             "leagueTierId": 105000020,
@@ -3801,6 +4685,12 @@
             "maxBattles": 12
           },
           {
+            "league": "Golem League 21",
+            "leagueKey": "golem",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/WkqDvnK0CXI-Nc0TNTKG_fSuzRYoLRC54HFOdMCxVTI.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/WkqDvnK0CXI-Nc0TNTKG_fSuzRYoLRC54HFOdMCxVTI.png"
+            },
             "leagueSeasonId": 1776056400,
             "leagueTrophies": 681,
             "leagueTierId": 105000021,
@@ -3815,6 +4705,12 @@
             "maxBattles": 12
           },
           {
+            "league": "P.E.K.K.A League 22",
+            "leagueKey": "pekka",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/iTWXPUUFQy0uEb7NDpMTyzGMFOJvlC4SLAqlHYgC8do.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/iTWXPUUFQy0uEb7NDpMTyzGMFOJvlC4SLAqlHYgC8do.png"
+            },
             "leagueSeasonId": 1776661200,
             "leagueTrophies": 326,
             "leagueTierId": 105000022,
@@ -3829,6 +4725,12 @@
             "maxBattles": 12
           },
           {
+            "league": "P.E.K.K.A League 22",
+            "leagueKey": "pekka",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/iTWXPUUFQy0uEb7NDpMTyzGMFOJvlC4SLAqlHYgC8do.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/iTWXPUUFQy0uEb7NDpMTyzGMFOJvlC4SLAqlHYgC8do.png"
+            },
             "leagueSeasonId": 1777266000,
             "leagueTrophies": 599,
             "leagueTierId": 105000022,
@@ -3843,6 +4745,12 @@
             "maxBattles": 12
           },
           {
+            "league": "P.E.K.K.A League 23",
+            "leagueKey": "pekka",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/0eDMQmsiZ0gs8xzViGfVETnYjwzgELTKwYhH3izevT4.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/0eDMQmsiZ0gs8xzViGfVETnYjwzgELTKwYhH3izevT4.png"
+            },
             "leagueSeasonId": 1777870800,
             "leagueTrophies": 450,
             "leagueTierId": 105000023,
@@ -4076,6 +4984,12 @@
         "previousLeagueSeasonId": 1777870800,
         "history": [
           {
+            "league": "Witch League 18",
+            "leagueKey": "witch",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/GeLamlTvRYNnZp5lEW64pyaORN30rCdrxTjU7oJoTN8.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/GeLamlTvRYNnZp5lEW64pyaORN30rCdrxTjU7oJoTN8.png"
+            },
             "leagueSeasonId": 1774846800,
             "leagueTrophies": 458,
             "leagueTierId": 105000018,
@@ -4090,6 +5004,12 @@
             "maxBattles": 10
           },
           {
+            "league": "Golem League 19",
+            "leagueKey": "golem",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/yS8XBv_a_SNtCpcofsWMFaojRNwO504Py7HyDCBCjYU.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/yS8XBv_a_SNtCpcofsWMFaojRNwO504Py7HyDCBCjYU.png"
+            },
             "leagueSeasonId": 1775451600,
             "leagueTrophies": 530,
             "leagueTierId": 105000019,
@@ -4104,6 +5024,12 @@
             "maxBattles": 12
           },
           {
+            "league": "Golem League 20",
+            "leagueKey": "golem",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/uizNRh8glQZuAbLdCa-EQSf3oJnge3nqoXHjtQ6O8pw.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/uizNRh8glQZuAbLdCa-EQSf3oJnge3nqoXHjtQ6O8pw.png"
+            },
             "leagueSeasonId": 1776056400,
             "leagueTrophies": 443,
             "leagueTierId": 105000020,
@@ -4118,6 +5044,12 @@
             "maxBattles": 12
           },
           {
+            "league": "Golem League 20",
+            "leagueKey": "golem",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/uizNRh8glQZuAbLdCa-EQSf3oJnge3nqoXHjtQ6O8pw.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/uizNRh8glQZuAbLdCa-EQSf3oJnge3nqoXHjtQ6O8pw.png"
+            },
             "leagueSeasonId": 1776661200,
             "leagueTrophies": 548,
             "leagueTierId": 105000020,
@@ -4132,6 +5064,12 @@
             "maxBattles": 12
           },
           {
+            "league": "Golem League 21",
+            "leagueKey": "golem",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/WkqDvnK0CXI-Nc0TNTKG_fSuzRYoLRC54HFOdMCxVTI.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/WkqDvnK0CXI-Nc0TNTKG_fSuzRYoLRC54HFOdMCxVTI.png"
+            },
             "leagueSeasonId": 1777266000,
             "leagueTrophies": 560,
             "leagueTierId": 105000021,
@@ -4146,6 +5084,12 @@
             "maxBattles": 12
           },
           {
+            "league": "P.E.K.K.A League 22",
+            "leagueKey": "pekka",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/iTWXPUUFQy0uEb7NDpMTyzGMFOJvlC4SLAqlHYgC8do.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/iTWXPUUFQy0uEb7NDpMTyzGMFOJvlC4SLAqlHYgC8do.png"
+            },
             "leagueSeasonId": 1777870800,
             "leagueTrophies": 467,
             "leagueTierId": 105000022,
@@ -4483,6 +5427,12 @@
         "previousLeagueSeasonId": 1777870800,
         "history": [
           {
+            "league": "Witch League 18",
+            "leagueKey": "witch",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/GeLamlTvRYNnZp5lEW64pyaORN30rCdrxTjU7oJoTN8.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/GeLamlTvRYNnZp5lEW64pyaORN30rCdrxTjU7oJoTN8.png"
+            },
             "leagueSeasonId": 1774846800,
             "leagueTrophies": 297,
             "leagueTierId": 105000018,
@@ -4497,6 +5447,12 @@
             "maxBattles": 10
           },
           {
+            "league": "Witch League 18",
+            "leagueKey": "witch",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/GeLamlTvRYNnZp5lEW64pyaORN30rCdrxTjU7oJoTN8.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/GeLamlTvRYNnZp5lEW64pyaORN30rCdrxTjU7oJoTN8.png"
+            },
             "leagueSeasonId": 1775451600,
             "leagueTrophies": 273,
             "leagueTierId": 105000018,
@@ -4511,6 +5467,12 @@
             "maxBattles": 10
           },
           {
+            "league": "Witch League 18",
+            "leagueKey": "witch",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/GeLamlTvRYNnZp5lEW64pyaORN30rCdrxTjU7oJoTN8.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/GeLamlTvRYNnZp5lEW64pyaORN30rCdrxTjU7oJoTN8.png"
+            },
             "leagueSeasonId": 1776056400,
             "leagueTrophies": 372,
             "leagueTierId": 105000018,
@@ -4525,6 +5487,12 @@
             "maxBattles": 10
           },
           {
+            "league": "Witch League 18",
+            "leagueKey": "witch",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/GeLamlTvRYNnZp5lEW64pyaORN30rCdrxTjU7oJoTN8.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/GeLamlTvRYNnZp5lEW64pyaORN30rCdrxTjU7oJoTN8.png"
+            },
             "leagueSeasonId": 1776661200,
             "leagueTrophies": 251,
             "leagueTierId": 105000018,
@@ -4539,6 +5507,12 @@
             "maxBattles": 10
           },
           {
+            "league": "Witch League 18",
+            "leagueKey": "witch",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/GeLamlTvRYNnZp5lEW64pyaORN30rCdrxTjU7oJoTN8.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/GeLamlTvRYNnZp5lEW64pyaORN30rCdrxTjU7oJoTN8.png"
+            },
             "leagueSeasonId": 1777266000,
             "leagueTrophies": 262,
             "leagueTierId": 105000018,
@@ -4553,6 +5527,12 @@
             "maxBattles": 10
           },
           {
+            "league": "Witch League 18",
+            "leagueKey": "witch",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/GeLamlTvRYNnZp5lEW64pyaORN30rCdrxTjU7oJoTN8.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/GeLamlTvRYNnZp5lEW64pyaORN30rCdrxTjU7oJoTN8.png"
+            },
             "leagueSeasonId": 1777870800,
             "leagueTrophies": 328,
             "leagueTierId": 105000018,
@@ -4881,6 +5861,12 @@
         "previousLeagueSeasonId": 1777870800,
         "history": [
           {
+            "league": "Wizard League 11",
+            "leagueKey": "wizard",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/XazuJHG2wjBq39KEA4g4hh1nKJQwVO0fRoVDPHvWwAY.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/XazuJHG2wjBq39KEA4g4hh1nKJQwVO0fRoVDPHvWwAY.png"
+            },
             "leagueSeasonId": 1777266000,
             "leagueTrophies": 582,
             "leagueTierId": 105000011,
@@ -4895,6 +5881,12 @@
             "maxBattles": 8
           },
           {
+            "league": "Wizard League 12",
+            "leagueKey": "wizard",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/A_ZoGbh1g8wYRWygsQ_wMgbVz8GXvvfavKwlSx8C8PQ.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/A_ZoGbh1g8wYRWygsQ_wMgbVz8GXvvfavKwlSx8C8PQ.png"
+            },
             "leagueSeasonId": 1777870800,
             "leagueTrophies": 450,
             "leagueTierId": 105000012,
@@ -5118,6 +6110,12 @@
         "previousLeagueSeasonId": 1776661200,
         "history": [
           {
+            "league": "Wizard League 11",
+            "leagueKey": "wizard",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/XazuJHG2wjBq39KEA4g4hh1nKJQwVO0fRoVDPHvWwAY.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/XazuJHG2wjBq39KEA4g4hh1nKJQwVO0fRoVDPHvWwAY.png"
+            },
             "leagueSeasonId": 1776661200,
             "leagueTrophies": 160,
             "leagueTierId": 105000011,
@@ -5237,6 +6235,12 @@
         "previousLeagueSeasonId": 1777266000,
         "history": [
           {
+            "league": "Archer League 8",
+            "leagueKey": "archer",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/lzneKpnJ_ADL1Xb1rceH7-svqRN1UaLnI7ldd8BbyxI.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/lzneKpnJ_ADL1Xb1rceH7-svqRN1UaLnI7ldd8BbyxI.png"
+            },
             "leagueSeasonId": 1777266000,
             "leagueTrophies": 72,
             "leagueTierId": 105000008,
@@ -6368,6 +7372,12 @@
         "previousLeagueSeasonId": 1776056400,
         "history": [
           {
+            "league": "Titan League 25",
+            "leagueKey": "titan",
+            "iconUrls": {
+              "small": "https://api-assets.clashofclans.com/leaguetiers/125/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png",
+              "large": "https://api-assets.clashofclans.com/leaguetiers/326/JLqVXdNkAGjD_yqMRDgu9KK-hDrulNPjsKU4EugHqX8.png"
+            },
             "leagueSeasonId": 1775451600,
             "leagueTrophies": 329,
             "leagueTierId": 105000025,
