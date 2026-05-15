@@ -94,15 +94,16 @@ function leagueTierKey(leagueTier) {
   const match = name.match(/^[a-z.]+/i);
   return match ? match[0].replace(/[^a-z]/g, '') : 'unknown';
 }
-function currentRankedFromProfile(player) {
+function currentRankedFromProfile(player, tierById = new Map()) {
   if (!player?.leagueTier) return null;
+  const canonical = tierById.get(player.leagueTier.id) || player.leagueTier;
   return {
-    leagueTierId: player.leagueTier.id,
-    league: player.leagueTier.name,
-    leagueKey: leagueTierKey(player.leagueTier),
-    leagueOrder: leagueTierOrder(player.leagueTier),
+    leagueTierId: canonical.id,
+    league: canonical.name,
+    leagueKey: leagueTierKey(canonical),
+    leagueOrder: leagueTierOrder(canonical),
     trophies: player.legendStatistics?.currentSeason?.trophies ?? player.trophies ?? 0,
-    iconUrls: player.leagueTier.iconUrls || null,
+    iconUrls: canonical.iconUrls || player.leagueTier.iconUrls || null,
     currentLeagueGroupTag: player.currentLeagueGroupTag || null,
     currentLeagueSeasonId: player.currentLeagueSeasonId || null,
     previousLeagueGroupTag: player.previousLeagueGroupTag || null,
@@ -147,6 +148,9 @@ function activityScore(stats) {
 (async () => {
   console.log('Buscando clã', CLAN_TAG);
   const clan = await api(`/clans/${enc(CLAN_TAG)}`);
+  const leagueTiers = await api('/leaguetiers', { allow404: true });
+  const leagueTierItems = leagueTiers?.items || [];
+  const leagueTierById = new Map(leagueTierItems.map((tier) => [tier.id, tier]));
 
   // War log (se público)
   const warlog = await api(`/clans/${enc(CLAN_TAG)}/warlog`, { allow404: true });
@@ -242,13 +246,18 @@ function activityScore(stats) {
   const playersByTag = Object.fromEntries(players.map((p) => [p.tag, p]));
   const roster = members.map((m) => {
     const p = playersByTag[m.tag] || {};
-    const ranked = currentRankedFromProfile(p);
+    const ranked = currentRankedFromProfile(p, leagueTierById);
     if (ranked) {
       ranked.history = (leagueHistoryByTag[m.tag]?.items || []).map((h) => ({
+        ...(leagueTierById.get(h.leagueTierId) ? {
+          league: leagueTierById.get(h.leagueTierId).name,
+          leagueKey: leagueTierKey(leagueTierById.get(h.leagueTierId)),
+          iconUrls: leagueTierById.get(h.leagueTierId).iconUrls || null,
+        } : {}),
         leagueSeasonId: h.leagueSeasonId,
         leagueTrophies: h.leagueTrophies,
         leagueTierId: h.leagueTierId,
-        leagueOrder: leagueTierOrder({ id: h.leagueTierId }),
+        leagueOrder: leagueTierOrder(leagueTierById.get(h.leagueTierId) || { id: h.leagueTierId }),
         placement: h.placement,
         attackWins: h.attackWins,
         attackLosses: h.attackLosses,
@@ -361,6 +370,15 @@ function activityScore(stats) {
       warWinStreak: clan.warWinStreak, warWins: clan.warWins, warTies: clan.warTies, warLosses: clan.warLosses,
       isWarLogPublic: clan.isWarLogPublic !== false,
       badgeUrls: clan.badgeUrls || null,
+    },
+    ranked: {
+      leagueTiers: leagueTierItems.map((tier) => ({
+        id: tier.id,
+        name: tier.name,
+        order: leagueTierOrder(tier),
+        key: leagueTierKey(tier),
+        iconUrls: tier.iconUrls || null,
+      })),
     },
     roster,
     warlog: { public: warlogPublic, summary: warlogSummary, stats: { wins, losses, ties } },

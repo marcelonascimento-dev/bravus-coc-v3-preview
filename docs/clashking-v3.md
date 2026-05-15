@@ -93,6 +93,7 @@ A API oficial do Clash já expõe Ranked Battles no perfil do jogador:
 - `leagueTier.id`
 - `leagueTier.name`
 - `leagueTier.iconUrls`
+- `/leaguetiers` como dicionário canônico de ID → nome/ícone
 - `legendStatistics.currentSeason.trophies`
 - `/players/{tag}/leaguehistory`
 
