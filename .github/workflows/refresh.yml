@@ -6,9 +6,12 @@ on:
     - cron: '*/15 * * * *'
   workflow_dispatch: {}
   push:
-    branches: [main]
+    branches: [main, codex/clashking-api-v3]
     paths:
       - 'fetch-coc.cjs'
+      - 'fetch-clan.cjs'
+      - 'fetch-clashking.cjs'
+      - 'lib/**'
       - '.github/workflows/refresh.yml'
 
 permissions:
@@ -41,6 +44,10 @@ jobs:
           CLAN_TAG: ${{ vars.CLAN_TAG || '#2Q9RYP8QC' }}
         run: node fetch-clan.cjs
 
+      - name: Fetch ClashKing intelligence
+        run: node fetch-clashking.cjs
+        continue-on-error: true
+
       - name: Send WhatsApp notifications
         env:
           COC_TOKEN: ${{ secrets.COC_TOKEN }}
@@ -54,7 +61,7 @@ jobs:
           if [[ -n "$(git status --porcelain)" ]]; then
             git config user.name  "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data.json data.js clan-data.json clan-data.js index.html history/
+            git add data.json data.js clan-data.json clan-data.js clashking-data.json clashking-data.js index.html history/
             git commit -m "chore: refresh data [auto $(date -u +%Y-%m-%dT%H:%MZ)]"
             git push
           else
