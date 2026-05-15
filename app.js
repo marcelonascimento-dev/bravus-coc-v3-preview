@@ -688,10 +688,16 @@
       .sort((a, b) => b._partScore - a._partScore)
       .slice(0, 10);
 
-    // Top push — evolução de troféus
+    // Top push — evolução de troféus multiplayer. Não é Ranked Battles.
+    // Filtra snapshots claramente defasados/baixos para não premiar variação em conta "zerada".
     const pushes = [...enriched]
       .filter((m) => m.trophyEvolution && (m.trophyEvolution.deltaSinceFirst != null || m.trophyEvolution.delta7d != null))
-      .sort((a, b) => (b.trophyEvolution.delta7d || b.trophyEvolution.deltaSinceFirst || 0) - (a.trophyEvolution.delta7d || a.trophyEvolution.deltaSinceFirst || 0))
+      .map((m) => ({
+        ...m,
+        _pushDelta: m.trophyEvolution.delta7d != null ? m.trophyEvolution.delta7d : (m.trophyEvolution.deltaSinceFirst || 0),
+      }))
+      .filter((m) => (m.trophies || 0) >= 1000 && m._pushDelta > 0)
+      .sort((a, b) => (b._pushDelta - a._pushDelta) || ((b.trophies || 0) - (a.trophies || 0)))
       .slice(0, 10);
 
     wrap.appendChild(el('div', { class: 'highlights-grid' }, [
@@ -703,21 +709,18 @@
         primary: m._partScore,
         secondary: `🛡${m._partBreakdown.wars} ↑${m._partBreakdown.dSent} ↓${m._partBreakdown.dRecv} ⚔${m._partBreakdown.atk}`,
       })),
-      buildHighlightCard('📈', 'Top push', 'evolução de troféus', pushes, (m) => {
-        const d7 = m.trophyEvolution?.delta7d;
-        const dAll = m.trophyEvolution?.deltaSinceFirst;
-        const main = d7 != null ? d7 : (dAll || 0);
-        const arrow = main > 0 ? '+' : '';
+      buildHighlightCard('📈', 'Top push', 'troféus multiplayer', pushes, (m) => {
+        const main = m._pushDelta || 0;
         return {
-          primary: arrow + main,
-          secondary: `${m.trophies} 🏆 · troféus`,
+          primary: '+' + main,
+          secondary: `${m.trophies} 🏆 atuais`,
         };
       }),
     ]));
 
     if (!pushes.length) {
       wrap.appendChild(el('div', { class: 'formula-note' },
-        '📈 Evolução de troféus aparece após o segundo dia de coleta. Os snapshots começaram a ser salvos agora.'));
+        '📈 Top push aparece quando houver jogadores com ganho positivo e pelo menos 1000 troféus no snapshot. Ranked Battles precisa de outra fonte de dados.'));
     }
 
     return wrap;
