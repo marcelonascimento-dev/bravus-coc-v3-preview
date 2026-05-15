@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-15T15:00:28.148Z",
+  "generatedAt": "2026-05-15T15:37:55.357Z",
   "provider": {
     "name": "ClashKing API",
     "baseUrl": "https://api.clashk.ing",
@@ -18,7 +18,7 @@
   },
   "rosterSource": "official-clan-data.json",
   "metadata": {
-    "rosterCount": 48,
+    "rosterCount": 49,
     "sampledPlayerDetails": 0,
     "currentDate": "2026-05-15",
     "previousWarsCount": 50,
@@ -119,13 +119,13 @@
         }
       },
       {
-        "tag": "#8JG8PUVR8",
-        "name": "AkA Low",
+        "tag": "#LQLL02QUR",
+        "name": "HP.Freitas",
         "th": 18,
-        "donations": 0,
-        "donationsReceived": 0,
-        "activity": 0,
-        "lastOnline": 1778242565,
+        "donations": null,
+        "donationsReceived": null,
+        "activity": null,
+        "lastOnline": null,
         "war": {
           "attacks": null,
           "stars": null,
@@ -142,13 +142,13 @@
         }
       },
       {
-        "tag": "#LQLL02QUR",
-        "name": "HP.Freitas",
+        "tag": "#8JG8PUVR8",
+        "name": "AkA Low",
         "th": 18,
-        "donations": null,
-        "donationsReceived": null,
-        "activity": null,
-        "lastOnline": null,
+        "donations": 0,
+        "donationsReceived": 0,
+        "activity": 0,
+        "lastOnline": 1778242565,
         "war": {
           "attacks": null,
           "stars": null,
@@ -257,13 +257,13 @@
         }
       },
       {
-        "tag": "#8CR8VRY8",
-        "name": "Avano",
+        "tag": "#PGQ9RP92U",
+        "name": "✨️Asta✨️",
         "th": 18,
         "donations": 0,
         "donationsReceived": 0,
         "activity": 0,
-        "lastOnline": 1778766950,
+        "lastOnline": 1778724957,
         "war": {
           "attacks": null,
           "stars": null,
@@ -303,52 +303,6 @@
         }
       },
       {
-        "tag": "#PGQ9RP92U",
-        "name": "✨️Asta✨️",
-        "th": 18,
-        "donations": 0,
-        "donationsReceived": 0,
-        "activity": 0,
-        "lastOnline": 1778724957,
-        "war": {
-          "attacks": null,
-          "stars": null,
-          "hitrate": null,
-          "tripleRate": null,
-          "avgStars": null,
-          "destruction": null
-        },
-        "capital": {
-          "raided": null,
-          "donated": null,
-          "attacks": null,
-          "medals": null
-        }
-      },
-      {
-        "tag": "#9JC98QCL2",
-        "name": "Yuri",
-        "th": 17,
-        "donations": 0,
-        "donationsReceived": 0,
-        "activity": 0,
-        "lastOnline": 1760246029,
-        "war": {
-          "attacks": null,
-          "stars": null,
-          "hitrate": null,
-          "tripleRate": null,
-          "avgStars": null,
-          "destruction": null
-        },
-        "capital": {
-          "raided": null,
-          "donated": null,
-          "attacks": null,
-          "medals": null
-        }
-      },
-      {
         "tag": "#L9LC90YQ8",
         "name": ">> JOY BOY <<",
         "th": 18,
@@ -356,6 +310,29 @@
         "donationsReceived": 0,
         "activity": 0,
         "lastOnline": 1778083306,
+        "war": {
+          "attacks": null,
+          "stars": null,
+          "hitrate": null,
+          "tripleRate": null,
+          "avgStars": null,
+          "destruction": null
+        },
+        "capital": {
+          "raided": null,
+          "donated": null,
+          "attacks": null,
+          "medals": null
+        }
+      },
+      {
+        "tag": "#8CR8VRY8",
+        "name": "Avano",
+        "th": 18,
+        "donations": 0,
+        "donationsReceived": 0,
+        "activity": 0,
+        "lastOnline": 1778766950,
         "war": {
           "attacks": null,
           "stars": null,
@@ -395,13 +372,36 @@
         }
       },
       {
-        "tag": "#9902GP2P",
-        "name": "MalvadaoPlay",
+        "tag": "#9JC98QCL2",
+        "name": "Yuri",
+        "th": 17,
+        "donations": 0,
+        "donationsReceived": 0,
+        "activity": 0,
+        "lastOnline": 1760246029,
+        "war": {
+          "attacks": null,
+          "stars": null,
+          "hitrate": null,
+          "tripleRate": null,
+          "avgStars": null,
+          "destruction": null
+        },
+        "capital": {
+          "raided": null,
+          "donated": null,
+          "attacks": null,
+          "medals": null
+        }
+      },
+      {
+        "tag": "#GLQ9YQPY",
+        "name": "RCUP",
         "th": 18,
         "donations": 0,
         "donationsReceived": 0,
         "activity": 0,
-        "lastOnline": 1778768154,
+        "lastOnline": 1778609192,
         "war": {
           "attacks": null,
           "stars": null,
@@ -425,6 +425,29 @@
         "donationsReceived": 0,
         "activity": 0,
         "lastOnline": 1778255704,
+        "war": {
+          "attacks": null,
+          "stars": null,
+          "hitrate": null,
+          "tripleRate": null,
+          "avgStars": null,
+          "destruction": null
+        },
+        "capital": {
+          "raided": null,
+          "donated": null,
+          "attacks": null,
+          "medals": null
+        }
+      },
+      {
+        "tag": "#9902GP2P",
+        "name": "MalvadaoPlay",
+        "th": 18,
+        "donations": 0,
+        "donationsReceived": 0,
+        "activity": 0,
+        "lastOnline": 1778768154,
         "war": {
           "attacks": null,
           "stars": null,
@@ -517,29 +540,6 @@
         "donationsReceived": null,
         "activity": null,
         "lastOnline": null,
-        "war": {
-          "attacks": null,
-          "stars": null,
-          "hitrate": null,
-          "tripleRate": null,
-          "avgStars": null,
-          "destruction": null
-        },
-        "capital": {
-          "raided": null,
-          "donated": null,
-          "attacks": null,
-          "medals": null
-        }
-      },
-      {
-        "tag": "#GLQ9YQPY",
-        "name": "RCUP",
-        "th": 18,
-        "donations": 0,
-        "donationsReceived": 0,
-        "activity": 0,
-        "lastOnline": 1778609192,
         "war": {
           "attacks": null,
           "stars": null,
@@ -701,6 +701,29 @@
         "donationsReceived": 0,
         "activity": 0,
         "lastOnline": 1751706152,
+        "war": {
+          "attacks": null,
+          "stars": null,
+          "hitrate": null,
+          "tripleRate": null,
+          "avgStars": null,
+          "destruction": null
+        },
+        "capital": {
+          "raided": null,
+          "donated": null,
+          "attacks": null,
+          "medals": null
+        }
+      },
+      {
+        "tag": "#Y0L98VVRY",
+        "name": "Josh.",
+        "th": 13,
+        "donations": null,
+        "donationsReceived": null,
+        "activity": null,
+        "lastOnline": null,
         "war": {
           "attacks": null,
           "stars": null,
