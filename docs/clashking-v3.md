@@ -67,3 +67,21 @@ UI (`app.js`)
    - capital;
    - push/Legends.
 5. Só depois promover ClashKing para fluxo principal do dashboard.
+
+## Nota sobre Ranked Battles
+
+Ranked Battles não é a antiga Trophy League. É um modo semanal separado com
+ligas próprias (Skeleton, Barbarian, Archer, Wizard, Valkyrie, Witch, Golem,
+P.E.K.K.A, Titan, Dragon, Electro e Legend).
+
+Implicações para o dashboard:
+
+- Não inferir Ranked League a partir de troféus comuns.
+- "Unranked" vindo de `league.name` no perfil oficial pode representar a liga
+  comum/trophy league ausente, não necessariamente o estado real em Ranked
+  Battles.
+- O card "Top push" deve mostrar apenas evolução de troféus até termos uma
+  fonte confiável para Ranked Battles.
+- Se uma API expuser Ranked Battles no futuro, o ranking correto deve usar:
+  trophies da temporada semanal, média de destruição por ataque, média de
+  destruição sofrida por defesa e tempo médio de ataque como desempates.

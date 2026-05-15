@@ -708,10 +708,9 @@
         const dAll = m.trophyEvolution?.deltaSinceFirst;
         const main = d7 != null ? d7 : (dAll || 0);
         const arrow = main > 0 ? '+' : '';
-        const league = displayLeague(m);
         return {
           primary: arrow + main,
-          secondary: `${m.trophies} 🏆${league ? ' · ' + league : ''}`,
+          secondary: `${m.trophies} 🏆 · troféus`,
         };
       }),
     ]));
@@ -722,39 +721,6 @@
     }
 
     return wrap;
-  }
-
-  function displayLeague(m) {
-    const current = (m.league || '').trim();
-    if (current && !/^unranked$/i.test(current)) return current;
-    return leagueFromTrophies(m.trophies);
-  }
-
-  function leagueFromTrophies(trophies) {
-    const t = Number(trophies) || 0;
-    if (t >= 5000) return 'Legend League';
-    if (t >= 4700) return 'Titan League I';
-    if (t >= 4400) return 'Titan League II';
-    if (t >= 4100) return 'Titan League III';
-    if (t >= 3800) return 'Champion League I';
-    if (t >= 3500) return 'Champion League II';
-    if (t >= 3200) return 'Champion League III';
-    if (t >= 3000) return 'Master League I';
-    if (t >= 2800) return 'Master League II';
-    if (t >= 2600) return 'Master League III';
-    if (t >= 2400) return 'Crystal League I';
-    if (t >= 2200) return 'Crystal League II';
-    if (t >= 2000) return 'Crystal League III';
-    if (t >= 1800) return 'Gold League I';
-    if (t >= 1600) return 'Gold League II';
-    if (t >= 1400) return 'Gold League III';
-    if (t >= 1200) return 'Silver League I';
-    if (t >= 1000) return 'Silver League II';
-    if (t >= 800) return 'Silver League III';
-    if (t >= 600) return 'Bronze League I';
-    if (t >= 500) return 'Bronze League II';
-    if (t >= 400) return 'Bronze League III';
-    return '';
   }
 
   function buildHighlightCard(icon, title, subtitle, items, formatter) {
