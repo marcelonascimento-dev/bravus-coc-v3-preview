@@ -73,6 +73,10 @@
   $('#hero-meta').appendChild(buildHeroMeta());
   $('#hero-stats').appendChild(buildHeroStats());
   $('#generated').textContent = (C0?.generatedAt || D.info.generatedAt) ? `Atualizado em ${C0?.generatedAt || D.info.generatedAt}` : '';
+  if (window.CLASHKING_DATA && $('#clashking-credit')) {
+    const wars = window.CLASHKING_DATA.metadata?.previousWarsCount || 0;
+    $('#clashking-credit').textContent = ` · V3 ClashKing: ${wars} guerras históricas`;
+  }
   document.title = `${clanName} · Clã & CWL`;
 
   function warFreqPt(s) {
