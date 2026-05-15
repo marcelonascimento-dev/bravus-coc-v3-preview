@@ -40,8 +40,28 @@ runners do GitHub têm IP dinâmico, usamos o proxy gratuito do RoyaleAPI
 | `index.html`, `style.css`, `app.js` | Interface (SPA estático sem build). |
 | `data.js` / `data.json` | Snapshot dos dados da CWL. |
 | `fetch-coc.cjs` | Pega dados na API e regrava os arquivos acima. |
+| `fetch-clashking.cjs` | Experimental V3: enriquece o dashboard com dados históricos da ClashKing API. |
 | `.github/workflows/refresh.yml` | Cron de 30 min + atualização manual. |
 | `build-data.cjs` | Fallback: gera os dados a partir da planilha original. |
+
+## V3 experimental - ClashKing API
+
+Branch de preparação: `codex/clashking-api-v3`.
+
+A ClashKing API entra como fonte adicional de inteligência histórica. A API
+oficial do Clash of Clans continua sendo a fonte canônica para o roster atual,
+guerra em andamento e snapshots sensíveis a tempo real.
+
+```bash
+npm run fetch:clashking
+```
+
+O comando gera:
+
+- `clashking-data.json`
+- `clashking-data.js`
+
+Crédito: dados históricos fornecidos por https://clashk.ing.
 
 ## Notificações WhatsApp (CallMeBot)
 
