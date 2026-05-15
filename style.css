@@ -413,11 +413,50 @@ tr.bonus-row td:first-child { box-shadow: inset 3px 0 0 var(--gold); }
 }
 .hl-pos { font-size: 16px; font-weight: 800; text-align: center; color: var(--muted); }
 .hl-player { display: flex; flex-direction: column; min-width: 0; }
+.hl-player-main { display: flex; align-items: center; gap: 7px; min-width: 0; }
 .hl-player-name { font-weight: 700; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .hl-player-th { font-size: 11px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
 .hl-primary { font-weight: 800; color: var(--gold-2); font-size: 15px; white-space: nowrap; }
 .hl-secondary { font-size: 11px; color: var(--muted); font-family: 'JetBrains Mono', monospace; white-space: nowrap; }
 .hl-empty { padding: 16px; text-align: center; color: var(--muted); font-size: 13px; }
+.ranked-icon {
+  width: 24px; height: 24px; flex: 0 0 24px;
+  display: inline-grid; place-items: center;
+  border-radius: 7px 7px 10px 10px;
+  border: 1px solid rgba(255,255,255,0.24);
+  box-shadow: inset 0 1px rgba(255,255,255,0.28), 0 3px 8px rgba(0,0,0,0.28);
+  position: relative;
+  overflow: hidden;
+}
+.ranked-icon::before {
+  content: "⚔";
+  font-size: 13px;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.45));
+}
+.ranked-icon::after {
+  content: "";
+  position: absolute; inset: auto 5px 3px;
+  height: 3px; border-radius: 999px;
+  background: rgba(255,255,255,0.55);
+}
+.ranked-icon.dragon {
+  background:
+    radial-gradient(circle at 35% 20%, #ffe88a, transparent 24px),
+    linear-gradient(145deg, #ffb238, #c33122 58%, #5b1120);
+}
+.ranked-icon.titan {
+  background:
+    radial-gradient(circle at 35% 20%, #d9f7ff, transparent 23px),
+    linear-gradient(145deg, #75d5ff, #1e6fb9 58%, #17245a);
+}
+.ranked-icon.legend {
+  background:
+    radial-gradient(circle at 35% 20%, #fff4b8, transparent 23px),
+    linear-gradient(145deg, #ffc94a, #7b2cff 58%, #2a123e);
+}
+.ranked-icon.unknown {
+  background: linear-gradient(145deg, #9ca3af, #374151);
+}
 
 /* Bonus strip compacto (substitui o megabanner) */
 .bonus-strip {

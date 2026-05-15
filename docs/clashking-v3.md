@@ -85,3 +85,15 @@ Implicações para o dashboard:
 - Se uma API expuser Ranked Battles no futuro, o ranking correto deve usar:
   trophies da temporada semanal, média de destruição por ataque, média de
   destruição sofrida por defesa e tempo médio de ataque como desempates.
+
+### Implementação temporária no preview
+
+Até encontrarmos uma API que exponha o leaderboard de Ranked Battles igual ao
+jogo, o preview usa `ranked-data.js` como snapshot manual. A UI ordena por:
+
+1. `leagueOrder` decrescente;
+2. `trophies` decrescente;
+3. nome.
+
+Isso replica a lógica visual do jogo: liga ranqueada tem prioridade sobre
+troféus. O ícone da liga é desenhado em CSS via `leagueKey`.

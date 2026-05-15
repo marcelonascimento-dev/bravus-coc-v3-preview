@@ -688,17 +688,8 @@
       .sort((a, b) => b._partScore - a._partScore)
       .slice(0, 10);
 
-    // Top push — evolução de troféus multiplayer. Não é Ranked Battles.
-    // Filtra snapshots claramente defasados/baixos para não premiar variação em conta "zerada".
-    const pushes = [...enriched]
-      .filter((m) => m.trophyEvolution && (m.trophyEvolution.deltaSinceFirst != null || m.trophyEvolution.delta7d != null))
-      .map((m) => ({
-        ...m,
-        _pushDelta: m.trophyEvolution.delta7d != null ? m.trophyEvolution.delta7d : (m.trophyEvolution.deltaSinceFirst || 0),
-      }))
-      .filter((m) => (m.trophies || 0) >= 1000 && m._pushDelta > 0)
-      .sort((a, b) => (b._pushDelta - a._pushDelta) || ((b.trophies || 0) - (a.trophies || 0)))
-      .slice(0, 10);
+    // Ranked Battles — o jogo ordena por liga primeiro, depois troféus dentro da liga.
+    const ranked = buildRankedPlayers(enriched).slice(0, 10);
 
     wrap.appendChild(el('div', { class: 'highlights-grid' }, [
       buildHighlightCard('🔥', 'Top atacantes', 'CWL + guerras normais', attackers, (m) => ({
@@ -709,21 +700,44 @@
         primary: m._partScore,
         secondary: `🛡${m._partBreakdown.wars} ↑${m._partBreakdown.dSent} ↓${m._partBreakdown.dRecv} ⚔${m._partBreakdown.atk}`,
       })),
-      buildHighlightCard('📈', 'Top push', 'troféus multiplayer', pushes, (m) => {
-        const main = m._pushDelta || 0;
-        return {
-          primary: '+' + main,
-          secondary: `${m.trophies} 🏆 atuais`,
-        };
-      }),
+      buildHighlightCard('⚔️', 'Top ranked', 'liga + troféus', ranked, (m) => ({
+        icon: rankedLeagueIcon(m.ranked.leagueKey, m.ranked.league),
+        primary: `${m.ranked.trophies} 🏆`,
+        secondary: m.ranked.league,
+      })),
     ]));
 
-    if (!pushes.length) {
+    if (!ranked.length) {
       wrap.appendChild(el('div', { class: 'formula-note' },
-        '📈 Top push aparece quando houver jogadores com ganho positivo e pelo menos 1000 troféus no snapshot. Ranked Battles precisa de outra fonte de dados.'));
+        '⚔️ Ranked Battles usa liga primeiro e troféus depois. Enquanto a API não expõe esse ranking, os dados vêm de ranked-data.js.'));
     }
 
     return wrap;
+  }
+
+  function buildRankedPlayers(roster) {
+    const data = window.RANKED_DATA?.players || [];
+    const byTag = Object.fromEntries(data.map((p) => [String(p.tag || '').toUpperCase(), p]));
+    const byName = Object.fromEntries(data.map((p) => [String(p.name || '').toLowerCase(), p]));
+    return roster
+      .map((m) => {
+        const ranked = byTag[String(m.tag || '').toUpperCase()] || byName[String(m.name || '').toLowerCase()];
+        return ranked ? { ...m, ranked } : null;
+      })
+      .filter(Boolean)
+      .sort((a, b) => (
+        (b.ranked.leagueOrder || 0) - (a.ranked.leagueOrder || 0)
+        || (b.ranked.trophies || 0) - (a.ranked.trophies || 0)
+        || String(a.name).localeCompare(String(b.name), 'pt-BR')
+      ));
+  }
+
+  function rankedLeagueIcon(key, label) {
+    return el('span', {
+      class: 'ranked-icon ' + (key || 'unknown'),
+      title: label || 'Ranked League',
+      'aria-label': label || 'Ranked League',
+    });
   }
 
   function buildHighlightCard(icon, title, subtitle, items, formatter) {
@@ -745,7 +759,10 @@
       const li = el('li', { class: 'hl-item' + (i === 0 ? ' first' : '') }, [
         el('span', { class: 'hl-pos' }, i === 0 ? '🥇' : (i === 1 ? '🥈' : (i === 2 ? '🥉' : '#' + (i + 1)))),
         el('span', { class: 'hl-player' }, [
-          el('span', { class: 'hl-player-name' }, m.name),
+          el('span', { class: 'hl-player-main' }, [
+            f.icon || null,
+            el('span', { class: 'hl-player-name' }, m.name),
+          ]),
           el('span', { class: 'hl-player-th' }, 'CV ' + (m.th ?? '?')),
         ]),
         el('span', { class: 'hl-primary' }, f.primary),
