@@ -457,6 +457,11 @@ tr.bonus-row td:first-child { box-shadow: inset 3px 0 0 var(--gold); }
 .ranked-icon.unknown {
   background: linear-gradient(145deg, #9ca3af, #374151);
 }
+.ranked-icon-img {
+  width: 28px; height: 28px; flex: 0 0 28px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.45));
+}
 
 /* Bonus strip compacto (substitui o megabanner) */
 .bonus-strip {

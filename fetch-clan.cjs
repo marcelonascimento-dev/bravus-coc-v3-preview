@@ -84,6 +84,31 @@ function achievementValue(p, name) {
   return a ? a.value : 0;
 }
 function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
+function leagueTierOrder(leagueTier) {
+  const id = Number(leagueTier?.id) || 0;
+  if (id >= 105000000) return id - 105000000;
+  return 0;
+}
+function leagueTierKey(leagueTier) {
+  const name = String(leagueTier?.name || '').toLowerCase();
+  const match = name.match(/^[a-z.]+/i);
+  return match ? match[0].replace(/[^a-z]/g, '') : 'unknown';
+}
+function currentRankedFromProfile(player) {
+  if (!player?.leagueTier) return null;
+  return {
+    leagueTierId: player.leagueTier.id,
+    league: player.leagueTier.name,
+    leagueKey: leagueTierKey(player.leagueTier),
+    leagueOrder: leagueTierOrder(player.leagueTier),
+    trophies: player.legendStatistics?.currentSeason?.trophies ?? player.trophies ?? 0,
+    iconUrls: player.leagueTier.iconUrls || null,
+    currentLeagueGroupTag: player.currentLeagueGroupTag || null,
+    currentLeagueSeasonId: player.currentLeagueSeasonId || null,
+    previousLeagueGroupTag: player.previousLeagueGroupTag || null,
+    previousLeagueSeasonId: player.previousLeagueSeasonId || null,
+  };
+}
 
 // ----- Score de atividade (pesos adaptativos: componentes sem dado saem da conta) -----
 function activityScore(stats) {
@@ -140,11 +165,19 @@ function activityScore(stats) {
   const members = clan.memberList || [];
   console.log(`Buscando perfil de ${members.length} membros…`);
   const players = [];
+  const leagueHistoryByTag = {};
   for (let i = 0; i < members.length; i++) {
     const m = members[i];
     try {
       const p = await api(`/players/${enc(m.tag)}`);
       players.push(p);
+      if (p.leagueTier) {
+        try {
+          leagueHistoryByTag[m.tag] = await api(`/players/${enc(m.tag)}/leaguehistory`, { allow404: true });
+        } catch (e) {
+          console.warn('skip leaguehistory', m.tag, e.message);
+        }
+      }
     } catch (e) {
       console.warn('skip player', m.tag, e.message);
     }
@@ -209,6 +242,23 @@ function activityScore(stats) {
   const playersByTag = Object.fromEntries(players.map((p) => [p.tag, p]));
   const roster = members.map((m) => {
     const p = playersByTag[m.tag] || {};
+    const ranked = currentRankedFromProfile(p);
+    if (ranked) {
+      ranked.history = (leagueHistoryByTag[m.tag]?.items || []).map((h) => ({
+        leagueSeasonId: h.leagueSeasonId,
+        leagueTrophies: h.leagueTrophies,
+        leagueTierId: h.leagueTierId,
+        leagueOrder: leagueTierOrder({ id: h.leagueTierId }),
+        placement: h.placement,
+        attackWins: h.attackWins,
+        attackLosses: h.attackLosses,
+        attackStars: h.attackStars,
+        defenseWins: h.defenseWins,
+        defenseLosses: h.defenseLosses,
+        defenseStars: h.defenseStars,
+        maxBattles: h.maxBattles,
+      }));
+    }
     const heroes = heroSummary(p);
     const troopsPct = troopProgress(p);
     const spellsPct = spellProgress(p);
@@ -233,6 +283,7 @@ function activityScore(stats) {
       th: p.townHallLevel || m.townHallLevel || null,
       trophies: p.trophies ?? m.trophies,
       league: p.league?.name || m.league?.name || null,
+      ranked,
       donations: m.donations || 0,
       donationsReceived: m.donationsReceived || 0,
       donationBalance: (m.donations || 0) - (m.donationsReceived || 0),
@@ -377,6 +428,7 @@ function activityScore(stats) {
     'data.js': h('data.js'),
     'clan-data.js': h('clan-data.js'),
   };
+  if (fs.existsSync(path.join(ROOT, 'clashking-data.js'))) versions['clashking-data.js'] = h('clashking-data.js');
   const idx = path.join(ROOT, 'index.html');
   let html = fs.readFileSync(idx, 'utf8');
   for (const [f, v] of Object.entries(versions)) {

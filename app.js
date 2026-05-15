@@ -701,7 +701,7 @@
         secondary: `🛡${m._partBreakdown.wars} ↑${m._partBreakdown.dSent} ↓${m._partBreakdown.dRecv} ⚔${m._partBreakdown.atk}`,
       })),
       buildHighlightCard('⚔️', 'Top ranked', 'liga + troféus', ranked, (m) => ({
-        icon: rankedLeagueIcon(m.ranked.leagueKey, m.ranked.league),
+        icon: rankedLeagueIcon(m.ranked),
         primary: `${m.ranked.trophies} 🏆`,
         secondary: m.ranked.league,
       })),
@@ -709,19 +709,16 @@
 
     if (!ranked.length) {
       wrap.appendChild(el('div', { class: 'formula-note' },
-        '⚔️ Ranked Battles usa liga primeiro e troféus depois. Enquanto a API não expõe esse ranking, os dados vêm de ranked-data.js.'));
+        '⚔️ Ranked Battles usa liga primeiro e troféus depois. Os dados vêm de leagueTier e leaguehistory da API oficial.'));
     }
 
     return wrap;
   }
 
   function buildRankedPlayers(roster) {
-    const data = window.RANKED_DATA?.players || [];
-    const byTag = Object.fromEntries(data.map((p) => [String(p.tag || '').toUpperCase(), p]));
-    const byName = Object.fromEntries(data.map((p) => [String(p.name || '').toLowerCase(), p]));
     return roster
       .map((m) => {
-        const ranked = byTag[String(m.tag || '').toUpperCase()] || byName[String(m.name || '').toLowerCase()];
+        const ranked = m.ranked;
         return ranked ? { ...m, ranked } : null;
       })
       .filter(Boolean)
@@ -732,11 +729,14 @@
       ));
   }
 
-  function rankedLeagueIcon(key, label) {
+  function rankedLeagueIcon(ranked) {
+    const iconUrl = ranked?.iconUrls?.small || ranked?.iconUrls?.large;
+    const label = ranked?.league || 'Ranked League';
+    if (iconUrl) return el('img', { class: 'ranked-icon-img', src: iconUrl, alt: label, title: label });
     return el('span', {
-      class: 'ranked-icon ' + (key || 'unknown'),
-      title: label || 'Ranked League',
-      'aria-label': label || 'Ranked League',
+      class: 'ranked-icon ' + (ranked?.leagueKey || 'unknown'),
+      title: label,
+      'aria-label': label,
     });
   }
 
