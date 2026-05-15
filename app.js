@@ -703,7 +703,7 @@
       buildHighlightCard('⚔️', 'Top ranked', 'liga + troféus', ranked, (m) => ({
         icon: rankedLeagueIcon(m.ranked),
         primary: `${m.ranked.trophies} 🏆`,
-        secondary: m.ranked.league,
+        secondary: compactRankedLeague(m.ranked.league),
       })),
     ]));
 
@@ -738,6 +738,10 @@
       title: label,
       'aria-label': label,
     });
+  }
+
+  function compactRankedLeague(league) {
+    return String(league || '').replace(/\s+League\s+/i, ' ');
   }
 
   function buildHighlightCard(icon, title, subtitle, items, formatter) {

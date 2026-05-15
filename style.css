@@ -402,7 +402,7 @@ tr.bonus-row td:first-child { box-shadow: inset 3px 0 0 var(--gold); }
 .hl-card-sub { font-size: 12px; color: var(--muted); }
 .hl-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
 .hl-item {
-  display: grid; grid-template-columns: 32px 1fr auto auto; gap: 10px; align-items: center;
+  display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; gap: 10px; align-items: center;
   padding: 8px 10px; border-radius: 8px;
   transition: background 0.15s;
 }
@@ -414,10 +414,10 @@ tr.bonus-row td:first-child { box-shadow: inset 3px 0 0 var(--gold); }
 .hl-pos { font-size: 16px; font-weight: 800; text-align: center; color: var(--muted); }
 .hl-player { display: flex; flex-direction: column; min-width: 0; }
 .hl-player-main { display: flex; align-items: center; gap: 7px; min-width: 0; }
-.hl-player-name { font-weight: 700; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hl-player-name { font-weight: 700; font-size: 14px; white-space: normal; overflow: visible; text-overflow: clip; line-height: 1.08; overflow-wrap: anywhere; }
 .hl-player-th { font-size: 11px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
-.hl-primary { font-weight: 800; color: var(--gold-2); font-size: 15px; white-space: nowrap; }
-.hl-secondary { font-size: 11px; color: var(--muted); font-family: 'JetBrains Mono', monospace; white-space: nowrap; }
+.hl-primary { font-weight: 800; color: var(--gold-2); font-size: 15px; white-space: nowrap; grid-column: 3; grid-row: 1; }
+.hl-secondary { font-size: 11px; color: var(--muted); font-family: 'JetBrains Mono', monospace; white-space: nowrap; grid-column: 3; grid-row: 2; justify-self: end; margin-top: -2px; }
 .hl-empty { padding: 16px; text-align: center; color: var(--muted); font-size: 13px; }
 .ranked-icon {
   width: 24px; height: 24px; flex: 0 0 24px;
@@ -458,9 +458,10 @@ tr.bonus-row td:first-child { box-shadow: inset 3px 0 0 var(--gold); }
   background: linear-gradient(145deg, #9ca3af, #374151);
 }
 .ranked-icon-img {
-  width: 28px; height: 28px; flex: 0 0 28px;
+  width: 36px; height: 36px; flex: 0 0 36px;
   object-fit: contain;
-  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.45));
+  margin: -4px 0;
+  filter: drop-shadow(0 3px 4px rgba(0,0,0,0.55));
 }
 
 /* Bonus strip compacto (substitui o megabanner) */
