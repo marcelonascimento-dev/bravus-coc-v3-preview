@@ -18,8 +18,8 @@ permissions:
   contents: write
 
 concurrency:
-  group: refresh-cwl
-  cancel-in-progress: false
+  group: refresh-cwl-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   refresh:
